@@ -2,7 +2,7 @@
 
 基线：Ant Design 官网6.6.8，资料检查日期2026-10-29。覆盖官网总览**73个核心入口 + 6个外部Pro入口 = 79项**；包含已废弃List和仅类型工具Util，不等于需要创建79个WPF可视控件。
 
-目标：保留.NET Framework4.8+；现代.NET最低8，产品包`net48;net8.0-windows`。目前已实现M0基础切片、AntSwitch、原生AntCheckBox/AntRadioButton单项、AntDivider、不换行AntFlexPanel、AntSpace、AntRow/AntCol及Layout/Sider手动折叠，并按官方6.6.8校准视觉token；响应式布局、Compact、组控件和其余规格仍按批次推进。[实施状态](../implementation-status.md)记录实际完成与未验收范围。
+目标：保留.NET Framework4.8+；现代.NET最低8，产品包`net48;net8.0-windows`。目前已实现M0基础切片、AntSwitch、原生AntCheckBox/AntRadioButton单项、AntDivider、支持换行及分散对齐的AntFlexPanel、AntSpace、AntRow/AntCol及Layout/Sider手动折叠，并按官方6.6.8校准视觉token；响应式布局、Compact、组控件和其余规格仍按批次推进。[实施状态](../implementation-status.md)记录实际完成与未验收范围。
 
 先读[共用要求](common.md)，再读本组件；[整体架构](../architecture/README.md)定义公开接口/模块/所有权，[性能契约](../architecture/performance.md)定义复杂度、资源上限与PF01–PF10回归，[dotnet规范](../engineering/dotnet-conventions.md)定义后续项目格式与skills使用。
 

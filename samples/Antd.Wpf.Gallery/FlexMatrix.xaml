@@ -29,6 +29,27 @@
               <antd:AntButton Content="Default" />
               <antd:AntButton Content="Action" Variant="Solid" SemanticColor="Primary" />
             </antd:AntFlexPanel>
+            <antd:AntDivider Content="Wrap · column gap 8 / row gap 8" IsPlain="True" />
+            <antd:AntFlexPanel Wrap="True" ColumnGap="8" RowGap="8" AlignItems="Center">
+              <antd:AntButton Content="One / 一" Width="112" Variant="Solid" SemanticColor="Primary" />
+              <antd:AntButton Content="Two / 二" Width="112" />
+              <antd:AntButton Content="Three / 三" Width="112" />
+              <antd:AntButton Content="Four / 四" Width="112" />
+              <antd:AntButton Content="Five / 五" Width="112" />
+              <antd:AntButton Content="Six / 六" Width="112" />
+            </antd:AntFlexPanel>
+            <antd:AntDivider Content="SpaceBetween" IsPlain="True" />
+            <antd:AntFlexPanel JustifyContent="SpaceBetween" ColumnGap="8">
+              <antd:AntButton Content="Start" /><antd:AntButton Content="Middle" /><antd:AntButton Content="End" />
+            </antd:AntFlexPanel>
+            <antd:AntDivider Content="SpaceAround" IsPlain="True" />
+            <antd:AntFlexPanel JustifyContent="SpaceAround" ColumnGap="8">
+              <antd:AntButton Content="One" /><antd:AntButton Content="Two" /><antd:AntButton Content="Three" />
+            </antd:AntFlexPanel>
+            <antd:AntDivider Content="SpaceEvenly" IsPlain="True" />
+            <antd:AntFlexPanel JustifyContent="SpaceEvenly" ColumnGap="8">
+              <antd:AntButton Content="One" /><antd:AntButton Content="Two" /><antd:AntButton Content="Three" />
+            </antd:AntFlexPanel>
             <antd:AntDivider Content="RTL · Start" IsPlain="True" />
             <antd:AntFlexPanel ColumnGap="8" FlowDirection="RightToLeft" AlignItems="Center">
               <antd:AntButton Content="First / 首项" Variant="Solid" SemanticColor="Primary" />

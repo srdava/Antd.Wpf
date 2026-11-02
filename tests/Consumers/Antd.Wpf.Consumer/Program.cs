@@ -74,6 +74,16 @@ internal static class Program
             Require(button.Template?.FindName("Chrome", button) is Border, "Button BAML unavailable");
             Require(LayoutInformation.GetLayoutSlot(flexSecond).X == 28 && VisualTreeHelper.GetChildrenCount(flex) == 2,
                 "Flex packaged layout unavailable");
+            flex.Wrap = true;
+            flex.Width = 40;
+            flex.RowGap = 6;
+            Pump();
+            Require(LayoutInformation.GetLayoutSlot(flexSecond).Y == 16, "Flex packaged wrapping unavailable");
+            flex.Width = 100;
+            flex.JustifyContent = FlexJustification.SpaceEvenly;
+            Pump();
+            Require(LayoutInformation.GetLayoutSlot(flexFirst).X == 14 && LayoutInformation.GetLayoutSlot(flexSecond).X == 56,
+                "Flex packaged distributed justification unavailable");
             Require(LayoutInformation.GetLayoutSlot((FrameworkElement)space.Children[1]).X == 38 && VisualTreeHelper.GetChildrenCount(space) == 3,
                 "Space packaged separator layout unavailable");
             Require(LayoutInformation.GetLayoutSlot(gridCol).X == -8 &&

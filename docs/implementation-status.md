@@ -17,7 +17,7 @@
 | AntCheckBox | 原生CheckBox绑定、Command、Space、三态；16DIP框、4圆角、8DIP标签内距、8×8半选方块；原生TogglePattern | Checkbox.Group/SelectedKeys与跨页全选未实现 |
 | AntRadioButton | 原生RadioButton/GroupName、命令/互斥与SelectionItemPattern；16DIP圈、6DIP点、8DIP标签内距/行末Margin及RTL | RadioGroup、按钮外观、组值/方向键/Tab契约和末项Margin0待实现；单项不猜测集合首尾 |
 | AntDivider | 水平/垂直、实/虚/点线、标题Start/Center/End及RTL、plain、尺寸外距、可选DIP标题Inset、ContentTemplate与Separator自动化；缓存Pen直接绘制 | 默认布局功能已实现；真实150%/200%DPI、动态DPI、屏幕阅读器及与浏览器的逐像素差分待验收 |
-| AntFlexPanel | 不换行横纵布局、RowGap/ColumnGap、Start/Center/End主轴对齐、跨轴Start/Center/End/Stretch、原生RTL与Min/Max/绑定；无包装节点 | Wrap/Grow/Shrink/Basis/AlignSelf和分散对齐待P2；Baseline、真实DPI/读屏及耗时/GC预算待验收 |
+| AntFlexPanel | 横纵布局与Wrap、RowGap/ColumnGap、六种主轴对齐、跨轴Start/Center/End/Stretch、换行槽拉伸、原生RTL与Min/Max/绑定；无包装节点 | Grow/Shrink/Basis/AlignSelf、WrapReverse和AlignContent待后续；Baseline、真实DPI/读屏及耗时/GC预算待验收 |
 | AntSpace | 默认Gap8、行列Gap覆盖、横纵方向、跨轴对齐/纵向默认拉伸、水平换行、RTL和装饰SeparatorTemplate；子项无包装 | 换行处隐藏孤立分隔符是WPF明确映射；Compact/Addon/Baseline、DPI/读屏/耗时/GC待验收 |
 | AntRow/AntCol | 24列、Span/Offset、换行、横纵gutter、六Justify/四Align、RTL、Span0不测量且保留绑定；列重归属清理内部gutter | 默认Span24是明确WPF映射；断点/Order/Push/Pull/Grow/Basis、真实DPI/读屏/耗时/GC待验收 |
 | AntLayout/Header/Content/Footer | 原生DockPanel区域与嵌套、Header MinHeight64/水平padding50、Footer padding24/50及字体相对行框；正文显式滚动 | 容器相对固定；不自动插入ScrollViewer，真实DPI/读屏待验收 |
@@ -51,6 +51,8 @@ Gallery预览修复见[复现与验收](analysis/gallery-preview-fixes.md)：六
 输入文字居中与邮箱示例修复于2026-11-02 15:09完成完整Verify，exit0：Release零警告/零错误，net48/net8各203/203、无失败/跳过，四个真实包消费宿主和十四张截图通过。66个源码快照hash与当前文件一致，双端Gallery输入区域已目视检查。包SHA256为F9500917AF1A6848BACACDF3E232474F0DA574F22AB04D6498F7ABE5A68F7D0E；此前计数/hash仅作历史。三种尺寸单行输入使用原生字体行框居中，保留高度/Padding及Top/Bottom覆盖；Email直接输入完整地址。复现、回归名称及WPF排版边界见[修复说明](analysis/gallery-preview-fixes.md)。既有PF02/PF05布局代理在临时预算内，不代表完整帧率、GC或多DPI验收。
 
 ## 视觉来源与本批修正
+
+2026-11-02后续Flex P2切片已实现横纵Wrap、SpaceBetween/Around/Evenly及默认跨轴行槽拉伸，原有不换行默认与枚举值保留。net8定向38/38，整套215项全部通过，独立生成包的net8 Consumer及明暗截图通过；自动提交约定已写入AGENTS.md。完整Verify在net48 Gallery EXE元数据读取阶段失败，用户正在检查本机EXE处理工具；本批Framework测试/包消费/截图待复核。上文203/203及m0-validation.json为15:09的历史完整通过记录。详情见[Flex实施与验收](analysis/flex-implementation.md#本批验证状态)。
 
 详见[官方6.6.8样式与token映射](analysis/visual-token-mapping.md)：官方源码URL/hash、官方npm默认/暗色算法实际输出均独立保存。Button三尺寸padding为7/15/15水平、纵向均0；Input/Select为7,0 / 11,4 / 11,7，字号14/14/16、圆角4/6/8。真实ActualHeight有双端断言，不只检查MinHeight。WPF文本行框22/24是明确映射；单行Input使用原生字体行框以修复文字偏下，多行仍保留22/24，不声称浏览器与WPF字体栅格完全相同。
 

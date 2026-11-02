@@ -259,6 +259,169 @@ public sealed class FlexTests
         Assert.Equal(double.MaxValue, panel.DesiredSize.Width);
     });
 
+    [Theory]
+    [InlineData(Orientation.Horizontal)]
+    [InlineData(Orientation.Vertical)]
+    public void Flex_WrapUsesBothGapsAndExactBoundaryInEitherDirection(Orientation orientation) => Sta.Run(() =>
+    {
+        bool horizontal = orientation == Orientation.Horizontal;
+        var panel = new AntFlexPanel { Wrap = true, Orientation = orientation, ColumnGap = horizontal ? 8 : 6, RowGap = horizontal ? 6 : 8 };
+        var first = new Border { Width = horizontal ? 20 : 10, Height = horizontal ? 10 : 20 };
+        var second = new Border { Width = horizontal ? 30 : 20, Height = horizontal ? 20 : 30 };
+        var third = new Border { Width = horizontal ? 40 : 15, Height = horizontal ? 15 : 40 };
+        panel.Children.Add(first);
+        panel.Children.Add(second);
+        panel.Children.Add(third);
+        Layout(panel, horizontal ? 58 : 41, horizontal ? 41 : 58);
+        Assert.Equal(horizontal ? new Size(58, 41) : new Size(41, 58), panel.DesiredSize);
+        Assert.Equal(horizontal ? new Rect(28, 0, 30, 20) : new Rect(0, 28, 20, 30), LayoutInformation.GetLayoutSlot(second));
+        Assert.Equal(horizontal ? new Rect(0, 26, 40, 15) : new Rect(26, 0, 15, 40), LayoutInformation.GetLayoutSlot(third));
+        Layout(panel, 57, 57);
+        Assert.Equal(horizontal ? new Point(0, 16) : new Point(16, 0), LayoutInformation.GetLayoutSlot(second).TopLeft);
+        Assert.Equal(horizontal ? new Point(0, 42) : new Point(42, 0), LayoutInformation.GetLayoutSlot(third).TopLeft);
+    });
+
+    [Theory]
+    [InlineData(Orientation.Horizontal, FlexJustification.SpaceBetween, 0, 70)]
+    [InlineData(Orientation.Horizontal, FlexJustification.SpaceAround, 10.5, 59.5)]
+    [InlineData(Orientation.Horizontal, FlexJustification.SpaceEvenly, 14, 56)]
+    [InlineData(Orientation.Vertical, FlexJustification.SpaceBetween, 0, 70)]
+    [InlineData(Orientation.Vertical, FlexJustification.SpaceAround, 10.5, 59.5)]
+    [InlineData(Orientation.Vertical, FlexJustification.SpaceEvenly, 14, 56)]
+    public void Flex_DistributedJustificationIncludesGapAndHandlesSingleItem(Orientation orientation, FlexJustification justification, double firstPosition, double secondPosition) => Sta.Run(() =>
+    {
+        bool horizontal = orientation == Orientation.Horizontal;
+        var panel = new AntFlexPanel { Orientation = orientation, ColumnGap = 8, RowGap = 8, JustifyContent = justification };
+        var first = new Border { Width = horizontal ? 20 : 10, Height = horizontal ? 10 : 20 };
+        var second = new Border { Width = horizontal ? 30 : 10, Height = horizontal ? 10 : 30 };
+        panel.Children.Add(first);
+        panel.Children.Add(second);
+        Layout(panel, horizontal ? 100 : 20, horizontal ? 20 : 100);
+        Rect firstSlot = LayoutInformation.GetLayoutSlot(first);
+        Rect secondSlot = LayoutInformation.GetLayoutSlot(second);
+        Assert.Equal(firstPosition, horizontal ? firstSlot.X : firstSlot.Y, 5);
+        Assert.Equal(secondPosition, horizontal ? secondSlot.X : secondSlot.Y, 5);
+        panel.Children.Remove(second);
+        Layout(panel, horizontal ? 100 : 20, horizontal ? 20 : 100);
+        firstSlot = LayoutInformation.GetLayoutSlot(first);
+        Assert.Equal(justification == FlexJustification.SpaceBetween ? 0 : 40, horizontal ? firstSlot.X : firstSlot.Y, 5);
+        panel.Children.Add(second);
+        Layout(panel, horizontal ? 40 : 20, horizontal ? 20 : 40);
+        firstSlot = LayoutInformation.GetLayoutSlot(first);
+        secondSlot = LayoutInformation.GetLayoutSlot(second);
+        Assert.Equal(0, horizontal ? firstSlot.X : firstSlot.Y);
+        Assert.Equal(28, horizontal ? secondSlot.X : secondSlot.Y);
+    });
+
+    [Fact]
+    public void Flex_WrappedLinesJustifyIndependentlyAndStretchCrossAxisSlots() => Sta.Run(() =>
+    {
+        var panel = new AntFlexPanel { Wrap = true, ColumnGap = 10, RowGap = 6, JustifyContent = FlexJustification.SpaceBetween, AlignItems = FlexAlignment.End };
+        var first = new Border { Width = 40, Height = 10 };
+        var second = new Border { Width = 40, Height = 20 };
+        var third = new Border { Width = 40, Height = 14 };
+        panel.Children.Add(first);
+        panel.Children.Add(second);
+        panel.Children.Add(third);
+        Layout(panel, 100, 60);
+        Assert.Equal(new Rect(0, 20, 40, 10), LayoutInformation.GetLayoutSlot(first));
+        Assert.Equal(new Rect(60, 10, 40, 20), LayoutInformation.GetLayoutSlot(second));
+        Assert.Equal(new Rect(0, 46, 40, 14), LayoutInformation.GetLayoutSlot(third));
+        panel.JustifyContent = FlexJustification.SpaceAround;
+        Layout(panel, 100, 60);
+        Assert.Equal(30, LayoutInformation.GetLayoutSlot(third).X);
+    });
+
+    [Fact]
+    public void Flex_WrapPreservesHiddenZeroOversizeAndUnboundedBehavior() => Sta.Run(() =>
+    {
+        var panel = new AntFlexPanel { Wrap = true, ColumnGap = 8, RowGap = 6, AlignItems = FlexAlignment.Start };
+        var first = new Border { Width = 20, Height = 10 };
+        var hidden = new Border { Width = 20, Height = 10, Visibility = Visibility.Hidden };
+        var collapsed = new Border { Width = 200, Height = 10, Visibility = Visibility.Collapsed };
+        var zero = new Border();
+        var wide = new Border { Width = 80, Height = 10 };
+        panel.Children.Add(first);
+        panel.Children.Add(hidden);
+        panel.Children.Add(collapsed);
+        panel.Children.Add(zero);
+        panel.Children.Add(wide);
+        panel.Measure(new Size(double.PositiveInfinity, double.PositiveInfinity));
+        Assert.Equal(new Size(144, 10), panel.DesiredSize);
+        Layout(panel, 56, 26);
+        Assert.Equal(new Point(28, 0), LayoutInformation.GetLayoutSlot(hidden).TopLeft);
+        Assert.Equal(new Point(56, 0), LayoutInformation.GetLayoutSlot(zero).TopLeft);
+        Assert.Equal(new Point(0, 16), LayoutInformation.GetLayoutSlot(wide).TopLeft);
+        hidden.Visibility = Visibility.Collapsed;
+        Layout(panel, 56, 26);
+        Assert.Equal(new Point(28, 0), LayoutInformation.GetLayoutSlot(zero).TopLeft);
+        Assert.Equal(80, wide.ActualWidth);
+        panel.Children.Clear();
+        Layout(panel, 0, 0);
+        Assert.Equal(new Size(), panel.DesiredSize);
+        panel.Children.Add(new Border { Width = 20, Height = 10 });
+        Layout(panel, 0, 0);
+        Assert.Equal(20, ((Border)panel.Children[0]).ActualWidth);
+    });
+
+    [Fact]
+    public void Flex_WrapResizeRtlAndBindingKeepChildrenAndFocus() => Sta.Run(() =>
+    {
+        var source = new Border { Tag = true };
+        var panel = new AntFlexPanel { Width = 170, Wrap = true, RowGap = 8, ColumnGap = 8, FlowDirection = FlowDirection.RightToLeft, VerticalAlignment = VerticalAlignment.Top };
+        BindingOperations.SetBinding(panel, AntFlexPanel.WrapProperty, new Binding("Tag") { Source = source });
+        var first = new AntButton { Content = "First", Width = 80 };
+        var second = new AntButton { Content = "Second", Width = 80 };
+        panel.Children.Add(first);
+        panel.Children.Add(second);
+        var host = new Border { Child = panel };
+        Window window = Sta.Show(new AntThemeScope { Content = host });
+        try
+        {
+            Assert.True(first.Focus());
+            Assert.True(first.TranslatePoint(new Point(40, 0), host).X > second.TranslatePoint(new Point(40, 0), host).X);
+            panel.Width = 100;
+            Sta.Pump();
+            Assert.Equal(first.DesiredSize.Height + 8, LayoutInformation.GetLayoutSlot(second).Y - LayoutInformation.GetLayoutSlot(first).Y, 5);
+            panel.Width = 130;
+            first.Width = 40;
+            Sta.Pump();
+            Assert.Equal(LayoutInformation.GetLayoutSlot(first).Y, LayoutInformation.GetLayoutSlot(second).Y);
+            first.Width = 80;
+            Sta.Pump();
+            source.Tag = false;
+            Sta.Pump();
+            Assert.Equal(LayoutInformation.GetLayoutSlot(first).Y, LayoutInformation.GetLayoutSlot(second).Y);
+            Assert.True(BindingOperations.IsDataBound(panel, AntFlexPanel.WrapProperty));
+            Assert.True(first.IsKeyboardFocused);
+            Assert.Same(first, panel.Children[0]);
+            Assert.Equal(2, VisualTreeHelper.GetChildrenCount(panel));
+        }
+        finally { window.Close(); }
+    });
+
+    [Fact]
+    public void Flex_WrapKeepsLinearChildVisitsDuringRepeatedAlignment() => Sta.Run(() =>
+    {
+        var panel = new AntFlexPanel { Wrap = true, ColumnGap = 1, RowGap = 2 };
+        for (int index = 0; index < 200; index++) { panel.Children.Add(new Probe()); }
+        Layout(panel, 104, 478);
+        Assert.Equal(new Size(104, 478), panel.DesiredSize);
+        for (int iteration = 0; iteration < 30; iteration++)
+        {
+            panel.JustifyContent = iteration % 2 == 0 ? FlexJustification.SpaceAround : FlexJustification.SpaceBetween;
+            panel.Arrange(new Rect(0, 0, 104, 478));
+        }
+        foreach (Probe child in panel.Children)
+        {
+            Assert.Equal(1, child.Measures);
+            Assert.InRange(child.Arranges, 1, 31);
+            Assert.Same(panel, VisualTreeHelper.GetParent(child));
+        }
+        Assert.Equal(200, VisualTreeHelper.GetChildrenCount(panel));
+        Assert.Equal(468, LayoutInformation.GetLayoutSlot((FrameworkElement)panel.Children[199]).Y);
+    });
+
     private static void Layout(AntFlexPanel panel, double width, double height)
     {
         panel.Measure(new Size(width, height));

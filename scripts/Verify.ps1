@@ -155,7 +155,7 @@ try {
     })
     $report = [ordered]@{
         validatedAt = (Get-Date).ToString('o'); command = 'pwsh -File scripts/Verify.ps1'; exitCode = 0
-        scope = 'M0, P1 native selection/layout, manual Sider collapse and Gallery scrolling/compact-navigation regression; not full catalog or release acceptance'
+        scope = 'M0, P1 native selection/layout, Flex wrapping/distributed justification, manual Sider collapse and Gallery scrolling/compact-navigation regression; not full catalog or release acceptance'
         sdk = (& dotnet --version); machine = $env:COMPUTERNAME
         tests = @($testResults); package = 'artifacts/packages/Antd.Wpf.0.1.0-alpha.1.nupkg'
         packageSha256 = (Get-FileHash -LiteralPath $package -Algorithm SHA256).Hash
@@ -171,7 +171,7 @@ try {
             'Earlier PF05 runs exceeded 300ms; current proxy results do not explain or close the intermittent issue.',
             'PF01/PF03/PF04/PF06-PF10, physical keyboard/IME, DPI matrix, screen reader, x86 and heap-root investigation remain unverified.',
             'Switch uses immediate state changes and a static busy indicator; motion animation is pending.'
-            'Flex supports nonwrapping layout only; Grow/Shrink/Basis, wrap, distributed justification and baseline remain pending. No Flex wall-time/GC budget is claimed.'
+            'Flex supports optional horizontal/vertical wrapping and distributed justification; Grow/Shrink/Basis/AlignSelf, wrap-reverse, align-content selection and baseline remain pending. No Flex wall-time/GC budget is claimed.'
             'Space uses decorative separators, suppresses separators at wrap boundaries, and does not implement Compact or baseline. No Space wall-time/GC budget is claimed.'
             'Grid implements base spans/offsets/gutters/alignment; responsive breakpoints, Order/Push/Pull/Grow are pending. No Grid wall-time/GC budget is claimed.'
             'Layout uses native docking, container-relative triggers and immediate manual collapse; responsive collapse, motion and standalone Layout time/GC/heap gates are pending.'

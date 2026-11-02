@@ -1,9 +1,10 @@
 # Antd.Wpf 开发入口
 
+- 本项目默认启用`ponytail:ponytail`的full模式；编码、修复、重构与审查均执行最小完整修改，优先复用现有实现和平台能力。
 - 产品目标、模块责任与兼容规则见 [架构设计](docs/architecture/README.md)。现代 .NET 最低为8，保留Framework4.8；共享源码不能直接依赖net48缺失的API。
 - 实现或修改控件前，从[组件索引](docs/components/README.md)读取对应项和[共用要求](docs/components/common.md)；完成时逐项核对该组件验收，不以属性存在代替行为完成。
 - 修改列表、布局、主题、弹层、动画、图像和异步加载时，读取[性能契约](docs/architecture/performance.md)，提交对应场景证据；预算尚未实测时如实标注。
-- 新增项目、调整项目文件或依赖时，遵循[项目格式与dotnet skills](docs/engineering/dotnet-conventions.md)。使用运行时技能目录中实际可用的精确skill，先读SKILL.md；缺少技能时说明覆盖限制并完成可验证的工作。
+- C#/.NET实现、测试、重构、构建及性能任务按[项目格式与dotnet skills](docs/engineering/dotnet-conventions.md)选择最窄且实际可用的精确skill，先读SKILL.md并执行对应验证；项目文件和依赖调整同时遵循其中的格式要求。缺少技能时说明覆盖限制并完成可验证的工作。
 - 项目格式由根`.editorconfig`、`Directory.Build.props`和`global.json`管理；TFM、UseWPF、OutputType和项目专属依赖留在项目文件。SDK和运行时版本分开处理。
 - 每批修改完成后运行对应验证，如实记录失败或未验证项，自动在当前开发分支创建Git提交并推送到对应远程分支，向用户报告提交号和推送结果。
 - 提交标题采用`type(scope): 中文内容`格式，例如`feat(flex): 支持换行与分散对齐`。作者及提交者统一使用`codex <codex@openai.com>`，通过仓库级Git配置设置。

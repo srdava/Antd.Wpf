@@ -115,7 +115,8 @@ public sealed class SwitchTests
             Sta.Pump();
             Assert.True(control.IsChecked);
             Assert.Equal("开", label.Content);
-            Assert.Equal(HorizontalAlignment.Right, thumb.HorizontalAlignment);
+            double checkedLeft = control.ActualWidth - thumb.ActualWidth - 2;
+            Assert.InRange(thumb.TranslatePoint(new Point(), control).X, checkedLeft - 0.81, checkedLeft + 0.81);
             scope.Mode = ThemeMode.Dark;
             control.FlowDirection = FlowDirection.RightToLeft;
             Sta.Pump();
@@ -146,6 +147,7 @@ public sealed class SwitchTests
         public void Invoke() => OnClick();
         public void Space()
         {
+            if (IsEnabled) { Assert.True(Focus()); }
             var source = PresentationSource.FromVisual(this);
             OnKeyDown(new KeyEventArgs(Keyboard.PrimaryDevice, source, 0, Key.Space) { RoutedEvent = Keyboard.KeyDownEvent, Source = this });
             OnKeyUp(new KeyEventArgs(Keyboard.PrimaryDevice, source, 1, Key.Space) { RoutedEvent = Keyboard.KeyUpEvent, Source = this });

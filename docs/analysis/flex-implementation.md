@@ -61,4 +61,6 @@ Gallery提供Flex examples明暗示例，包括换行和三种分散对齐，Ver
 
 独立打包至`artifacts/flex-packages/`，以该目录和nuget.org作为来源、隔离缓存并仅构建net8 Consumer，零警告/零错误；真实包消费通过，包含新增换行和分散对齐位置检查。net8明暗Flex截图已重新生成并目视核对，底部示例可滚动到达。
 
-完整Verify当前未通过。net48库可编译，但Gallery EXE的PE CLR目录为0，版本信息为`Synaptics Pointing Device Driver`，测试项目引用它时报CS0009。失败文件SHA256为`FC8BDE6391D73D891ABE4B1B4FA31FC066C27CDBEAC8F4F7CC146ABD879A96E3`。用户确认本机有会处理EXE的工具并正在检查。本批net48测试、Framework包消费及net48截图待该问题解除后重跑；未运行这份异常EXE。`docs/m0-validation.json`保留15:09的上次完整通过记录，不能作为本批通过证明。
+此批首次完整Verify未通过。net48库可编译，但Gallery EXE的PE CLR目录为0，版本信息为`Synaptics Pointing Device Driver`，测试项目引用它时报CS0009。失败文件SHA256为`FC8BDE6391D73D891ABE4B1B4FA31FC066C27CDBEAC8F4F7CC146ABD879A96E3`。用户确认本机有会处理EXE的工具并检查，未运行这份异常EXE。
+
+2026-11-02 16:11的后续Switch批次重建后元数据正常，完整Verify已通过，包含本批Flex的两端38项回归、四个包消费者与Flex明暗截图。最新完整套件为两端各226/226，结果见`docs/m0-validation.json`。此记录补齐先前Framework待验证项，Flex独立耗时/GC与硬件门槛仍待验收。

@@ -8,7 +8,7 @@ This alpha implements a foundation slice, not the complete Ant Design component 
 - `AntButton`: variants, semantic colors, shapes, icons, loading delay and command suppression.
 - `AntInput`: native TextBox editing/binding, placeholder, prefix/suffix, clear, counter, sizes and validation presentation.
 - `AntSelect`: native ComboBox selection, a recycled virtual item panel, scoped Popup resources and owner cleanup.
-- `AntSwitch`: native ToggleButton commands and accessibility, two-state binding, checked/unchecked content and loading interaction guard.
+- `AntSwitch`: native ToggleButton commands and accessibility, two-state binding, checked/unchecked content, loading interaction guard and 200 ms thumb motion. MotionEnabled disables transitions; hiding, unloading and retemplating release clocks. Color/label transitions, pressed-handle stretch, shadow and busy rotation are pending.
 - `AntCheckBox` / `AntRadioButton`: native checked/group/command/accessibility semantics with source-aligned geometry, gaps and theme resources. Group wrapper components are pending.
 - `AntDivider`: horizontal/vertical solid, dashed or dotted lines; titled/ordinary separators, Start/Center/End with RTL, plain text, sizes, optional DIP title inset and native content templates. Rails use a cached drawing pen with one title presenter.
 - `AntFlexPanel`: horizontal/vertical layout with optional wrapping, numeric row/column gaps, Start/Center/End/SpaceBetween/SpaceAround/SpaceEvenly justification, cross-axis alignment/Stretch, native RTL and child constraints. Grow/Shrink/Basis/AlignSelf and baseline are pending.

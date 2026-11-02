@@ -88,8 +88,10 @@
                 <antd:AntSwitch Size="Small" IsChecked="True" Margin="0,0,20,8" AutomationProperties.Name="Small switch" />
                 <antd:AntSwitch IsChecked="True" IsLoading="True" Margin="0,0,20,8" AutomationProperties.Name="Saving switch" />
                 <antd:AntSwitch IsEnabled="False" Margin="0,0,20,8" AutomationProperties.Name="Disabled switch" />
+                <antd:AntSwitch CheckedContent="即时" UncheckedContent="即时" antd:AntThemeScope.MotionEnabled="False" Margin="0,0,20,8" AutomationProperties.Name="Motion disabled switch" />
               </WrapPanel>
               <TextBlock Text="{Binding IsFeatureEnabled, StringFormat='Bound value: {0}'}" Foreground="{DynamicResource Antd.Brush.Secondary}" />
+              <TextBlock Text="Thumb motion · 200 ms · “即时” switches immediately" Foreground="{DynamicResource Antd.Brush.Secondary}" Margin="0,8,0,0" TextWrapping="Wrap" />
               <WrapPanel Margin="0,16,0,0">
                 <antd:AntCheckBox Content="Checkbox" IsChecked="{Binding IsFeatureEnabled}" Margin="0,0,16,0" />
                 <antd:AntCheckBox Content="Indeterminate" IsChecked="{x:Null}" Margin="0,0,16,0" />

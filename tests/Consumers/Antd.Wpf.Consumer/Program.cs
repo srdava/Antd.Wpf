@@ -111,6 +111,17 @@ internal static class Program
             Require(packagedSider.ActualWidth == 200 && ((AntInput)packagedSider.Content).Text == "Retained", "Sider packaged restore failed");
             Require(input.Template?.FindName("PART_ContentHost", input) is ScrollViewer, "Input BAML unavailable");
             Require(toggle.Template?.FindName("Label", toggle) is ContentPresenter { Content: "开" }, "Switch BAML unavailable");
+            var thumbTranslation = (toggle.Template?.FindName("Thumb", toggle) as Border)?.RenderTransform as TranslateTransform
+                ?? throw new InvalidOperationException("Switch thumb translation unavailable");
+            Require(!thumbTranslation.HasAnimatedProperties && thumbTranslation.X > 0,
+                "Switch initial thumb position unavailable");
+            toggle.IsChecked = false;
+            Require(thumbTranslation.HasAnimatedProperties, "Switch packaged motion unavailable");
+            scope.MotionEnabled = false;
+            Require(!thumbTranslation.HasAnimatedProperties && thumbTranslation.X == 0, "Switch motion cancellation failed");
+            toggle.IsChecked = true;
+            Require(!thumbTranslation.HasAnimatedProperties && thumbTranslation.X > 0, "Switch no-motion position unavailable");
+            scope.MotionEnabled = true;
             Require(checkbox.Template?.FindName("Indeterminate", checkbox) is System.Windows.Shapes.Rectangle { Opacity: 1 }, "Checkbox BAML unavailable");
             Require(radio.Template?.FindName("Dot", radio) is System.Windows.Shapes.Ellipse { Width: 6, Opacity: 1 }, "Radio BAML unavailable");
             Require(divider.Template?.FindName("PART_Layout", divider) is Decorator { Child: ContentPresenter { Content: "Packaged section" } }, "Divider internal BAML types unavailable");

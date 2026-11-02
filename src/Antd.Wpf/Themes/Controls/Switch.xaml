@@ -19,6 +19,7 @@
           <Grid>
             <ContentPresenter x:Name="Label" Content="{TemplateBinding UncheckedContent}" Margin="{TemplateBinding Padding}" VerticalAlignment="Center" HorizontalAlignment="Center" />
             <Border x:Name="Thumb" HorizontalAlignment="Left" VerticalAlignment="Center" Width="18" Height="18" Margin="2" CornerRadius="9" Background="{DynamicResource Antd.Brush.White}">
+              <Border.RenderTransform><TranslateTransform x:Name="ThumbTranslation" /></Border.RenderTransform>
               <TextBlock x:Name="Busy" Text="…" Foreground="{DynamicResource Antd.Brush.Primary}" FontSize="12" HorizontalAlignment="Center" VerticalAlignment="Center" Visibility="Collapsed" />
             </Border>
           </Grid>
@@ -26,7 +27,6 @@
       </Grid>
       <ControlTemplate.Triggers>
         <Trigger Property="IsChecked" Value="True">
-          <Setter TargetName="Thumb" Property="HorizontalAlignment" Value="Right" />
           <Setter TargetName="Label" Property="Content" Value="{Binding CheckedContent, RelativeSource={RelativeSource TemplatedParent}}" />
           <Setter TargetName="Label" Property="Margin" Value="9,0,24,0" />
         </Trigger>

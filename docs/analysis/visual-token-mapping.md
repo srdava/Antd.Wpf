@@ -73,7 +73,7 @@ Radio `dotSize=8` 属于 `wireframe=true` 的另一条路径，不应混入默�
 
 Switch 没有官方 Large 尺寸；主题 Large 映射 Default 属于本项目决定，不能声称官方有52×28的Large。轨道无边框，拨钮白色，文字也是白色；不能把文字 Foreground 与拨钮颜色绑定为同一状态画刷来改变暗色拨钮。
 
-未选背景为 `colorTextQuaternary`，hover 为 `colorTextTertiary`；选中背景为 Primary/PrimaryHover；disabled/loading 的整体 opacity 为0.65。原样式按状态和内容宽度计算最小宽度，不固定裁切长文本。`handleShadow = 0 2px 4px 0 rgba(0,35,11,0.2)`。活动按压时把手有拉伸，文本有对应偏移，动画时长0.2s；没有这些行为时应列为待实现。
+未选背景为 `colorTextQuaternary`，hover 为 `colorTextTertiary`；选中背景为 Primary/PrimaryHover；disabled/loading 的整体 opacity 为0.65。原样式按状态和内容宽度计算最小宽度，不固定裁切长文本。`handleShadow = 0 2px 4px 0 rgba(0,35,11,0.2)`。活动按压时把手有拉伸，文本有对应偏移，动画时长0.2s。WPF已实现200ms拨钮RenderTransform位移和CSS ease-in-out曲线，受MotionEnabled控制；颜色/标签过渡、按压拉伸、把手阴影及加载旋转仍待实现。详见[Switch动画实施](switch-motion-implementation.md)。
 
 ## 色彩和焦点：官方事实
 

@@ -13,7 +13,7 @@
 | AntButton | 六种变体、常用语义色、圆形/胶囊、三尺寸、图标位置、Ghost、加载延迟、防命令重入 | 完整IconTemplate/LoadingIcon、预设全调色板、波纹/渐变/中文自动间距未完成 |
 | AntInput | TextBox原生编辑/绑定/撤销、占位、前后缀、清除、计数、变体/状态、AutomationPeer状态 | Search/Password/OTP及完整计数策略、所有高对比度交互矩阵未完成 |
 | AntSelect | ComboBox单选语义、默认模板、虚拟化/回收、Popup主题桥接、Esc/卸载/重模板化清理 | 清除、多选/Tags、分组、搜索、远程加载与完整状态矩阵未完成 |
-| AntSwitch | ToggleButton原生命令/TogglePattern、两态绑定、null按关展示并在下次操作开启、开关内容/尺寸/RTL、加载防重入、忙碌UIA状态 | 即时切换和静态忙碌指示，滑动/加载动画未实现；真实输入与高对比度动态矩阵待验收 |
+| AntSwitch | ToggleButton原生命令/TogglePattern、两态绑定、null按关展示、开关内容/尺寸/RTL、加载防重入、忙碌UIA状态；200ms拨钮动画、关闭动画及隐藏/卸载/重模板化清理 | 颜色/标签过渡、按压拉伸、把手阴影和加载旋转待实现；真实输入、高对比度动态矩阵及硬件帧率/GC待验收 |
 | AntCheckBox | 原生CheckBox绑定、Command、Space、三态；16DIP框、4圆角、8DIP标签内距、8×8半选方块；原生TogglePattern | Checkbox.Group/SelectedKeys与跨页全选未实现 |
 | AntRadioButton | 原生RadioButton/GroupName、命令/互斥与SelectionItemPattern；16DIP圈、6DIP点、8DIP标签内距/行末Margin及RTL | RadioGroup、按钮外观、组值/方向键/Tab契约和末项Margin0待实现；单项不猜测集合首尾 |
 | AntDivider | 水平/垂直、实/虚/点线、标题Start/Center/End及RTL、plain、尺寸外距、可选DIP标题Inset、ContentTemplate与Separator自动化；缓存Pen直接绘制 | 默认布局功能已实现；真实150%/200%DPI、动态DPI、屏幕阅读器及与浏览器的逐像素差分待验收 |
@@ -52,7 +52,9 @@ Gallery预览修复见[复现与验收](analysis/gallery-preview-fixes.md)：六
 
 ## 视觉来源与本批修正
 
-2026-11-02后续Flex P2切片已实现横纵Wrap、SpaceBetween/Around/Evenly及默认跨轴行槽拉伸，原有不换行默认与枚举值保留。net8定向38/38，整套215项全部通过，独立生成包的net8 Consumer及明暗截图通过；自动提交约定已写入AGENTS.md。完整Verify在net48 Gallery EXE元数据读取阶段失败，用户正在检查本机EXE处理工具；本批Framework测试/包消费/截图待复核。上文203/203及m0-validation.json为15:09的历史完整通过记录。详情见[Flex实施与验收](analysis/flex-implementation.md#本批验证状态)。
+2026-11-02后续Flex P2切片已实现横纵Wrap、SpaceBetween/Around/Evenly及默认跨轴行槽拉伸，原有不换行默认与枚举值保留。该批net8定向38/38、整套215项通过，Framework当时受Gallery EXE元数据问题阻塞；在后续Switch批次完整Verify中已补齐两端、四个包消费及截图验证。详情见[Flex实施与验收](analysis/flex-implementation.md#本批验证状态)。
+
+Switch拨钮动画批次于2026-11-02 16:11完成完整Verify，exit0。新增200ms ease-in-out位移、快速反向连续性、关闭动画、隐藏/卸载/禁用/重模板化清理，以及标签/尺寸变化端点更新。Release零警告/零错误，net48/net8各226/226，无失败/跳过；四个真实包消费宿主和14张截图通过，67个源码快照hash一致。包SHA256为CDBD0ACF024584B4CF1FF5A6E74D5CE068BFE98DA60CD385107C26C24014AAEE，许可校验通过。先前EXE元数据阻塞在重建后解除，合成Space测试补齐Focus前提。动画帧不触发控件重新Measure，硬件帧率/GC仍待测。来源、时钟所有权与逐项验收见[Switch动画实施](analysis/switch-motion-implementation.md)，最新摘要为m0-validation.json；此前计数/hash仅作历史。
 
 详见[官方6.6.8样式与token映射](analysis/visual-token-mapping.md)：官方源码URL/hash、官方npm默认/暗色算法实际输出均独立保存。Button三尺寸padding为7/15/15水平、纵向均0；Input/Select为7,0 / 11,4 / 11,7，字号14/14/16、圆角4/6/8。真实ActualHeight有双端断言，不只检查MinHeight。WPF文本行框22/24是明确映射；单行Input使用原生字体行框以修复文字偏下，多行仍保留22/24，不声称浏览器与WPF字体栅格完全相同。
 

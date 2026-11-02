@@ -1,0 +1,574 @@
+{
+  "date": "2026-10-29",
+  "basis": "official-documentation-analysis",
+  "coreComponents": 73,
+  "externalProComponents": 6,
+  "totalRequirements": 79,
+  "componentsWithAtLeastThreeAcceptanceScenarios": 79,
+  "sourceHashMatches": 73,
+  "localLinksChecked": 167,
+  "missingLinks": 0,
+  "duplicateComponents": 0,
+  "propsXmlValid": true,
+  "sdkVersion": "10.0.403",
+  "msbuildPropertyEvaluation": "passed",
+  "productProjects": 0,
+  "wpfBuildRun": false,
+  "runtimeCompatibilityTested": false,
+  "wpfPerformanceMeasured": false,
+  "requirements": [
+    {
+      "slug": "button",
+      "file": "01-foundation-layout-navigation.md",
+      "source": true,
+      "acceptanceCount": 4,
+      "hasAnchor": true
+    },
+    {
+      "slug": "float-button",
+      "file": "01-foundation-layout-navigation.md",
+      "source": true,
+      "acceptanceCount": 4,
+      "hasAnchor": true
+    },
+    {
+      "slug": "icon",
+      "file": "01-foundation-layout-navigation.md",
+      "source": true,
+      "acceptanceCount": 4,
+      "hasAnchor": true
+    },
+    {
+      "slug": "typography",
+      "file": "01-foundation-layout-navigation.md",
+      "source": true,
+      "acceptanceCount": 4,
+      "hasAnchor": true
+    },
+    {
+      "slug": "divider",
+      "file": "01-foundation-layout-navigation.md",
+      "source": true,
+      "acceptanceCount": 4,
+      "hasAnchor": true
+    },
+    {
+      "slug": "flex",
+      "file": "01-foundation-layout-navigation.md",
+      "source": true,
+      "acceptanceCount": 4,
+      "hasAnchor": true
+    },
+    {
+      "slug": "grid",
+      "file": "01-foundation-layout-navigation.md",
+      "source": true,
+      "acceptanceCount": 4,
+      "hasAnchor": true
+    },
+    {
+      "slug": "layout",
+      "file": "01-foundation-layout-navigation.md",
+      "source": true,
+      "acceptanceCount": 4,
+      "hasAnchor": true
+    },
+    {
+      "slug": "masonry",
+      "file": "01-foundation-layout-navigation.md",
+      "source": true,
+      "acceptanceCount": 4,
+      "hasAnchor": true
+    },
+    {
+      "slug": "space",
+      "file": "01-foundation-layout-navigation.md",
+      "source": true,
+      "acceptanceCount": 4,
+      "hasAnchor": true
+    },
+    {
+      "slug": "splitter",
+      "file": "01-foundation-layout-navigation.md",
+      "source": true,
+      "acceptanceCount": 4,
+      "hasAnchor": true
+    },
+    {
+      "slug": "anchor",
+      "file": "01-foundation-layout-navigation.md",
+      "source": true,
+      "acceptanceCount": 4,
+      "hasAnchor": true
+    },
+    {
+      "slug": "breadcrumb",
+      "file": "01-foundation-layout-navigation.md",
+      "source": true,
+      "acceptanceCount": 4,
+      "hasAnchor": true
+    },
+    {
+      "slug": "dropdown",
+      "file": "01-foundation-layout-navigation.md",
+      "source": true,
+      "acceptanceCount": 4,
+      "hasAnchor": true
+    },
+    {
+      "slug": "menu",
+      "file": "01-foundation-layout-navigation.md",
+      "source": true,
+      "acceptanceCount": 4,
+      "hasAnchor": true
+    },
+    {
+      "slug": "pagination",
+      "file": "01-foundation-layout-navigation.md",
+      "source": true,
+      "acceptanceCount": 4,
+      "hasAnchor": true
+    },
+    {
+      "slug": "steps",
+      "file": "01-foundation-layout-navigation.md",
+      "source": true,
+      "acceptanceCount": 4,
+      "hasAnchor": true
+    },
+    {
+      "slug": "tabs",
+      "file": "01-foundation-layout-navigation.md",
+      "source": true,
+      "acceptanceCount": 4,
+      "hasAnchor": true
+    },
+    {
+      "slug": "affix",
+      "file": "01-foundation-layout-navigation.md",
+      "source": true,
+      "acceptanceCount": 4,
+      "hasAnchor": true
+    },
+    {
+      "slug": "app",
+      "file": "01-foundation-layout-navigation.md",
+      "source": true,
+      "acceptanceCount": 4,
+      "hasAnchor": true
+    },
+    {
+      "slug": "border-beam",
+      "file": "01-foundation-layout-navigation.md",
+      "source": true,
+      "acceptanceCount": 4,
+      "hasAnchor": true
+    },
+    {
+      "slug": "config-provider",
+      "file": "01-foundation-layout-navigation.md",
+      "source": true,
+      "acceptanceCount": 4,
+      "hasAnchor": true
+    },
+    {
+      "slug": "_util",
+      "file": "01-foundation-layout-navigation.md",
+      "source": true,
+      "acceptanceCount": 4,
+      "hasAnchor": true
+    },
+    {
+      "slug": "auto-complete",
+      "file": "02-data-entry.md",
+      "source": true,
+      "acceptanceCount": 4,
+      "hasAnchor": true
+    },
+    {
+      "slug": "cascader",
+      "file": "02-data-entry.md",
+      "source": true,
+      "acceptanceCount": 4,
+      "hasAnchor": true
+    },
+    {
+      "slug": "checkbox",
+      "file": "02-data-entry.md",
+      "source": true,
+      "acceptanceCount": 4,
+      "hasAnchor": true
+    },
+    {
+      "slug": "color-picker",
+      "file": "02-data-entry.md",
+      "source": true,
+      "acceptanceCount": 4,
+      "hasAnchor": true
+    },
+    {
+      "slug": "date-picker",
+      "file": "02-data-entry.md",
+      "source": true,
+      "acceptanceCount": 5,
+      "hasAnchor": true
+    },
+    {
+      "slug": "form",
+      "file": "02-data-entry.md",
+      "source": true,
+      "acceptanceCount": 5,
+      "hasAnchor": true
+    },
+    {
+      "slug": "input",
+      "file": "02-data-entry.md",
+      "source": true,
+      "acceptanceCount": 5,
+      "hasAnchor": true
+    },
+    {
+      "slug": "input-number",
+      "file": "02-data-entry.md",
+      "source": true,
+      "acceptanceCount": 5,
+      "hasAnchor": true
+    },
+    {
+      "slug": "mentions",
+      "file": "02-data-entry.md",
+      "source": true,
+      "acceptanceCount": 4,
+      "hasAnchor": true
+    },
+    {
+      "slug": "radio",
+      "file": "02-data-entry.md",
+      "source": true,
+      "acceptanceCount": 4,
+      "hasAnchor": true
+    },
+    {
+      "slug": "rate",
+      "file": "02-data-entry.md",
+      "source": true,
+      "acceptanceCount": 4,
+      "hasAnchor": true
+    },
+    {
+      "slug": "select",
+      "file": "02-data-entry.md",
+      "source": true,
+      "acceptanceCount": 5,
+      "hasAnchor": true
+    },
+    {
+      "slug": "slider",
+      "file": "02-data-entry.md",
+      "source": true,
+      "acceptanceCount": 4,
+      "hasAnchor": true
+    },
+    {
+      "slug": "switch",
+      "file": "02-data-entry.md",
+      "source": true,
+      "acceptanceCount": 4,
+      "hasAnchor": true
+    },
+    {
+      "slug": "time-picker",
+      "file": "02-data-entry.md",
+      "source": true,
+      "acceptanceCount": 4,
+      "hasAnchor": true
+    },
+    {
+      "slug": "transfer",
+      "file": "02-data-entry.md",
+      "source": true,
+      "acceptanceCount": 4,
+      "hasAnchor": true
+    },
+    {
+      "slug": "tree-select",
+      "file": "02-data-entry.md",
+      "source": true,
+      "acceptanceCount": 5,
+      "hasAnchor": true
+    },
+    {
+      "slug": "upload",
+      "file": "02-data-entry.md",
+      "source": true,
+      "acceptanceCount": 5,
+      "hasAnchor": true
+    },
+    {
+      "slug": "avatar",
+      "file": "03-display-feedback.md",
+      "source": true,
+      "acceptanceCount": 4,
+      "hasAnchor": true
+    },
+    {
+      "slug": "badge",
+      "file": "03-display-feedback.md",
+      "source": true,
+      "acceptanceCount": 4,
+      "hasAnchor": true
+    },
+    {
+      "slug": "calendar",
+      "file": "03-display-feedback.md",
+      "source": true,
+      "acceptanceCount": 4,
+      "hasAnchor": true
+    },
+    {
+      "slug": "card",
+      "file": "03-display-feedback.md",
+      "source": true,
+      "acceptanceCount": 4,
+      "hasAnchor": true
+    },
+    {
+      "slug": "carousel",
+      "file": "03-display-feedback.md",
+      "source": true,
+      "acceptanceCount": 4,
+      "hasAnchor": true
+    },
+    {
+      "slug": "collapse",
+      "file": "03-display-feedback.md",
+      "source": true,
+      "acceptanceCount": 4,
+      "hasAnchor": true
+    },
+    {
+      "slug": "descriptions",
+      "file": "03-display-feedback.md",
+      "source": true,
+      "acceptanceCount": 4,
+      "hasAnchor": true
+    },
+    {
+      "slug": "empty",
+      "file": "03-display-feedback.md",
+      "source": true,
+      "acceptanceCount": 4,
+      "hasAnchor": true
+    },
+    {
+      "slug": "image",
+      "file": "03-display-feedback.md",
+      "source": true,
+      "acceptanceCount": 5,
+      "hasAnchor": true
+    },
+    {
+      "slug": "list",
+      "file": "03-display-feedback.md",
+      "source": true,
+      "acceptanceCount": 4,
+      "hasAnchor": true
+    },
+    {
+      "slug": "listy",
+      "file": "03-display-feedback.md",
+      "source": true,
+      "acceptanceCount": 4,
+      "hasAnchor": true
+    },
+    {
+      "slug": "popover",
+      "file": "03-display-feedback.md",
+      "source": true,
+      "acceptanceCount": 4,
+      "hasAnchor": true
+    },
+    {
+      "slug": "qr-code",
+      "file": "03-display-feedback.md",
+      "source": true,
+      "acceptanceCount": 4,
+      "hasAnchor": true
+    },
+    {
+      "slug": "segmented",
+      "file": "03-display-feedback.md",
+      "source": true,
+      "acceptanceCount": 4,
+      "hasAnchor": true
+    },
+    {
+      "slug": "statistic",
+      "file": "03-display-feedback.md",
+      "source": true,
+      "acceptanceCount": 4,
+      "hasAnchor": true
+    },
+    {
+      "slug": "table",
+      "file": "03-display-feedback.md",
+      "source": true,
+      "acceptanceCount": 8,
+      "hasAnchor": true
+    },
+    {
+      "slug": "tag",
+      "file": "03-display-feedback.md",
+      "source": true,
+      "acceptanceCount": 4,
+      "hasAnchor": true
+    },
+    {
+      "slug": "timeline",
+      "file": "03-display-feedback.md",
+      "source": true,
+      "acceptanceCount": 4,
+      "hasAnchor": true
+    },
+    {
+      "slug": "tooltip",
+      "file": "03-display-feedback.md",
+      "source": true,
+      "acceptanceCount": 4,
+      "hasAnchor": true
+    },
+    {
+      "slug": "tour",
+      "file": "03-display-feedback.md",
+      "source": true,
+      "acceptanceCount": 4,
+      "hasAnchor": true
+    },
+    {
+      "slug": "tree",
+      "file": "03-display-feedback.md",
+      "source": true,
+      "acceptanceCount": 7,
+      "hasAnchor": true
+    },
+    {
+      "slug": "alert",
+      "file": "03-display-feedback.md",
+      "source": true,
+      "acceptanceCount": 4,
+      "hasAnchor": true
+    },
+    {
+      "slug": "drawer",
+      "file": "03-display-feedback.md",
+      "source": true,
+      "acceptanceCount": 5,
+      "hasAnchor": true
+    },
+    {
+      "slug": "message",
+      "file": "03-display-feedback.md",
+      "source": true,
+      "acceptanceCount": 4,
+      "hasAnchor": true
+    },
+    {
+      "slug": "modal",
+      "file": "03-display-feedback.md",
+      "source": true,
+      "acceptanceCount": 5,
+      "hasAnchor": true
+    },
+    {
+      "slug": "notification",
+      "file": "03-display-feedback.md",
+      "source": true,
+      "acceptanceCount": 4,
+      "hasAnchor": true
+    },
+    {
+      "slug": "popconfirm",
+      "file": "03-display-feedback.md",
+      "source": true,
+      "acceptanceCount": 4,
+      "hasAnchor": true
+    },
+    {
+      "slug": "progress",
+      "file": "03-display-feedback.md",
+      "source": true,
+      "acceptanceCount": 4,
+      "hasAnchor": true
+    },
+    {
+      "slug": "result",
+      "file": "03-display-feedback.md",
+      "source": true,
+      "acceptanceCount": 4,
+      "hasAnchor": true
+    },
+    {
+      "slug": "skeleton",
+      "file": "03-display-feedback.md",
+      "source": true,
+      "acceptanceCount": 4,
+      "hasAnchor": true
+    },
+    {
+      "slug": "spin",
+      "file": "03-display-feedback.md",
+      "source": true,
+      "acceptanceCount": 4,
+      "hasAnchor": true
+    },
+    {
+      "slug": "watermark",
+      "file": "03-display-feedback.md",
+      "source": true,
+      "acceptanceCount": 4,
+      "hasAnchor": true
+    },
+    {
+      "slug": "pro-layout",
+      "file": "04-pro-extensions.md",
+      "source": true,
+      "acceptanceCount": 3,
+      "hasAnchor": true
+    },
+    {
+      "slug": "pro-form",
+      "file": "04-pro-extensions.md",
+      "source": true,
+      "acceptanceCount": 3,
+      "hasAnchor": true
+    },
+    {
+      "slug": "pro-table",
+      "file": "04-pro-extensions.md",
+      "source": true,
+      "acceptanceCount": 3,
+      "hasAnchor": true
+    },
+    {
+      "slug": "pro-descriptions",
+      "file": "04-pro-extensions.md",
+      "source": true,
+      "acceptanceCount": 3,
+      "hasAnchor": true
+    },
+    {
+      "slug": "pro-list",
+      "file": "04-pro-extensions.md",
+      "source": true,
+      "acceptanceCount": 3,
+      "hasAnchor": true
+    },
+    {
+      "slug": "editable-pro-table",
+      "file": "04-pro-extensions.md",
+      "source": true,
+      "acceptanceCount": 3,
+      "hasAnchor": true
+    }
+  ]
+}

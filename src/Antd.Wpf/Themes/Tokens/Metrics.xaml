@@ -1,0 +1,20 @@
+<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:t="clr-namespace:Antd.Wpf.Theming"
+                    xmlns:sys="clr-namespace:System;assembly=mscorlib">
+  <sys:Double x:Key="{ComponentResourceKey TypeInTargetAssembly={x:Type t:AntThemeScope}, ResourceId=Antd.ControlHeight.Small}">24</sys:Double>
+  <sys:Double x:Key="{ComponentResourceKey TypeInTargetAssembly={x:Type t:AntThemeScope}, ResourceId=Antd.ControlHeight.Middle}">32</sys:Double>
+  <sys:Double x:Key="{ComponentResourceKey TypeInTargetAssembly={x:Type t:AntThemeScope}, ResourceId=Antd.ControlHeight.Large}">40</sys:Double>
+  <sys:Double x:Key="{ComponentResourceKey TypeInTargetAssembly={x:Type t:AntThemeScope}, ResourceId=Antd.FontSize.Large}">16</sys:Double>
+  <sys:Double x:Key="{ComponentResourceKey TypeInTargetAssembly={x:Type t:AntThemeScope}, ResourceId=Antd.FontSize.Small}">12</sys:Double>
+  <sys:Double x:Key="{ComponentResourceKey TypeInTargetAssembly={x:Type t:AntThemeScope}, ResourceId=Antd.LineHeight}">22</sys:Double>
+  <sys:Double x:Key="{ComponentResourceKey TypeInTargetAssembly={x:Type t:AntThemeScope}, ResourceId=Antd.LineHeight.Large}">24</sys:Double>
+  <CornerRadius x:Key="{ComponentResourceKey TypeInTargetAssembly={x:Type t:AntThemeScope}, ResourceId=Antd.CornerRadius.Small}">4</CornerRadius>
+  <CornerRadius x:Key="{ComponentResourceKey TypeInTargetAssembly={x:Type t:AntThemeScope}, ResourceId=Antd.CornerRadius.Large}">8</CornerRadius>
+  <Thickness x:Key="{ComponentResourceKey TypeInTargetAssembly={x:Type t:AntThemeScope}, ResourceId=Antd.Button.Padding.Small}">7,0</Thickness>
+  <Thickness x:Key="{ComponentResourceKey TypeInTargetAssembly={x:Type t:AntThemeScope}, ResourceId=Antd.Button.Padding.Middle}">15,0</Thickness>
+  <Thickness x:Key="{ComponentResourceKey TypeInTargetAssembly={x:Type t:AntThemeScope}, ResourceId=Antd.Button.Padding.Large}">15,0</Thickness>
+  <Thickness x:Key="{ComponentResourceKey TypeInTargetAssembly={x:Type t:AntThemeScope}, ResourceId=Antd.Input.Padding.Small}">7,0</Thickness>
+  <Thickness x:Key="{ComponentResourceKey TypeInTargetAssembly={x:Type t:AntThemeScope}, ResourceId=Antd.Input.Padding.Middle}">11,4</Thickness>
+  <Thickness x:Key="{ComponentResourceKey TypeInTargetAssembly={x:Type t:AntThemeScope}, ResourceId=Antd.Input.Padding.Large}">11,7</Thickness>
+</ResourceDictionary>

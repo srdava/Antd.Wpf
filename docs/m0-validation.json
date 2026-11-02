@@ -1,0 +1,434 @@
+{
+  "validatedAt": "2026-11-02T15:09:41.8784729+08:00",
+  "command": "pwsh -File scripts/Verify.ps1",
+  "exitCode": 0,
+  "scope": "M0, P1 native selection/layout, manual Sider collapse and Gallery scrolling/compact-navigation regression; not full catalog or release acceptance",
+  "sdk": "10.0.403",
+  "machine": "RD_SUNR",
+  "tests": [
+    {
+      "target": "net48",
+      "passed": 203,
+      "total": 203,
+      "report": "artifacts/test-results/verified-net48.trx"
+    },
+    {
+      "target": "net8.0-windows",
+      "passed": 203,
+      "total": 203,
+      "report": "artifacts/test-results/verified-net8.0-windows.trx"
+    }
+  ],
+  "package": "artifacts/packages/Antd.Wpf.0.1.0-alpha.1.nupkg",
+  "packageSha256": "F9500917AF1A6848BACACDF3E232474F0DA574F22AB04D6498F7ABE5A68F7D0E",
+  "thirdPartyNotices": {
+    "source": "src/Antd.Wpf/THIRD-PARTY-NOTICES.txt",
+    "sha256": "869F3B049CD11E491B0E36BC13A5DE06A901AE70CFB72DE9BA0EFD72F4ABD3FE",
+    "packagedBytesMatchSource": true
+  },
+  "consumerTargetsPassed": [
+    "net48",
+    "net481",
+    "net8.0-windows",
+    "net10.0-windows"
+  ],
+  "captures": [
+    "artifacts/gallery-net48.png",
+    "artifacts/gallery-net8.png",
+    "artifacts/visual-matrix-net48.png",
+    "artifacts/visual-matrix-net8.png",
+    "artifacts/divider-matrix-net48.png",
+    "artifacts/divider-matrix-net8.png",
+    "artifacts/flex-matrix-net48.png",
+    "artifacts/flex-matrix-net8.png",
+    "artifacts/space-matrix-net48.png",
+    "artifacts/space-matrix-net8.png",
+    "artifacts/grid-matrix-net48.png",
+    "artifacts/grid-matrix-net8.png",
+    "artifacts/layout-matrix-net48.png",
+    "artifacts/layout-matrix-net8.png"
+  ],
+  "performance": [
+    {
+      "target": "net48",
+      "scenario": "PF02.layout-proxy",
+      "samples": 30,
+      "p50Milliseconds": 92.986,
+      "p95Milliseconds": 141.147,
+      "provisionalBudgetMilliseconds": 200,
+      "proxyWithinBudget": true,
+      "maxMilliseconds": 156.76,
+      "raw": "artifacts/performance/verified-20261102-150941/m0/net48/samples.csv",
+      "environment": "artifacts/performance/verified-20261102-150941/m0/net48/environment.txt",
+      "qualification": "Hidden-window layout/Dispatcher proxy; not full PF acceptance"
+    },
+    {
+      "target": "net48",
+      "scenario": "PF02.mixed-layout-proxy",
+      "samples": 30,
+      "p50Milliseconds": 64.48,
+      "p95Milliseconds": 84.019,
+      "provisionalBudgetMilliseconds": 200,
+      "proxyWithinBudget": true,
+      "maxMilliseconds": 90.943,
+      "raw": "artifacts/performance/verified-20261102-150941/m0/net48/samples.csv",
+      "environment": "artifacts/performance/verified-20261102-150941/m0/net48/environment.txt",
+      "qualification": "Hidden-window layout/Dispatcher proxy; not full PF acceptance"
+    },
+    {
+      "target": "net48",
+      "scenario": "PF05.layout-proxy",
+      "samples": 30,
+      "p50Milliseconds": 11.952,
+      "p95Milliseconds": 14.915,
+      "provisionalBudgetMilliseconds": 300,
+      "proxyWithinBudget": true,
+      "maxMilliseconds": 15.368,
+      "raw": "artifacts/performance/verified-20261102-150941/m0/net48/samples.csv",
+      "environment": "artifacts/performance/verified-20261102-150941/m0/net48/environment.txt",
+      "qualification": "Hidden-window layout/Dispatcher proxy; not full PF acceptance"
+    },
+    {
+      "target": "net48",
+      "scenario": "PF02.divider-layout-proxy",
+      "samples": 30,
+      "p50Milliseconds": 24.477,
+      "p95Milliseconds": 34.471,
+      "provisionalBudgetMilliseconds": 200,
+      "proxyWithinBudget": true,
+      "maxMilliseconds": 40.005,
+      "raw": "artifacts/performance/verified-20261102-150941/divider/net48/samples.csv",
+      "environment": "artifacts/performance/verified-20261102-150941/divider/net48/environment.txt",
+      "qualification": "Hidden-window layout/Dispatcher proxy; not full PF acceptance"
+    },
+    {
+      "target": "net8.0-windows",
+      "scenario": "PF02.layout-proxy",
+      "samples": 30,
+      "p50Milliseconds": 54.09,
+      "p95Milliseconds": 82.149,
+      "provisionalBudgetMilliseconds": 200,
+      "proxyWithinBudget": true,
+      "maxMilliseconds": 82.856,
+      "raw": "artifacts/performance/verified-20261102-150941/m0/net8.0-windows/samples.csv",
+      "environment": "artifacts/performance/verified-20261102-150941/m0/net8.0-windows/environment.txt",
+      "qualification": "Hidden-window layout/Dispatcher proxy; not full PF acceptance"
+    },
+    {
+      "target": "net8.0-windows",
+      "scenario": "PF02.mixed-layout-proxy",
+      "samples": 30,
+      "p50Milliseconds": 44.982,
+      "p95Milliseconds": 75.773,
+      "provisionalBudgetMilliseconds": 200,
+      "proxyWithinBudget": true,
+      "maxMilliseconds": 99.517,
+      "raw": "artifacts/performance/verified-20261102-150941/m0/net8.0-windows/samples.csv",
+      "environment": "artifacts/performance/verified-20261102-150941/m0/net8.0-windows/environment.txt",
+      "qualification": "Hidden-window layout/Dispatcher proxy; not full PF acceptance"
+    },
+    {
+      "target": "net8.0-windows",
+      "scenario": "PF05.layout-proxy",
+      "samples": 30,
+      "p50Milliseconds": 13.212,
+      "p95Milliseconds": 19.691,
+      "provisionalBudgetMilliseconds": 300,
+      "proxyWithinBudget": true,
+      "maxMilliseconds": 38.815,
+      "raw": "artifacts/performance/verified-20261102-150941/m0/net8.0-windows/samples.csv",
+      "environment": "artifacts/performance/verified-20261102-150941/m0/net8.0-windows/environment.txt",
+      "qualification": "Hidden-window layout/Dispatcher proxy; not full PF acceptance"
+    },
+    {
+      "target": "net8.0-windows",
+      "scenario": "PF02.divider-layout-proxy",
+      "samples": 30,
+      "p50Milliseconds": 22.329,
+      "p95Milliseconds": 33.291,
+      "provisionalBudgetMilliseconds": 200,
+      "proxyWithinBudget": true,
+      "maxMilliseconds": 33.304,
+      "raw": "artifacts/performance/verified-20261102-150941/divider/net8.0-windows/samples.csv",
+      "environment": "artifacts/performance/verified-20261102-150941/divider/net8.0-windows/environment.txt",
+      "qualification": "Hidden-window layout/Dispatcher proxy; not full PF acceptance"
+    }
+  ],
+  "popupComparisonDirectory": "artifacts/performance/verified-20261102-150941/popup-comparison",
+  "sourceSnapshot": [
+    {
+      "path": "samples\\Antd.Wpf.Gallery\\Antd.Wpf.Gallery.csproj",
+      "sha256": "3850BDBB3B71AAC1B03E10437922842167DE8BD8D4F57225A25F0340BB5B9DD8"
+    },
+    {
+      "path": "samples\\Antd.Wpf.Gallery\\App.xaml",
+      "sha256": "681E5209FBEF897738F46812FA24BC8F460490E9DE7507046AD987210634C177"
+    },
+    {
+      "path": "samples\\Antd.Wpf.Gallery\\App.xaml.cs",
+      "sha256": "8181E3294B162A877DAD4014FD8172D44808C52DD5B6CC5B23DD38CD7E3AD77B"
+    },
+    {
+      "path": "samples\\Antd.Wpf.Gallery\\AssemblyInfo.cs",
+      "sha256": "6F750FEF6275B4EA87476EB9D4C8EBB8973354A0E27EF37CCBA87E3726E2FEBC"
+    },
+    {
+      "path": "samples\\Antd.Wpf.Gallery\\DividerMatrix.xaml",
+      "sha256": "5410EB8E6B4B03672EE45BFAFC32435A1A6ED17120F6753E0CBC82366E8747AE"
+    },
+    {
+      "path": "samples\\Antd.Wpf.Gallery\\FlexMatrix.xaml",
+      "sha256": "70D25BF2F1632C570147B6FE84E88683BDDE4A5F4D0A347F3A319AA00EC47B09"
+    },
+    {
+      "path": "samples\\Antd.Wpf.Gallery\\GridMatrix.xaml",
+      "sha256": "F680E96E28443EBA82CCEBBFB8E171E25D63BB6C2645E88D6A7BE57FA85E7550"
+    },
+    {
+      "path": "samples\\Antd.Wpf.Gallery\\LayoutMatrix.xaml",
+      "sha256": "1D83D02B7890AB26DA80F96BB6B368AB7A1E2BAB094365BB3488843FB63C1B0A"
+    },
+    {
+      "path": "samples\\Antd.Wpf.Gallery\\MainWindow.xaml",
+      "sha256": "EAA1C5CC78F43FE7013B10353B495F664DE92A873D242199EA450D7C2B605010"
+    },
+    {
+      "path": "samples\\Antd.Wpf.Gallery\\MainWindow.xaml.cs",
+      "sha256": "E5BD42C78D9E9439342F2F56C68D42DDB6268FD9AF2255A3762A5E86738576EC"
+    },
+    {
+      "path": "samples\\Antd.Wpf.Gallery\\SpaceMatrix.xaml",
+      "sha256": "50E620DCE3D120AA3E898EED0F38864D649142FE25FFF8629683B849B193D64C"
+    },
+    {
+      "path": "samples\\Antd.Wpf.Gallery\\VisualMatrix.xaml",
+      "sha256": "DD744B06A952BCB92EB550ED72791486F974ECADFF3F867D7B892A8AB0E5365A"
+    },
+    {
+      "path": "src\\Antd.Wpf\\Antd.Wpf.csproj",
+      "sha256": "5D54B639236EBAB989C76678B642C202D7312BAF7F609006B4759DDA609B98A3"
+    },
+    {
+      "path": "src\\Antd.Wpf\\AssemblyInfo.cs",
+      "sha256": "C8ABFECA430E8F90C327DFF297AFC6373B1D3A88D40702CACDACF430BB3CB589"
+    },
+    {
+      "path": "src\\Antd.Wpf\\Automation\\AntDividerAutomationPeer.cs",
+      "sha256": "DE6B80E1BCD3A90357EACE89BCE09D474EE7C70F5C9C600FFDD7026E12DB7D5A"
+    },
+    {
+      "path": "src\\Antd.Wpf\\Automation\\AntInputAutomationPeer.cs",
+      "sha256": "0EB38BCF1E20B1277523D20BCABB45619973D88FECA8F1C963B07AE0C160197A"
+    },
+    {
+      "path": "src\\Antd.Wpf\\Automation\\AntSiderAutomationPeer.cs",
+      "sha256": "5CB3DA4D721815D32AEFD71E509BAF2EF37C1EC88E89857F01B2717DA713A37F"
+    },
+    {
+      "path": "src\\Antd.Wpf\\Automation\\AntSwitchAutomationPeer.cs",
+      "sha256": "097752AEFB576F14604E8758294E5735AAFE40684FAFFF5A2B7856DC49486214"
+    },
+    {
+      "path": "src\\Antd.Wpf\\Controls\\AntButton.cs",
+      "sha256": "41AE7ECDF9BC5982AECE2050B71EDDAA4DE66E054CC457B2C567C9EDD4C9A4E1"
+    },
+    {
+      "path": "src\\Antd.Wpf\\Controls\\AntCheckBox.cs",
+      "sha256": "176040E4E77D5D67A32F20872F7F0EBB45A3C0893C4B9D11358EEA0E74F27132"
+    },
+    {
+      "path": "src\\Antd.Wpf\\Controls\\AntCol.cs",
+      "sha256": "D7586193BFF3DDB718C04B401063B047234615640919A809F862C997588C357F"
+    },
+    {
+      "path": "src\\Antd.Wpf\\Controls\\AntDivider.cs",
+      "sha256": "7495B916274277B06B342DA77A040DF8397AC26DC5EDAA3353A7482256FAA10D"
+    },
+    {
+      "path": "src\\Antd.Wpf\\Controls\\AntFlexPanel.cs",
+      "sha256": "95FDCF88EC3C0B7D9A109143FB63198D5D43C16A3E981184A754C8226D50C33E"
+    },
+    {
+      "path": "src\\Antd.Wpf\\Controls\\AntInput.cs",
+      "sha256": "767533F3ABB12A1BF97C84279D8271E83F75904D10B6B996699C49DEC7DD77C3"
+    },
+    {
+      "path": "src\\Antd.Wpf\\Controls\\AntLayout.cs",
+      "sha256": "7BD374B17B1ECF4F54BA01A2F9261E238302DAA479F65C614AC72C03ACAD8A44"
+    },
+    {
+      "path": "src\\Antd.Wpf\\Controls\\AntRadioButton.cs",
+      "sha256": "015AEB0B9AC0B1B110B7F08F9885BD1FC2C6FBA1BC65B79BB83860FAFE6CC2C1"
+    },
+    {
+      "path": "src\\Antd.Wpf\\Controls\\AntRow.cs",
+      "sha256": "CF8B15FDA44B30AB952FCFE7B44B522CDFF939CEC2DF9ED5353D5F02C8AD24B7"
+    },
+    {
+      "path": "src\\Antd.Wpf\\Controls\\AntSelect.cs",
+      "sha256": "07D74E75B33CA4CB130F3C2EF98A89877A560A7157B4596A3C408C27CDA8B364"
+    },
+    {
+      "path": "src\\Antd.Wpf\\Controls\\AntSider.cs",
+      "sha256": "3B0A07B32D06B11F52C3AA50CAA26B8D3270F0B94B689F34B01DBEF82F50F541"
+    },
+    {
+      "path": "src\\Antd.Wpf\\Controls\\AntSpace.cs",
+      "sha256": "D02E17CCFE3A997D92809F5188A21998313E46568574718FCCD3C25B96CF4412"
+    },
+    {
+      "path": "src\\Antd.Wpf\\Controls\\AntSwitch.cs",
+      "sha256": "47B300AC80CBEF225A8091BC3AD1DBACA2DF392A46A823C83AE74887FAD952AD"
+    },
+    {
+      "path": "src\\Antd.Wpf\\Controls\\ControlEnums.cs",
+      "sha256": "5E206327D27819685B362BD45274BF88D2581A0E1161B614A69503CA876D3C31"
+    },
+    {
+      "path": "src\\Antd.Wpf\\Internal\\DividerMetricsConverter.cs",
+      "sha256": "EEC1534C9639744A72D217BDF2483679D1841796E5E4E5E9625E412543157603"
+    },
+    {
+      "path": "src\\Antd.Wpf\\Internal\\DividerPresenter.cs",
+      "sha256": "10F067F72379536E58C66E73441BAB10BCF15891EEFC06F57D16BCA4094853B9"
+    },
+    {
+      "path": "src\\Antd.Wpf\\Themes\\Controls\\Button.xaml",
+      "sha256": "882CC80D7E403A212266D37E0AB8F19C58E5CB155706B3FA2B6EB1355F19BC4D"
+    },
+    {
+      "path": "src\\Antd.Wpf\\Themes\\Controls\\CheckBox.xaml",
+      "sha256": "CBC88ADC569BFC009B85C8FA2912F38FC068E51F34E35E5AE99D5CA7286BED40"
+    },
+    {
+      "path": "src\\Antd.Wpf\\Themes\\Controls\\Divider.xaml",
+      "sha256": "BBF8F11EDEB7AB4FE530F298308BD983289A2EAF6B5F02A8664F983D862E95E6"
+    },
+    {
+      "path": "src\\Antd.Wpf\\Themes\\Controls\\Input.xaml",
+      "sha256": "F03C7D4C1678D53356E164C062237FB5422D0D31A950FAAD031707AFD1B4D794"
+    },
+    {
+      "path": "src\\Antd.Wpf\\Themes\\Controls\\Layout.xaml",
+      "sha256": "3EE365FF4482567C1D103F486F59FC020F507106EBE141C0BD7F96FF0370B8A6"
+    },
+    {
+      "path": "src\\Antd.Wpf\\Themes\\Controls\\RadioButton.xaml",
+      "sha256": "5513A395E50572B449F15A0531A84BC2A55A4AAC7EABD557AB89EF7B20B053C6"
+    },
+    {
+      "path": "src\\Antd.Wpf\\Themes\\Controls\\Select.xaml",
+      "sha256": "C7027873BF35D726C97664AA8E8E4E8DB7C27C16760A13DB65DEA4D157EA1B47"
+    },
+    {
+      "path": "src\\Antd.Wpf\\Themes\\Controls\\Switch.xaml",
+      "sha256": "BF2EC00C2FC617A2877EBBB436F8DD5217A7CC2FA81BF4CDD036EDFC12A262F1"
+    },
+    {
+      "path": "src\\Antd.Wpf\\Themes\\Generic.xaml",
+      "sha256": "25FADD5279B6B6F5D58C498DBFBF4417CB3D2BBCD2388FDA70E8E826AE20B44B"
+    },
+    {
+      "path": "src\\Antd.Wpf\\Themes\\Tokens\\Dark.xaml",
+      "sha256": "A858B2FC889FDBB9C775B26EED94A3B7FD953F75295136C28D3C6A1EF4EDD52A"
+    },
+    {
+      "path": "src\\Antd.Wpf\\Themes\\Tokens\\HighContrast.xaml",
+      "sha256": "338271B413CBF4C740CDF51BE60103319D69291A23A15CA143E117598BBA4C7B"
+    },
+    {
+      "path": "src\\Antd.Wpf\\Themes\\Tokens\\Light.xaml",
+      "sha256": "86F6C6B62CC7E21E214137AD602FE5A64347BE6E1C89C60B2AE33AE5328AE2FD"
+    },
+    {
+      "path": "src\\Antd.Wpf\\Themes\\Tokens\\Metrics.xaml",
+      "sha256": "EA00359D4BE3CB80C5DCBE3417324D5C912405C75E8D76B0B54E998F9BBCF6DB"
+    },
+    {
+      "path": "src\\Antd.Wpf\\Theming\\AntThemeScope.cs",
+      "sha256": "2D849D9768D163E241DCB2D6D6E58CD3696509FDC2BF6F554795AFB9BB8FCFC5"
+    },
+    {
+      "path": "tests\\Antd.Wpf.Tests\\Antd.Wpf.Tests.csproj",
+      "sha256": "631F7CAAC18CC7E29CBC4823324A8FB2B8DBE991C681A8EB65BC704CB2CFC20D"
+    },
+    {
+      "path": "tests\\Antd.Wpf.Tests\\ButtonPaletteTests.cs",
+      "sha256": "5F8CD0C322D41517592573751E09412FBD779E5A3792D81DCFD4DF2981DB199C"
+    },
+    {
+      "path": "tests\\Antd.Wpf.Tests\\DividerPerformanceScenarios.cs",
+      "sha256": "7B7379E26DBF48CBE7A7A4AFC9E2610735F7774266537CAE0E00811940827B32"
+    },
+    {
+      "path": "tests\\Antd.Wpf.Tests\\DividerTests.cs",
+      "sha256": "B8ABCBB36A0FD103146FCE645892F748F9F99485E911CFD5A9623AFC44A18B90"
+    },
+    {
+      "path": "tests\\Antd.Wpf.Tests\\FlexTests.cs",
+      "sha256": "FA0A92E8AADC8412424C157C4E8517868DA41DA05916323235781C0BD60DF9A1"
+    },
+    {
+      "path": "tests\\Antd.Wpf.Tests\\GalleryPreviewTests.cs",
+      "sha256": "E072589FB88FEFBA59594F89AA51AA0C8238E850672A398AAB476E1F730EDFE1"
+    },
+    {
+      "path": "tests\\Antd.Wpf.Tests\\GridTests.cs",
+      "sha256": "8D9B1D93D0692F5A865A5DA4C1F1DDACF88CAFCD134CF666EB46499F9529B9FA"
+    },
+    {
+      "path": "tests\\Antd.Wpf.Tests\\LayoutTests.cs",
+      "sha256": "BA8821A285A3B94156E3D08E2CA696062EC88E5083FCB0F31FAEC72F29264168"
+    },
+    {
+      "path": "tests\\Antd.Wpf.Tests\\M0BehaviorTests.cs",
+      "sha256": "19D49C150DE92E5A4DE7206E0E63820FD1F73F278D8BF26E9805819B476261BE"
+    },
+    {
+      "path": "tests\\Antd.Wpf.Tests\\NativeSelectionTests.cs",
+      "sha256": "29C99F8101A209DB7C1B468136BF07061A246FB11C98317E8E529B7E83F2B4C6"
+    },
+    {
+      "path": "tests\\Antd.Wpf.Tests\\PerformanceScenarios.cs",
+      "sha256": "C67324D33CC6AAF8EA609572249159EFB351DBBA77675EBC79E695C79F7C3074"
+    },
+    {
+      "path": "tests\\Antd.Wpf.Tests\\PopupComparisons.cs",
+      "sha256": "E9ECE0460E457872878E31B5AC3CE2B7BE1A024AE510F21F8F00658F5ABD216A"
+    },
+    {
+      "path": "tests\\Antd.Wpf.Tests\\SpaceTests.cs",
+      "sha256": "7ED8D1E5383D6579336296A2AE8274C8643AB78B2C08556E7B39F423347A9BF4"
+    },
+    {
+      "path": "tests\\Antd.Wpf.Tests\\Sta.cs",
+      "sha256": "FDA677E7ACFEB780CD0B8383118E400C805C9ED10AEE8D0218243FD97A0E59FB"
+    },
+    {
+      "path": "tests\\Antd.Wpf.Tests\\SwitchTests.cs",
+      "sha256": "68FA82FC00155BE1B38807AB24A7AEF75056FD786565C34C9463D48FDBD3087C"
+    },
+    {
+      "path": "tests\\Antd.Wpf.Tests\\VisualTokenTests.cs",
+      "sha256": "27D9D4599DACCD1B7E3A492B29C535ECCB806BFB8020BA92CF9C52C509AD9653"
+    },
+    {
+      "path": "tests\\Consumers\\Antd.Wpf.Consumer\\Antd.Wpf.Consumer.csproj",
+      "sha256": "B4CF61919B8CE37BBF1C1213925C048BA33E56ED4CD55CD266694D94D01E4238"
+    },
+    {
+      "path": "tests\\Consumers\\Antd.Wpf.Consumer\\Program.cs",
+      "sha256": "5799589BF432D2EE833C0B622B53BB109300CA3D8A6CA502A890A14C66530172"
+    }
+  ],
+  "limitations": [
+    "Framework consumers share the installed CLR 4.x runtime; not separate OS installations.",
+    "Earlier PF05 runs exceeded 300ms; current proxy results do not explain or close the intermittent issue.",
+    "PF01/PF03/PF04/PF06-PF10, physical keyboard/IME, DPI matrix, screen reader, x86 and heap-root investigation remain unverified.",
+    "Switch uses immediate state changes and a static busy indicator; motion animation is pending.",
+    "Flex supports nonwrapping layout only; Grow/Shrink/Basis, wrap, distributed justification and baseline remain pending. No Flex wall-time/GC budget is claimed.",
+    "Space uses decorative separators, suppresses separators at wrap boundaries, and does not implement Compact or baseline. No Space wall-time/GC budget is claimed.",
+    "Grid implements base spans/offsets/gutters/alignment; responsive breakpoints, Order/Push/Pull/Grow are pending. No Grid wall-time/GC budget is claimed.",
+    "Layout uses native docking, container-relative triggers and immediate manual collapse; responsive collapse, motion and standalone Layout time/GC/heap gates are pending."
+  ]
+}

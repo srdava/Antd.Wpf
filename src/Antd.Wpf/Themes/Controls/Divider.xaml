@@ -1,0 +1,38 @@
+<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:c="clr-namespace:Antd.Wpf.Controls"
+                    xmlns:t="clr-namespace:Antd.Wpf.Theming"
+                    xmlns:i="clr-namespace:Antd.Wpf.Internal">
+  <i:DividerMetricsConverter x:Key="Antd.DividerMetrics" />
+  <Style TargetType="{x:Type c:AntDivider}">
+    <Setter Property="BorderBrush" Value="{DynamicResource Antd.Brush.Split}" /><Setter Property="BorderThickness" Value="1" />
+    <Setter Property="Foreground" Value="{DynamicResource Antd.Brush.Text}" />
+    <Setter Property="FontFamily" Value="Segoe UI, Microsoft YaHei UI" /><Setter Property="FontSize" Value="{DynamicResource Antd.FontSize}" />
+    <Setter Property="FontWeight" Value="Normal" /><Setter Property="Margin" Value="0,24" />
+    <Setter Property="Padding" Value="{Binding FontSize, RelativeSource={RelativeSource Self}, Converter={StaticResource Antd.DividerMetrics}}" />
+    <Setter Property="TextBlock.LineHeight" Value="{Binding FontSize, RelativeSource={RelativeSource Self}, Converter={StaticResource Antd.DividerMetrics}, ConverterParameter=LineHeight}" />
+    <Setter Property="TextBlock.LineStackingStrategy" Value="BlockLineHeight" />
+    <Setter Property="VerticalAlignment" Value="Center" /><Setter Property="HorizontalAlignment" Value="Stretch" />
+    <Setter Property="Focusable" Value="False" /><Setter Property="IsTabStop" Value="False" />
+    <Setter Property="UseLayoutRounding" Value="True" /><Setter Property="SnapsToDevicePixels" Value="True" />
+    <Setter Property="Template"><Setter.Value><ControlTemplate TargetType="{x:Type c:AntDivider}">
+      <i:DividerPresenter x:Name="PART_Layout" ClipToBounds="True">
+        <ContentPresenter x:Name="PART_Title" ContentSource="Content" ClipToBounds="True" />
+      </i:DividerPresenter>
+      <ControlTemplate.Triggers>
+        <Trigger Property="HasTitle" Value="False"><Setter TargetName="PART_Title" Property="Visibility" Value="Collapsed" /></Trigger>
+      </ControlTemplate.Triggers>
+    </ControlTemplate></Setter.Value></Setter>
+    <Style.Triggers>
+      <Trigger Property="HasTitle" Value="True"><Setter Property="FontSize" Value="{DynamicResource {ComponentResourceKey TypeInTargetAssembly={x:Type t:AntThemeScope}, ResourceId=Antd.FontSize.Large}}" /><Setter Property="FontWeight" Value="Medium" /><Setter Property="Margin" Value="0,16" /></Trigger>
+      <Trigger Property="IsPlain" Value="True"><Setter Property="FontSize" Value="{DynamicResource Antd.FontSize}" /><Setter Property="FontWeight" Value="Normal" /></Trigger>
+      <Trigger Property="Size" Value="Small"><Setter Property="Margin" Value="0,8" /></Trigger>
+      <Trigger Property="Size" Value="Middle"><Setter Property="Margin" Value="0,16" /></Trigger>
+      <Trigger Property="Orientation" Value="Vertical">
+        <Setter Property="Margin" Value="8,0" /><Setter Property="HorizontalAlignment" Value="Center" />
+        <Setter Property="Height" Value="{Binding FontSize, RelativeSource={RelativeSource Self}, Converter={StaticResource Antd.DividerMetrics}, ConverterParameter=Height}" />
+        <Setter Property="RenderTransform" Value="{Binding FontSize, RelativeSource={RelativeSource Self}, Converter={StaticResource Antd.DividerMetrics}, ConverterParameter=Offset}" />
+      </Trigger>
+    </Style.Triggers>
+  </Style>
+</ResourceDictionary>

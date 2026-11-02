@@ -1,0 +1,58 @@
+{
+  "version": "6.6.8",
+  "method": "Official getDesignToken + Layout prepareComponentToken",
+  "modes": {
+    "Light": {
+      "component": {
+        "colorBgHeader": "#001529",
+        "colorBgBody": "#f5f5f5",
+        "colorBgTrigger": "#002140",
+        "bodyBg": "#f5f5f5",
+        "headerBg": "#001529",
+        "headerHeight": 64,
+        "headerPadding": "0 50px",
+        "headerColor": "rgba(0,0,0,0.88)",
+        "footerPadding": "24px 50px",
+        "footerBg": "#f5f5f5",
+        "siderBg": "#001529",
+        "triggerHeight": 48,
+        "triggerBg": "#002140",
+        "triggerColor": "#fff",
+        "zeroTriggerWidth": 40,
+        "zeroTriggerHeight": 40,
+        "lightSiderBg": "#ffffff",
+        "lightTriggerBg": "#ffffff",
+        "lightTriggerColor": "rgba(0,0,0,0.88)"
+      },
+      "borderRadiusLG": 8,
+      "fontSize": 14,
+      "lineHeight": 1.5714285714285714
+    },
+    "Dark": {
+      "component": {
+        "colorBgHeader": "#001529",
+        "colorBgBody": "#000000",
+        "colorBgTrigger": "#002140",
+        "bodyBg": "#000000",
+        "headerBg": "#001529",
+        "headerHeight": 64,
+        "headerPadding": "0 50px",
+        "headerColor": "rgba(255,255,255,0.85)",
+        "footerPadding": "24px 50px",
+        "footerBg": "#000000",
+        "siderBg": "#001529",
+        "triggerHeight": 48,
+        "triggerBg": "#002140",
+        "triggerColor": "#fff",
+        "zeroTriggerWidth": 40,
+        "zeroTriggerHeight": 40,
+        "lightSiderBg": "#141414",
+        "lightTriggerBg": "#141414",
+        "lightTriggerColor": "rgba(255,255,255,0.85)"
+      },
+      "borderRadiusLG": 8,
+      "fontSize": 14,
+      "lineHeight": 1.5714285714285714
+    }
+  }
+}

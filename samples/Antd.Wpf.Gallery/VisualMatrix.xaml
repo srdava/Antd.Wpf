@@ -1,0 +1,70 @@
+<Window xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:antd="https://antd-wpf.dev/xaml"
+        Title="Antd.Wpf · Visual matrix" Width="1120" Height="1000" UseLayoutRounding="True"
+        FontFamily="Segoe UI, Microsoft YaHei UI" FontSize="14">
+  <ScrollViewer VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Auto">
+  <ItemsControl MinWidth="1000" Width="{Binding ViewportWidth, RelativeSource={RelativeSource AncestorType=ScrollViewer}}">
+    <ItemsControl.Items><x:Static Member="antd:ThemeMode.Light" /><x:Static Member="antd:ThemeMode.Dark" /></ItemsControl.Items>
+    <ItemsControl.ItemsPanel><ItemsPanelTemplate><UniformGrid Columns="2" /></ItemsPanelTemplate></ItemsControl.ItemsPanel>
+    <ItemsControl.ItemTemplate><DataTemplate>
+      <antd:AntThemeScope Mode="{Binding}" MotionEnabled="False">
+        <Border Background="{DynamicResource Antd.Brush.Background}" Padding="24" TextElement.Foreground="{DynamicResource Antd.Brush.Text}">
+          <StackPanel>
+            <TextBlock Text="{Binding StringFormat='Ant Design 6.6.8 · {0}'}" FontSize="22" FontWeight="SemiBold" Margin="0,0,0,20" />
+            <TextBlock Text="Button" FontWeight="SemiBold" Margin="0,0,0,8" />
+            <WrapPanel Margin="0,0,0,12">
+              <antd:AntButton Content="Small" Size="Small" Margin="0,0,8,0" />
+              <antd:AntButton Content="Default" Margin="0,0,8,0" />
+              <antd:AntButton Content="Large" Size="Large" Margin="0,0,8,0" />
+              <antd:AntButton Content="Neutral" Variant="Solid" />
+            </WrapPanel>
+            <WrapPanel Margin="0,0,0,20">
+              <antd:AntButton Content="Primary" Variant="Solid" SemanticColor="Primary" Margin="0,0,8,0" />
+              <antd:AntButton Content="Danger" Variant="Solid" SemanticColor="Danger" Margin="0,0,8,0" />
+              <antd:AntButton Content="Filled" Variant="Filled" Margin="0,0,8,0" />
+              <antd:AntButton Content="Disabled" IsEnabled="False" />
+            </WrapPanel>
+            <TextBlock Text="Input · Small / Default / Large" FontWeight="SemiBold" Margin="0,0,0,8" />
+            <antd:AntInput Text="Small input" Size="Small" Margin="0,0,0,8" />
+            <antd:AntInput Text="默认输入 / Default input" Prefix="@" Suffix=".com" Margin="0,0,0,8" />
+            <antd:AntInput Text="Large input" Size="Large" Margin="0,0,0,8" />
+            <antd:AntInput Text="Disabled" IsEnabled="False" Margin="0,0,0,20" />
+            <TextBlock Text="Select · Small / Default / Large" FontWeight="SemiBold" Margin="0,0,0,8" />
+            <antd:AntSelect Size="Small" SelectedIndex="0" Margin="0,0,0,8"><ComboBoxItem Content="Small option" /></antd:AntSelect>
+            <antd:AntSelect SelectedIndex="0" Margin="0,0,0,8"><ComboBoxItem Content="Default option" /></antd:AntSelect>
+            <antd:AntSelect Size="Large" SelectedIndex="0" Margin="0,0,0,20"><ComboBoxItem Content="Large option" /></antd:AntSelect>
+            <TextBlock Text="Checkbox" FontWeight="SemiBold" Margin="0,0,0,8" />
+            <WrapPanel Margin="0,0,0,8">
+              <antd:AntCheckBox Content="Unchecked" Margin="0,0,8,0" />
+              <antd:AntCheckBox Content="Checked" IsChecked="True" />
+            </WrapPanel>
+            <WrapPanel Margin="0,0,0,20">
+              <antd:AntCheckBox Content="Indeterminate" IsChecked="{x:Null}" Margin="0,0,8,0" />
+              <antd:AntCheckBox Content="Disabled" IsEnabled="False" IsChecked="True" />
+            </WrapPanel>
+            <TextBlock Text="Radio" FontWeight="SemiBold" Margin="0,0,0,8" />
+            <WrapPanel Margin="0,0,0,20">
+              <antd:AntRadioButton Content="Unchecked" />
+              <antd:AntRadioButton Content="Checked" IsChecked="True" />
+              <antd:AntRadioButton Content="Disabled" IsEnabled="False" />
+            </WrapPanel>
+            <TextBlock Text="Switch · Small / Default" FontWeight="SemiBold" Margin="0,0,0,8" />
+            <WrapPanel Margin="0,0,0,12">
+              <antd:AntSwitch Size="Small" Margin="0,0,16,0" />
+              <antd:AntSwitch Size="Small" IsChecked="True" Margin="0,0,16,0" />
+              <antd:AntSwitch Margin="0,0,16,0" />
+              <antd:AntSwitch IsChecked="True" Margin="0,0,16,0" />
+              <antd:AntSwitch IsChecked="True" IsLoading="True" />
+            </WrapPanel>
+            <WrapPanel>
+              <antd:AntSwitch CheckedContent="开" UncheckedContent="关" Margin="0,0,16,0" />
+              <antd:AntSwitch CheckedContent="开" UncheckedContent="关" IsChecked="True" />
+            </WrapPanel>
+          </StackPanel>
+        </Border>
+      </antd:AntThemeScope>
+    </DataTemplate></ItemsControl.ItemTemplate>
+  </ItemsControl>
+  </ScrollViewer>
+</Window>

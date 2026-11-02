@@ -1,0 +1,15 @@
+<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <ResourceDictionary.MergedDictionaries>
+    <ResourceDictionary Source="/Antd.Wpf;component/Themes/Tokens/Light.xaml" />
+    <ResourceDictionary Source="/Antd.Wpf;component/Themes/Tokens/Metrics.xaml" />
+    <ResourceDictionary Source="/Antd.Wpf;component/Themes/Controls/Button.xaml" />
+    <ResourceDictionary Source="/Antd.Wpf;component/Themes/Controls/Input.xaml" />
+    <ResourceDictionary Source="/Antd.Wpf;component/Themes/Controls/Select.xaml" />
+    <ResourceDictionary Source="/Antd.Wpf;component/Themes/Controls/Switch.xaml" />
+    <ResourceDictionary Source="/Antd.Wpf;component/Themes/Controls/CheckBox.xaml" />
+    <ResourceDictionary Source="/Antd.Wpf;component/Themes/Controls/RadioButton.xaml" />
+    <ResourceDictionary Source="/Antd.Wpf;component/Themes/Controls/Divider.xaml" />
+    <ResourceDictionary Source="/Antd.Wpf;component/Themes/Controls/Layout.xaml" />
+  </ResourceDictionary.MergedDictionaries>
+</ResourceDictionary>

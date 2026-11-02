@@ -1,0 +1,56 @@
+<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:po="http://schemas.microsoft.com/winfx/2006/xaml/presentation/options"
+                    xmlns:sys="clr-namespace:System;assembly=mscorlib">
+  <ResourceDictionary.MergedDictionaries>
+    <ResourceDictionary Source="/Antd.Wpf;component/Themes/Tokens/Metrics.xaml" />
+  </ResourceDictionary.MergedDictionaries>
+  <SolidColorBrush x:Key="Antd.Brush.Text" Color="#000000" Opacity="0.88" po:Freeze="True" />
+  <SolidColorBrush x:Key="Antd.Brush.Split" Color="#050505" Opacity="0.06" po:Freeze="True" />
+  <SolidColorBrush x:Key="Antd.Brush.Secondary" Color="#000000" Opacity="0.65" po:Freeze="True" />
+  <SolidColorBrush x:Key="Antd.Brush.Tertiary" Color="#000000" Opacity="0.45" po:Freeze="True" />
+  <SolidColorBrush x:Key="Antd.Brush.Quaternary" Color="#000000" Opacity="0.25" po:Freeze="True" />
+  <SolidColorBrush x:Key="Antd.Brush.DisabledText" Color="#000000" Opacity="0.25" po:Freeze="True" />
+  <SolidColorBrush x:Key="Antd.Brush.Background" Color="#f5f5f5" po:Freeze="True" />
+  <SolidColorBrush x:Key="Antd.Brush.LayoutHeader" Color="#001529" po:Freeze="True" />
+  <SolidColorBrush x:Key="Antd.Brush.LayoutSider" Color="#ffffff" po:Freeze="True" />
+  <SolidColorBrush x:Key="Antd.Brush.LayoutTrigger" Color="#ffffff" po:Freeze="True" />
+  <SolidColorBrush x:Key="Antd.Brush.LayoutTriggerText" Color="#000000" Opacity="0.88" po:Freeze="True" />
+  <SolidColorBrush x:Key="Antd.Brush.Container" Color="#ffffff" po:Freeze="True" />
+  <SolidColorBrush x:Key="Antd.Brush.Elevated" Color="#ffffff" po:Freeze="True" />
+  <SolidColorBrush x:Key="Antd.Brush.Border" Color="#d9d9d9" po:Freeze="True" />
+  <SolidColorBrush x:Key="Antd.Brush.Fill" Color="#000000" Opacity="0.04" po:Freeze="True" />
+  <SolidColorBrush x:Key="Antd.Brush.HoverFill" Color="#000000" Opacity="0.06" po:Freeze="True" />
+  <SolidColorBrush x:Key="Antd.Brush.ActiveFill" Color="#000000" Opacity="0.15" po:Freeze="True" />
+  <SolidColorBrush x:Key="Antd.Brush.DisabledFill" Color="#000000" Opacity="0.04" po:Freeze="True" />
+  <SolidColorBrush x:Key="Antd.Brush.Primary" Color="#1677ff" po:Freeze="True" />
+  <SolidColorBrush x:Key="Antd.Brush.PrimaryHover" Color="#4096ff" po:Freeze="True" />
+  <SolidColorBrush x:Key="Antd.Brush.PrimaryActive" Color="#0958d9" po:Freeze="True" />
+  <SolidColorBrush x:Key="Antd.Brush.PrimaryFill" Color="#e6f4ff" po:Freeze="True" />
+  <SolidColorBrush x:Key="Antd.Brush.PrimaryFillHover" Color="#bae0ff" po:Freeze="True" />
+  <SolidColorBrush x:Key="Antd.Brush.Danger" Color="#ff4d4f" po:Freeze="True" />
+  <SolidColorBrush x:Key="Antd.Brush.DangerHover" Color="#ff7875" po:Freeze="True" />
+  <SolidColorBrush x:Key="Antd.Brush.DangerActive" Color="#d9363e" po:Freeze="True" />
+  <SolidColorBrush x:Key="Antd.Brush.DangerFill" Color="#fff2f0" po:Freeze="True" />
+  <SolidColorBrush x:Key="Antd.Brush.DangerFillHover" Color="#ffdfdc" po:Freeze="True" />
+  <SolidColorBrush x:Key="Antd.Brush.Warning" Color="#faad14" po:Freeze="True" />
+  <SolidColorBrush x:Key="Antd.Brush.White" Color="#fff" po:Freeze="True" />
+  <SolidColorBrush x:Key="Antd.Brush.Selection" Color="#e6f4ff" po:Freeze="True" />
+  <SolidColorBrush x:Key="Antd.Brush.ItemHover" Color="#000000" Opacity="0.04" po:Freeze="True" />
+  <SolidColorBrush x:Key="Antd.Brush.Outline" Color="#0591FF" Opacity="0.1" po:Freeze="True" />
+  <SolidColorBrush x:Key="Antd.Brush.FocusOutline" Color="#91caff" po:Freeze="True" />
+  <SolidColorBrush x:Key="Antd.Brush.ErrorOutline" Color="#FF2605" Opacity="0.06" po:Freeze="True" />
+  <SolidColorBrush x:Key="Antd.Brush.WarningOutline" Color="#FFD705" Opacity="0.1" po:Freeze="True" />
+  <SolidColorBrush x:Key="Antd.Brush.ButtonShadow" Color="#000000" Opacity="0.02" po:Freeze="True" />
+  <sys:Double x:Key="Antd.FontSize">14</sys:Double>
+  <CornerRadius x:Key="Antd.CornerRadius">6</CornerRadius>
+  <SolidColorBrush x:Key="Antd.Brush.NeutralSolid" Color="#000000" po:Freeze="True" />
+  <SolidColorBrush x:Key="Antd.Brush.NeutralSolidHover" Color="#000000" Opacity="0.75" po:Freeze="True" />
+  <SolidColorBrush x:Key="Antd.Brush.NeutralSolidActive" Color="#000000" Opacity="0.95" po:Freeze="True" />
+  <SolidColorBrush x:Key="Antd.Brush.PrimaryFillActive" Color="#91caff" po:Freeze="True" />
+  <SolidColorBrush x:Key="Antd.Brush.DangerFillActive" Color="#ffccc7" po:Freeze="True" />
+  <SolidColorBrush x:Key="Antd.Brush.Link" Color="#1677ff" po:Freeze="True" />
+  <SolidColorBrush x:Key="Antd.Brush.LinkHover" Color="#69b1ff" po:Freeze="True" />
+  <SolidColorBrush x:Key="Antd.Brush.LinkActive" Color="#0958d9" po:Freeze="True" />
+  <SolidColorBrush x:Key="Antd.Brush.NeutralSolidText" Color="#fff" po:Freeze="True" />
+</ResourceDictionary>

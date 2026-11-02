@@ -1,0 +1,42 @@
+<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:t="clr-namespace:Antd.Wpf.Theming"
+                    xmlns:c="clr-namespace:Antd.Wpf.Controls"
+                    xmlns:po="http://schemas.microsoft.com/winfx/2006/xaml/presentation/options">
+  <StreamGeometry x:Key="Antd.Geometry.Check" po:Freeze="True">M 0,4 L 3,7 L 8,0</StreamGeometry>
+  <Style TargetType="{x:Type c:AntCheckBox}">
+    <Setter Property="VerticalAlignment" Value="Center" />
+    <Setter Property="Foreground" Value="{DynamicResource Antd.Brush.Text}" />
+    <Setter Property="Background" Value="{DynamicResource Antd.Brush.Container}" />
+    <Setter Property="BorderBrush" Value="{DynamicResource Antd.Brush.Border}" /><Setter Property="BorderThickness" Value="1" />
+    <Setter Property="FontFamily" Value="Segoe UI, Microsoft YaHei UI" /><Setter Property="FontSize" Value="{DynamicResource Antd.FontSize}" />
+    <Setter Property="TextBlock.LineHeight" Value="{DynamicResource {ComponentResourceKey TypeInTargetAssembly={x:Type t:AntThemeScope}, ResourceId=Antd.LineHeight}}" /><Setter Property="TextBlock.LineStackingStrategy" Value="BlockLineHeight" />
+    <Setter Property="MinHeight" Value="22" /><Setter Property="Padding" Value="8,0" /><Setter Property="VerticalContentAlignment" Value="Center" />
+    <Setter Property="FocusVisualStyle" Value="{x:Null}" /><Setter Property="UseLayoutRounding" Value="True" />
+    <Setter Property="Template"><Setter.Value><ControlTemplate TargetType="{x:Type c:AntCheckBox}">
+      <Grid Background="Transparent">
+        <Grid.ColumnDefinitions><ColumnDefinition Width="Auto" /><ColumnDefinition Width="*" /></Grid.ColumnDefinitions>
+        <Grid Width="16" Height="16" VerticalAlignment="Center">
+          <Border x:Name="FocusRing" Margin="-4" BorderThickness="3" BorderBrush="{DynamicResource Antd.Brush.FocusOutline}" CornerRadius="8" Opacity="0" IsHitTestVisible="False" />
+          <Border x:Name="Box" Background="{TemplateBinding Background}" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" CornerRadius="{DynamicResource {ComponentResourceKey TypeInTargetAssembly={x:Type t:AntThemeScope}, ResourceId=Antd.CornerRadius.Small}}" />
+          <Path x:Name="Check" Width="8" Height="8" Data="{StaticResource Antd.Geometry.Check}" Stroke="{DynamicResource Antd.Brush.White}" StrokeThickness="2" HorizontalAlignment="Center" VerticalAlignment="Center" Opacity="0" IsHitTestVisible="False" />
+          <Rectangle x:Name="Indeterminate" Width="8" Height="8" Fill="{DynamicResource Antd.Brush.Primary}" HorizontalAlignment="Center" VerticalAlignment="Center" Opacity="0" IsHitTestVisible="False" />
+        </Grid>
+        <ContentPresenter x:Name="Label" Grid.Column="1" Margin="{TemplateBinding Padding}" ContentSource="Content" RecognizesAccessKey="True" VerticalAlignment="{TemplateBinding VerticalContentAlignment}" />
+      </Grid>
+      <ControlTemplate.Triggers>
+        <Trigger Property="Content" Value="{x:Null}"><Setter TargetName="Label" Property="Visibility" Value="Collapsed" /></Trigger>
+        <Trigger Property="IsChecked" Value="True"><Setter TargetName="Check" Property="Opacity" Value="1" /></Trigger>
+        <Trigger Property="IsChecked" Value="{x:Null}"><Setter TargetName="Indeterminate" Property="Opacity" Value="1" /></Trigger>
+        <Trigger Property="IsKeyboardFocused" Value="True"><Setter TargetName="FocusRing" Property="Opacity" Value="1" /></Trigger>
+        <Trigger Property="IsEnabled" Value="False"><Setter TargetName="Check" Property="Stroke" Value="{DynamicResource Antd.Brush.DisabledText}" /><Setter TargetName="Indeterminate" Property="Fill" Value="{DynamicResource Antd.Brush.DisabledText}" /></Trigger>
+      </ControlTemplate.Triggers>
+    </ControlTemplate></Setter.Value></Setter>
+    <Style.Triggers>
+      <Trigger Property="IsMouseOver" Value="True"><Setter Property="BorderBrush" Value="{DynamicResource Antd.Brush.Primary}" /></Trigger>
+      <Trigger Property="IsChecked" Value="True"><Setter Property="Background" Value="{DynamicResource Antd.Brush.Primary}" /><Setter Property="BorderBrush" Value="{DynamicResource Antd.Brush.Primary}" /></Trigger>
+      <MultiTrigger><MultiTrigger.Conditions><Condition Property="IsChecked" Value="True" /><Condition Property="IsMouseOver" Value="True" /></MultiTrigger.Conditions><Setter Property="Background" Value="{DynamicResource Antd.Brush.PrimaryHover}" /><Setter Property="BorderBrush" Value="{DynamicResource Antd.Brush.PrimaryHover}" /></MultiTrigger>
+      <Trigger Property="IsEnabled" Value="False"><Setter Property="Foreground" Value="{DynamicResource Antd.Brush.DisabledText}" /><Setter Property="Background" Value="{DynamicResource Antd.Brush.DisabledFill}" /><Setter Property="BorderBrush" Value="{DynamicResource Antd.Brush.Border}" /></Trigger>
+    </Style.Triggers>
+  </Style>
+</ResourceDictionary>

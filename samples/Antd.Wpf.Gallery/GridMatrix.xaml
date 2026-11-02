@@ -1,0 +1,71 @@
+<Window xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:antd="https://antd-wpf.dev/xaml"
+        Title="Antd.Wpf · Grid" Width="1120" Height="900" UseLayoutRounding="True"
+        FontFamily="Segoe UI, Microsoft YaHei UI" FontSize="14">
+  <Window.Resources>
+    <Style x:Key="Tile" TargetType="Border">
+      <Setter Property="Background" Value="{DynamicResource Antd.Brush.Primary}" />
+      <Setter Property="TextElement.Foreground" Value="White" />
+      <Setter Property="MinHeight" Value="32" />
+      <Setter Property="Padding" Value="8,0" />
+    </Style>
+  </Window.Resources>
+  <ScrollViewer VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Auto">
+  <ItemsControl MinWidth="1000" Width="{Binding ViewportWidth, RelativeSource={RelativeSource AncestorType=ScrollViewer}}">
+    <ItemsControl.Items><x:Static Member="antd:ThemeMode.Light" /><x:Static Member="antd:ThemeMode.Dark" /></ItemsControl.Items>
+    <ItemsControl.ItemsPanel><ItemsPanelTemplate><UniformGrid Columns="2" /></ItemsPanelTemplate></ItemsControl.ItemsPanel>
+    <ItemsControl.ItemTemplate><DataTemplate>
+      <antd:AntThemeScope Mode="{Binding}" MotionEnabled="False">
+        <Border Background="{DynamicResource Antd.Brush.Container}" Padding="28" TextElement.Foreground="{DynamicResource Antd.Brush.Text}">
+          <StackPanel>
+            <TextBlock Text="{Binding StringFormat='Grid · {0}'}" FontSize="24" FontWeight="SemiBold" Margin="0,0,0,20" />
+            <TextBlock Text="24 tracks · gutter 16" Foreground="{DynamicResource Antd.Brush.Secondary}" Margin="0,0,0,12" />
+            <antd:AntRow HorizontalGutter="16">
+              <antd:AntCol Span="8"><Border Style="{StaticResource Tile}"><TextBlock Text="8" HorizontalAlignment="Center" VerticalAlignment="Center" /></Border></antd:AntCol>
+              <antd:AntCol Span="8"><Border Style="{StaticResource Tile}"><TextBlock Text="8" HorizontalAlignment="Center" VerticalAlignment="Center" /></Border></antd:AntCol>
+              <antd:AntCol Span="8"><Border Style="{StaticResource Tile}"><TextBlock Text="8" HorizontalAlignment="Center" VerticalAlignment="Center" /></Border></antd:AntCol>
+            </antd:AntRow>
+            <antd:AntDivider Content="Wrap · 12 + 16 · rows 8" IsPlain="True" />
+            <antd:AntRow HorizontalGutter="16" VerticalGutter="8">
+              <antd:AntCol Span="12"><Border Style="{StaticResource Tile}"><TextBlock Text="12" VerticalAlignment="Center" /></Border></antd:AntCol>
+              <antd:AntCol Span="16"><Border Style="{StaticResource Tile}"><TextBlock Text="16" VerticalAlignment="Center" /></Border></antd:AntCol>
+            </antd:AntRow>
+            <antd:AntDivider Content="Offset · 6 + 6 / 6 + 6" IsPlain="True" />
+            <antd:AntRow HorizontalGutter="16">
+              <antd:AntCol Span="6" Offset="6"><Border Style="{StaticResource Tile}"><TextBlock Text="6" HorizontalAlignment="Center" VerticalAlignment="Center" /></Border></antd:AntCol>
+              <antd:AntCol Span="6" Offset="6"><Border Style="{StaticResource Tile}"><TextBlock Text="6" HorizontalAlignment="Center" VerticalAlignment="Center" /></Border></antd:AntCol>
+            </antd:AntRow>
+            <antd:AntDivider Content="SpaceBetween" IsPlain="True" />
+            <antd:AntRow HorizontalGutter="16" Justify="SpaceBetween">
+              <antd:AntCol Span="6"><Border Style="{StaticResource Tile}"><TextBlock Text="6" HorizontalAlignment="Center" VerticalAlignment="Center" /></Border></antd:AntCol>
+              <antd:AntCol Span="6"><Border Style="{StaticResource Tile}"><TextBlock Text="6" HorizontalAlignment="Center" VerticalAlignment="Center" /></Border></antd:AntCol>
+            </antd:AntRow>
+            <antd:AntDivider Content="Middle · mixed heights" IsPlain="True" />
+            <antd:AntRow HorizontalGutter="16" Align="Middle">
+              <antd:AntCol Span="8"><Border Style="{StaticResource Tile}" Height="32"><TextBlock Text="32" HorizontalAlignment="Center" VerticalAlignment="Center" /></Border></antd:AntCol>
+              <antd:AntCol Span="8"><Border Style="{StaticResource Tile}" Height="56"><TextBlock Text="56" HorizontalAlignment="Center" VerticalAlignment="Center" /></Border></antd:AntCol>
+              <antd:AntCol Span="8"><Border Style="{StaticResource Tile}" Height="72"><TextBlock Text="72" HorizontalAlignment="Center" VerticalAlignment="Center" /></Border></antd:AntCol>
+            </antd:AntRow>
+            <antd:AntDivider Content="RTL · offset 8" IsPlain="True" />
+            <antd:AntRow HorizontalGutter="16" FlowDirection="RightToLeft">
+              <antd:AntCol Span="8" Offset="8"><Border Style="{StaticResource Tile}"><TextBlock Text="首项 / First" HorizontalAlignment="Center" VerticalAlignment="Center" /></Border></antd:AntCol>
+              <antd:AntCol Span="8"><Border Style="{StaticResource Tile}"><TextBlock Text="次项 / Second" HorizontalAlignment="Center" VerticalAlignment="Center" /></Border></antd:AntCol>
+            </antd:AntRow>
+            <antd:AntDivider Content="Nested · outer 12 / inner 12 + 12" IsPlain="True" />
+            <antd:AntRow HorizontalGutter="16">
+              <antd:AntCol Span="12">
+                <antd:AntRow HorizontalGutter="8">
+                  <antd:AntCol Span="12"><Border Style="{StaticResource Tile}"><TextBlock Text="12" HorizontalAlignment="Center" VerticalAlignment="Center" /></Border></antd:AntCol>
+                  <antd:AntCol Span="12"><Border Style="{StaticResource Tile}"><TextBlock Text="12" HorizontalAlignment="Center" VerticalAlignment="Center" /></Border></antd:AntCol>
+                </antd:AntRow>
+              </antd:AntCol>
+              <antd:AntCol Span="12"><antd:AntInput Placeholder="Native content / 原生内容" /></antd:AntCol>
+            </antd:AntRow>
+          </StackPanel>
+        </Border>
+      </antd:AntThemeScope>
+    </DataTemplate></ItemsControl.ItemTemplate>
+  </ItemsControl>
+  </ScrollViewer>
+</Window>

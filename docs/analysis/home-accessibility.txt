@@ -1,0 +1,541 @@
+- document:
+  - banner:
+    - heading "logo Ant Design" [level=1]:
+      - link "logo Ant Design":
+        - /url: /
+        - img "logo"
+        - text: Ant Design
+    - img "Search"
+    - textbox "Type keywords..."
+    - menu:
+      - menuitem "Design":
+        - link "Design":
+          - /url: /docs/spec/introduce
+      - menuitem "Development":
+        - link "Development":
+          - /url: /docs/react/introduce
+      - menuitem "Components":
+        - link "Components":
+          - /url: /components/overview/
+      - menuitem "Blog":
+        - link "Blog":
+          - /url: /docs/blog/ai-open-source-contribution
+      - menuitem "Resources":
+        - link "Resources":
+          - /url: /docs/resources
+    - link "YouMind":
+      - /url: https://youmind.com?utm_source=ant-design
+      - img "YouMind"
+    - link "TRACTIAN":
+      - /url: https://tractian.com?utm_source=ant-design
+      - img "TRACTIAN"
+    - link "LobeHub":
+      - /url: https://lobehub.com?utm_source=ant-design
+      - img "LobeHub"
+    - link "CodeRabbit":
+      - /url: https://coderabbit.ai?utm_source=ant-design
+      - img "CodeRabbit"
+    - text: 6.6.8
+    - combobox
+    - img "down"
+    - button "中 En"
+    - button "RTL Switch Button":
+      - img:
+        - img "Direction Icon"
+    - button:
+      - img
+    - link "github":
+      - /url: https://github.com/ant-design/ant-design
+      - button "github":
+        - img "github"
+  - article:
+    - heading "Ant Design" [level=1]
+    - paragraph: AI friendly design system that combines beauty and intelligence, making work full of inspiration and joy.
+  - link "Getting Started":
+    - /url: /components/overview/
+  - link "Design Language":
+    - /url: /docs/spec/introduce/
+  - link "Ant Design Pro V6 is out! A fresh start on the latest stack. 42% faster builds, and an AI assistant ready to help. 2026-05-08":
+    - /url: https://github.com/ant-design/ant-design-pro/issues/11734
+    - heading "Ant Design Pro V6 is out!" [level=5]
+    - text: A fresh start on the latest stack. 42% faster builds, and an AI assistant ready to help. 2026-05-08
+  - text: HOT
+  - link "Ant Design CLI is released Your Ant Design expert in the terminal. Works offline, integrates natively with your code agent. 2026-05-08":
+    - /url: https://ant.design/docs/react/cli
+    - heading "Ant Design CLI is released" [level=5]
+    - text: Your Ant Design expert in the terminal. Works offline, integrates natively with your code agent. 2026-05-08
+  - link "Ant Design 6.0 is here! Experience ultimate flexibility in theme customization and embrace the modern React ecosystem. It provides a solid foundation and a superior experience for building applications in the age of AI.":
+    - /url: https://github.com/ant-design/ant-design/issues/55804
+    - heading "Ant Design 6.0 is here!" [level=5]
+    - text: Experience ultimate flexibility in theme customization and embrace the modern React ecosystem. It provides a solid foundation and a superior experience for building applications in the age of AI.
+  - text: Sponsors
+  - link "YouMind YouMind":
+    - /url: https://youmind.com?utm_source=ant-design
+    - img "YouMind"
+    - text: YouMind
+  - link "TRACTIAN TRACTIAN":
+    - /url: https://tractian.com?utm_source=ant-design
+    - img "TRACTIAN"
+    - text: TRACTIAN
+  - link "LobeHub LobeHub":
+    - /url: https://lobehub.com?utm_source=ant-design
+    - img "LobeHub"
+    - text: LobeHub
+  - link "CodeRabbit CodeRabbit":
+    - /url: https://coderabbit.ai?utm_source=ant-design
+    - img "CodeRabbit"
+    - text: CodeRabbit
+  - heading "Flexible theme customization" [level=1]
+  - text: Open style algorithms and semantic structures make it easy for you and AI to customize themes
+  - radiogroup "segmented control":
+    - radio "Components" [checked]
+    - text: Components
+    - radio "Dashboard"
+    - text: Dashboard
+  - tab "Ant Design" [selected]:
+    - img "Ant Design"
+  - tab "MUI":
+    - img "MUI"
+  - tab "shadcn":
+    - img "shadcn"
+  - tab "Bootstrap":
+    - img "Bootstrap"
+  - tab "Cartoon":
+    - img "Cartoon"
+  - tab "Dark":
+    - img "Dark"
+  - tab "Illustration":
+    - img "Illustration"
+  - tab "Glass":
+    - img "Glass"
+  - tab "Geek":
+    - img "Geek"
+  - tab "LobeHub":
+    - img "LobeHub"
+  - tab "Document":
+    - img "Document"
+  - tab "Blossom":
+    - img "Blossom"
+  - tab "Ant Design V4":
+    - img "Ant Design V4"
+  - tab "Serene Icon":
+    - img "Serene Icon"
+  - img "copy"
+  - link "bg-colors":
+    - /url: /theme-editor
+    - img "bg-colors"
+  - img
+  - textbox "hi@example.com"
+  - text: Apple Banana
+  - combobox
+  - img "down"
+  - text: "#1677FF"
+  - button "Dropdown"
+  - button "down":
+    - img "down"
+  - textbox "Select Date"
+  - group:
+    - checkbox "Apple" [checked]
+    - text: Apple
+    - checkbox "Pear"
+    - text: Pear
+  - radiogroup:
+    - radio "Apple" [checked]
+    - text: Apple
+    - radio "Pear"
+    - text: Pear
+  - switch [checked]
+  - progressbar
+  - img "check"
+  - text: Finished
+  - img "close"
+  - text: In Process 3 Waiting
+  - progressbar: 50%
+  - progressbar:
+    - img "close-circle"
+  - text: Success Error Default Processing Warning
+  - img
+  - img "loading"
+  - list:
+    - listitem:
+      - radio "star star" [checked]:
+        - img "star"
+        - img "star"
+    - listitem:
+      - radio "star star" [checked]:
+        - img "star"
+        - img "star"
+    - listitem:
+      - radio "star star" [checked]:
+        - img "star"
+        - img "star"
+    - listitem:
+      - radio "star star":
+        - img "star"
+        - img "star"
+    - listitem:
+      - radio "star star":
+        - img "star"
+        - img "star"
+  - img "x"
+  - text: Twitter
+  - img "youtube"
+  - text: Youtube
+  - img "facebook"
+  - text: Facebook
+  - tooltip "exclamation-circle Are you OK? Cancel OK":
+    - img "exclamation-circle"
+    - text: Are you OK?
+    - button "Cancel"
+    - button "OK"
+  - radiogroup "segmented control":
+    - radio "1D" [checked]
+    - text: 1D
+    - radio "7D"
+    - text: 7D
+    - radio "1M"
+    - text: 1M
+    - radio "1Y"
+    - text: 1Y
+    - radio "All"
+    - text: All
+  - radiogroup "segmented control":
+    - radio "message Chats" [checked]
+    - img "message"
+    - text: Chats
+    - radio "mail Emails"
+    - img "mail"
+    - text: Emails
+  - 'img "Contributor: Ant Design contributor"'
+  - 'img "Contributor: Ant Design contributor"'
+  - 'img "Contributor: Ant Design contributor"'
+  - 'img "Contributor: Ant Design contributor"'
+  - 'img "Contributor: Ant Design contributor"'
+  - 'img "Contributor: Ant Design contributor"'
+  - text: "+5"
+  - heading "Verify account" [level=5]
+  - text: We've sent a code to a****@gmail.com
+  - group:
+    - textbox "OTP Input 1": "4"
+    - textbox "OTP Input 2": "3"
+    - textbox "OTP Input 3": "2"
+    - textbox "OTP Input 4": "0"
+    - textbox "OTP Input 5"
+    - textbox "OTP Input 6"
+  - text: Didn't receive a code? Resend
+  - button "Primary button"
+  - button "Danger button"
+  - button "Outlined button"
+  - button "Round button"
+  - img
+  - heading "Ant Design" [level=5]
+  - text: "@ant-design"
+  - paragraph: Building the future of UI for web & mobile.
+  - alert:
+    - img "check-circle"
+    - text: Ant Design An enterprise-class design system for building modern, intelligent, and delightful user experiences.
+    - button "Close":
+      - img "Close"
+  - img
+  - heading "Create an account" [level=4]
+  - text: Start your free 7-day trial. No credit card required.
+  - button "Get Started"
+  - separator: OR
+  - button "google Continue with Google":
+    - img "google"
+    - text: Continue with Google
+  - button "apple Continue with Apple":
+    - img "apple"
+    - text: Continue with Apple
+  - dialog:
+    - button "Close":
+      - img "close"
+    - text: Ant Design Ant Design use CSS-in-JS technology to provide dynamic & mix theme ability.
+    - button "Cancel"
+    - button "OK"
+  - heading "Rich components" [level=1]
+  - text: Practical components to meet your needs, flexible customization and expansion
+  - heading "DatePicker" [level=4]
+  - text: Update
+  - textbox "Select date": 2025-11-22
+  - button "Clear":
+    - img "close-circle"
+  - list:
+    - listitem: Yesterday
+    - listitem: Last Week
+    - listitem: Last Month
+    - listitem: Last Year
+  - button "Last year"
+  - button "Previous month"
+  - button "Choose a month": Nov
+  - button "Choose a year": "2025"
+  - button "Next month"
+  - button "Next year"
+  - table:
+    - rowgroup:
+      - row "Su Mo Tu We Th Fr Sa":
+        - columnheader "Su"
+        - columnheader "Mo"
+        - columnheader "Tu"
+        - columnheader "We"
+        - columnheader "Th"
+        - columnheader "Fr"
+        - columnheader "Sa"
+    - rowgroup:
+      - row "26 27 28 29 30 31 1":
+        - cell "26"
+        - cell "27"
+        - cell "28"
+        - cell "29"
+        - cell "30"
+        - cell "31"
+        - cell "1"
+      - row "2 3 4 5 6 7 8":
+        - cell "2"
+        - cell "3"
+        - cell "4"
+        - cell "5"
+        - cell "6"
+        - cell "7"
+        - cell "8"
+      - row "9 10 11 12 13 14 15":
+        - cell "9"
+        - cell "10"
+        - cell "11"
+        - cell "12"
+        - cell "13"
+        - cell "14"
+        - cell "15"
+      - row "16 17 18 19 20 21 22":
+        - cell "16"
+        - cell "17"
+        - cell "18"
+        - cell "19"
+        - cell "20"
+        - cell "21"
+        - cell "22"
+      - row "23 24 25 26 27 28 29":
+        - cell "23"
+        - cell "24"
+        - cell "25"
+        - cell "26"
+        - cell "27"
+        - cell "28"
+        - cell "29"
+      - row "30 1 2 3 4 5 6":
+        - cell "30"
+        - cell "1"
+        - cell "2"
+        - cell "3"
+        - cell "4"
+        - cell "5"
+        - cell "6"
+  - heading "Tour" [level=4]
+  - text: Update
+  - tooltip "Close Ant Design A quick guide for new come user about how to use app. Previous Next":
+    - button "Close":
+      - img "Close"
+    - text: Ant Design A quick guide for new come user about how to use app.
+    - button "Previous"
+    - button "Next"
+  - heading "FloatButton" [level=4]
+  - text: Update
+  - button "question-circle":
+    - img "question-circle"
+  - button "customer-service":
+    - img "customer-service"
+  - button "sync":
+    - img "sync"
+  - button "vertical-align-top":
+    - img "vertical-align-top"
+  - button "question-circle":
+    - img "question-circle"
+  - button "customer-service":
+    - img "customer-service"
+  - button "sync":
+    - img "sync"
+  - heading "Splitter" [level=4]
+  - text: New
+  - heading "First" [level=5]
+  - separator
+  - heading "Second" [level=5]
+  - heading "Masonry" [level=4]
+  - text: New 1 2 3 4 5 6 7 8 9
+  - img "bg"
+  - heading "Design and framework" [level=1]
+  - text: Supporting ecology, allowing you to quickly build website applications
+  - link "Design values Design values Certainty, Meaningfulness, Growth, Naturalness":
+    - /url: /docs/spec/values/
+    - img "Design values"
+    - heading "Design values" [level=4]
+    - text: Certainty, Meaningfulness, Growth, Naturalness
+  - link "Design guide Design guide Global style and design pattern":
+    - /url: /docs/spec/colors/
+    - img "Design guide"
+    - heading "Design guide" [level=4]
+    - text: Global style and design pattern
+  - link "Components Libraries Components Libraries Ant Design of React / Angular / Vue":
+    - /url: /docs/react/introduce/
+    - img "Components Libraries"
+    - heading "Components Libraries" [level=4]
+    - text: Ant Design of React / Angular / Vue
+  - link "Ant Design Mobile Ant Design Mobile Mobile UI component library":
+    - /url: https://mobile.ant.design/
+    - img "Ant Design Mobile"
+    - heading "Ant Design Mobile" [level=4]
+    - text: Mobile UI component library
+  - link "AntV AntV New generation of data visualization solutions":
+    - /url: https://antv.vision/
+    - img "AntV"
+    - heading "AntV" [level=4]
+    - text: New generation of data visualization solutions
+  - link "Kitchen Kitchen Sketch Tool set for designers":
+    - /url: https://kitchen.alipay.com/
+    - img "Kitchen"
+    - heading "Kitchen" [level=4]
+    - text: Sketch Tool set for designers
+  - contentinfo:
+    - heading "Resources" [level=2]
+    - link "Ant Design X":
+      - /url: https://x.ant.design
+    - link "Ant Design Charts":
+      - /url: https://charts.ant.design
+    - link "Ant Design Pro":
+      - /url: https://pro.ant.design
+    - link "Pro Components":
+      - /url: https://procomponents.ant.design
+    - link "Ant Design Mobile":
+      - /url: https://mobile.ant.design
+    - link "Ant Design Mini":
+      - /url: https://mini.ant.design
+    - link "Ant Design Web3":
+      - /url: https://web3.ant.design
+    - link "Ant Design Landing":
+      - /url: https://landing.ant.design
+    - text: "-Landing Templates"
+    - link "Scaffolds":
+      - /url: https://scaffold.ant.design
+    - text: "-Scaffold Market"
+    - link "Umi":
+      - /url: https://umijs.org
+    - text: "-React Application Framework"
+    - link "dumi":
+      - /url: https://d.umijs.org
+    - text: "-Component doc generator"
+    - link "qiankun":
+      - /url: https://qiankun.umijs.org
+    - text: "-Micro-Frontends Framework"
+    - link "Ant Motion":
+      - /url: https://motion.ant.design
+    - text: "-Motion Solution"
+    - link "China Mirror 🇨🇳":
+      - /url: https://ant-design.antgroup.com
+    - heading "Community" [level=2]
+    - link "ant-design Awesome Ant Design":
+      - /url: https://github.com/websemantics/awesome-ant-design
+      - img "ant-design"
+      - text: Awesome Ant Design
+    - link "medium Medium":
+      - /url: http://medium.com/ant-design/
+      - img "medium"
+      - text: Medium
+    - link "x X":
+      - /url: http://x.com/antdesignui
+      - img "x"
+      - text: X
+    - link "yuque logo Ant Design in YuQue":
+      - /url: https://yuque.com/ant-design/ant-design
+      - img "yuque logo"
+      - text: Ant Design in YuQue
+    - link "zhihu Ant Design in Zhihu":
+      - /url: https://www.zhihu.com/column/c_1564262000561106944
+      - img "zhihu"
+      - text: Ant Design in Zhihu
+    - link "zhihu Experience Cloud Blog":
+      - /url: https://www.zhihu.com/column/c_1543658574504751104
+      - img "zhihu"
+      - text: Experience Cloud Blog
+    - link "seeconf logo SEE Conf":
+      - /url: https://seeconf.antfin.com/
+      - img "seeconf logo"
+      - text: SEE Conf
+    - text: "-Experience Tech Conference"
+    - heading "Help" [level=2]
+    - link "github GitHub":
+      - /url: https://github.com/ant-design/ant-design
+      - img "github"
+      - text: GitHub
+    - link "history Change Log":
+      - /url: /changelog
+      - img "history"
+      - text: Change Log
+    - link "question-circle FAQ":
+      - /url: /docs/react/faq
+      - img "question-circle"
+      - text: FAQ
+    - link "robot For Agents":
+      - /url: https://ant.design/docs/react/for-agents.md
+      - img "robot"
+      - text: For Agents
+    - link "bug Bug Report":
+      - /url: https://new-issue.ant.design/
+      - img "bug"
+      - text: Bug Report
+    - link "issues-close Issues":
+      - /url: https://github.com/ant-design/ant-design/issues
+      - img "issues-close"
+      - text: Issues
+    - link "message Discussions":
+      - /url: https://github.com/ant-design/ant-design/discussions
+      - img "message"
+      - text: Discussions
+    - link "question-circle StackOverflow":
+      - /url: http://stackoverflow.com/questions/tagged/antd
+      - img "question-circle"
+      - text: StackOverflow
+    - link "question-circle SegmentFault":
+      - /url: https://segmentfault.com/t/antd
+      - img "question-circle"
+      - text: SegmentFault
+    - heading "Ant XTech logo More Products" [level=2]:
+      - img "Ant XTech logo"
+      - text: More Products
+    - link "yuque logo YuQue":
+      - /url: https://yuque.com
+      - img "yuque logo"
+      - text: YuQue
+    - text: "-Document Collaboration Platform"
+    - link "AntV logo AntV":
+      - /url: https://antv.antgroup.com
+      - img "AntV logo"
+      - text: AntV
+    - text: "-Data Visualization"
+    - link "Egg logo Egg":
+      - /url: https://eggjs.org
+      - img "Egg logo"
+      - text: Egg
+    - text: "-Enterprise Node.js Framework"
+    - link "Kitchen logo Kitchen":
+      - /url: https://kitchen.alipay.com
+      - img "Kitchen logo"
+      - text: Kitchen
+    - text: "-Sketch Toolkit"
+    - link "Galacean logo Galacean":
+      - /url: https://galacean.antgroup.com/
+      - img "Galacean logo"
+      - text: Galacean
+    - text: "-Interactive Graphics Solution"
+    - link "WeaveFox logo WeaveFox":
+      - /url: https://weavefox.cn/
+      - img "WeaveFox logo"
+      - text: WeaveFox
+    - text: "-AI Development with WeaveFox 🦊"
+    - link "xtech logo Ant Financial Experience Tech":
+      - /url: https://xtech.antfin.com/
+      - img "xtech logo"
+      - text: Ant Financial Experience Tech
+    - link "bg-colors Theme Editor":
+      - /url: /theme-editor
+      - img "bg-colors"
+      - text: Theme Editor
+    - text: Made with ❤ by Ant Group and Ant Design Community

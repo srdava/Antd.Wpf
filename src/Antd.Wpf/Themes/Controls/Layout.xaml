@@ -1,0 +1,131 @@
+<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:po="http://schemas.microsoft.com/winfx/2006/xaml/presentation/options"
+                    xmlns:c="clr-namespace:Antd.Wpf.Controls"
+                    xmlns:i="clr-namespace:Antd.Wpf.Internal">
+  <i:DividerMetricsConverter x:Key="Antd.LayoutFontMetrics" />
+  <ScaleTransform x:Key="Antd.Sider.ArrowLeft" ScaleX="1" po:Freeze="True" />
+  <ScaleTransform x:Key="Antd.Sider.ArrowRight" ScaleX="-1" po:Freeze="True" />
+  <Geometry x:Key="Antd.Sider.LeftGlyph" po:Freeze="True">M724 218.3V141c0-6.7-7.7-10.4-12.9-6.3L260.3 486.8a31.86 31.86 0 000 50.3l450.8 352.1c5.3 4.1 12.9.4 12.9-6.3v-77.3c0-4.9-2.3-9.6-6.1-12.6l-360-281 360-281.1c3.8-3 6.1-7.7 6.1-12.6z</Geometry>
+  <Geometry x:Key="Antd.Sider.BarsGlyph" po:Freeze="True">M912 192H328c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h584c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zm0 284H328c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h584c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zm0 284H328c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h584c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zM104 228a56 56 0 10112 0 56 56 0 10-112 0zm0 284a56 56 0 10112 0 56 56 0 10-112 0zm0 284a56 56 0 10112 0 56 56 0 10-112 0z</Geometry>
+  <Style x:Key="Antd.LayoutRegion" TargetType="ContentControl">
+    <Setter Property="FontSize" Value="{DynamicResource Antd.FontSize}" />
+    <Setter Property="Foreground" Value="{DynamicResource Antd.Brush.Text}" />
+    <Setter Property="HorizontalContentAlignment" Value="Stretch" />
+    <Setter Property="VerticalContentAlignment" Value="Stretch" />
+    <Setter Property="TextBlock.LineHeight" Value="{Binding FontSize, RelativeSource={RelativeSource Self}, Converter={StaticResource Antd.LayoutFontMetrics}, ConverterParameter=LineHeight}" />
+    <Setter Property="Template"><Setter.Value><ControlTemplate TargetType="ContentControl">
+      <Border x:Name="Chrome" Background="{TemplateBinding Background}" Padding="{TemplateBinding Padding}"
+              BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}">
+        <ContentPresenter HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
+                          VerticalAlignment="{TemplateBinding VerticalContentAlignment}" />
+      </Border>
+    </ControlTemplate></Setter.Value></Setter>
+  </Style>
+  <Style TargetType="c:AntLayout"><Setter Property="Background" Value="{DynamicResource Antd.Brush.Background}" /></Style>
+  <Style TargetType="c:AntHeader" BasedOn="{StaticResource Antd.LayoutRegion}">
+    <Setter Property="MinHeight" Value="64" />
+    <Setter Property="Padding" Value="50,0" />
+    <Setter Property="VerticalContentAlignment" Value="Center" />
+    <Setter Property="Background" Value="{DynamicResource Antd.Brush.LayoutHeader}" />
+  </Style>
+  <Style TargetType="c:AntContent" BasedOn="{StaticResource Antd.LayoutRegion}" />
+  <Style TargetType="c:AntFooter" BasedOn="{StaticResource Antd.LayoutRegion}">
+    <Setter Property="Padding" Value="50,24" />
+    <Setter Property="Background" Value="{DynamicResource Antd.Brush.Background}" />
+  </Style>
+  <Style x:Key="Antd.SiderTrigger" TargetType="Button">
+    <Setter Property="Background" Value="{DynamicResource Antd.Brush.LayoutTrigger}" />
+    <Setter Property="Foreground" Value="{DynamicResource Antd.Brush.LayoutTriggerText}" />
+    <Setter Property="BorderThickness" Value="0" />
+    <Setter Property="Padding" Value="0" />
+    <Setter Property="Cursor" Value="Hand" />
+    <Setter Property="Tag"><Setter.Value><CornerRadius>0</CornerRadius></Setter.Value></Setter>
+    <Setter Property="Template"><Setter.Value><ControlTemplate TargetType="Button">
+      <Grid>
+        <Border Background="{TemplateBinding Background}" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}"
+                CornerRadius="{Binding Tag, RelativeSource={RelativeSource TemplatedParent}}">
+          <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" />
+        </Border>
+        <Border x:Name="Focus" Margin="2" BorderThickness="2" BorderBrush="{DynamicResource Antd.Brush.Primary}" Opacity="0" IsHitTestVisible="False" />
+      </Grid>
+      <ControlTemplate.Triggers><Trigger Property="IsKeyboardFocused" Value="True"><Setter TargetName="Focus" Property="Opacity" Value="1" /></Trigger></ControlTemplate.Triggers>
+    </ControlTemplate></Setter.Value></Setter>
+    <Style.Triggers><Trigger Property="IsEnabled" Value="False">
+      <Setter Property="Foreground" Value="{DynamicResource Antd.Brush.DisabledText}" /><Setter Property="Cursor" Value="Arrow" />
+    </Trigger></Style.Triggers>
+  </Style>
+  <Style x:Key="Antd.SiderZeroTrigger" TargetType="Button" BasedOn="{StaticResource Antd.SiderTrigger}">
+    <Setter Property="Background" Value="{DynamicResource Antd.Brush.LayoutSider}" />
+    <Setter Property="BorderBrush" Value="{DynamicResource Antd.Brush.Background}" />
+    <Setter Property="Tag"><Setter.Value><CornerRadius>0,8,8,0</CornerRadius></Setter.Value></Setter>
+    <Setter Property="Template"><Setter.Value><ControlTemplate TargetType="Button">
+      <Grid>
+        <Border Background="{TemplateBinding Background}" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}"
+                CornerRadius="{Binding Tag, RelativeSource={RelativeSource TemplatedParent}}">
+          <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" />
+        </Border>
+        <Border x:Name="Hover" Background="White" Opacity="0" IsHitTestVisible="False" CornerRadius="{Binding Tag, RelativeSource={RelativeSource TemplatedParent}}" />
+        <Border x:Name="Focus" Margin="2" BorderThickness="2" BorderBrush="{DynamicResource Antd.Brush.Primary}" Opacity="0" IsHitTestVisible="False" />
+      </Grid>
+      <ControlTemplate.Triggers>
+        <MultiTrigger><MultiTrigger.Conditions><Condition Property="IsMouseOver" Value="True" /><Condition Property="IsEnabled" Value="True" /></MultiTrigger.Conditions><Setter TargetName="Hover" Property="Opacity" Value="0.2" /></MultiTrigger>
+        <Trigger Property="IsKeyboardFocused" Value="True"><Setter TargetName="Focus" Property="Opacity" Value="1" /></Trigger>
+      </ControlTemplate.Triggers>
+    </ControlTemplate></Setter.Value></Setter>
+  </Style>
+  <Style TargetType="c:AntSider" BasedOn="{StaticResource Antd.LayoutRegion}">
+    <Setter Property="Mode" Value="Dark" />
+    <Setter Property="Panel.ZIndex" Value="1" />
+    <Setter Property="Background" Value="{DynamicResource Antd.Brush.LayoutSider}" />
+    <Setter Property="Template"><Setter.Value><ControlTemplate TargetType="c:AntSider">
+      <Grid Background="{TemplateBinding Background}">
+        <Grid.RowDefinitions><RowDefinition /><RowDefinition Height="Auto" /></Grid.RowDefinitions>
+        <Border x:Name="Body" Padding="{TemplateBinding Padding}">
+          <ContentPresenter x:Name="PART_Content" HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" VerticalAlignment="{TemplateBinding VerticalContentAlignment}" />
+        </Border>
+        <Button x:Name="PART_Trigger" Grid.Row="1" Height="48" Visibility="Collapsed" Style="{StaticResource Antd.SiderTrigger}"
+                Command="{Binding CollapseCommand, RelativeSource={RelativeSource TemplatedParent}}" AutomationProperties.Name="Collapse sidebar">
+          <Grid>
+            <ContentPresenter x:Name="CustomTrigger" Content="{Binding RelativeSource={RelativeSource TemplatedParent}}" ContentTemplate="{TemplateBinding TriggerTemplate}" />
+            <Viewbox x:Name="Arrow" Width="14" Height="14" Visibility="Collapsed" RenderTransformOrigin="0.5,0.5" RenderTransform="{StaticResource Antd.Sider.ArrowLeft}">
+              <Canvas Width="896" Height="896"><Path Data="{StaticResource Antd.Sider.LeftGlyph}" Fill="{Binding Foreground, RelativeSource={RelativeSource AncestorType=Button}}"><Path.RenderTransform><TranslateTransform X="-64" Y="-64" /></Path.RenderTransform></Path></Canvas>
+            </Viewbox>
+          </Grid>
+        </Button>
+        <Canvas Grid.RowSpan="2" x:Name="ZeroLayer" Visibility="Collapsed">
+          <Button x:Name="PART_ZeroTrigger" Canvas.Left="{Binding ActualWidth, RelativeSource={RelativeSource TemplatedParent}}" Canvas.Top="64" Width="40" Height="40" Style="{StaticResource Antd.SiderZeroTrigger}"
+                  Command="{Binding CollapseCommand, RelativeSource={RelativeSource TemplatedParent}}" AutomationProperties.Name="Collapse sidebar">
+            <Grid>
+              <ContentPresenter x:Name="CustomZeroTrigger" Content="{Binding RelativeSource={RelativeSource TemplatedParent}}" ContentTemplate="{TemplateBinding TriggerTemplate}" />
+              <Viewbox x:Name="Bars" Width="20" Height="20" Visibility="Collapsed" FlowDirection="LeftToRight">
+                <Canvas Width="1024" Height="1024"><Path Data="{StaticResource Antd.Sider.BarsGlyph}" Fill="{Binding Foreground, RelativeSource={RelativeSource AncestorType=Button}}" /></Canvas>
+              </Viewbox>
+            </Grid>
+          </Button>
+        </Canvas>
+      </Grid>
+      <ControlTemplate.Triggers>
+        <Trigger Property="TriggerTemplate" Value="{x:Null}">
+          <Setter TargetName="CustomTrigger" Property="Visibility" Value="Collapsed" /><Setter TargetName="CustomZeroTrigger" Property="Visibility" Value="Collapsed" />
+          <Setter TargetName="Arrow" Property="Visibility" Value="Visible" /><Setter TargetName="Bars" Property="Visibility" Value="Visible" />
+        </Trigger>
+        <Trigger Property="IsCollapsible" Value="True"><Setter TargetName="PART_Trigger" Property="Visibility" Value="Visible" /></Trigger>
+        <Trigger Property="IsCollapsed" Value="True"><Setter TargetName="Arrow" Property="RenderTransform" Value="{StaticResource Antd.Sider.ArrowRight}" /><Setter TargetName="PART_Trigger" Property="AutomationProperties.Name" Value="Expand sidebar" /><Setter TargetName="PART_ZeroTrigger" Property="AutomationProperties.Name" Value="Expand sidebar" /></Trigger>
+        <Trigger Property="DockPanel.Dock" Value="Right">
+          <Setter TargetName="Arrow" Property="RenderTransform" Value="{StaticResource Antd.Sider.ArrowRight}" />
+          <Setter TargetName="PART_ZeroTrigger" Property="Canvas.Left" Value="-40" />
+          <Setter TargetName="PART_ZeroTrigger" Property="Tag"><Setter.Value><CornerRadius>8,0,0,8</CornerRadius></Setter.Value></Setter>
+        </Trigger>
+        <MultiTrigger><MultiTrigger.Conditions><Condition Property="DockPanel.Dock" Value="Right" /><Condition Property="IsCollapsed" Value="True" /></MultiTrigger.Conditions><Setter TargetName="Arrow" Property="RenderTransform" Value="{StaticResource Antd.Sider.ArrowLeft}" /></MultiTrigger>
+        <Trigger Property="Mode" Value="Light"><Setter TargetName="PART_ZeroTrigger" Property="BorderThickness" Value="0,1,1,1" /></Trigger>
+        <MultiTrigger><MultiTrigger.Conditions><Condition Property="DockPanel.Dock" Value="Right" /><Condition Property="Mode" Value="Light" /></MultiTrigger.Conditions><Setter TargetName="PART_ZeroTrigger" Property="BorderThickness" Value="1,1,0,1" /></MultiTrigger>
+        <Trigger Property="IsZeroWidthCollapsed" Value="True">
+          <Setter TargetName="Body" Property="Visibility" Value="Collapsed" /><Setter TargetName="PART_Trigger" Property="Visibility" Value="Collapsed" />
+        </Trigger>
+        <Trigger Property="UsesZeroWidthTrigger" Value="True"><Setter TargetName="PART_Trigger" Property="Visibility" Value="Collapsed" /></Trigger>
+        <MultiTrigger><MultiTrigger.Conditions><Condition Property="UsesZeroWidthTrigger" Value="True" /><Condition Property="IsCollapsible" Value="True" /></MultiTrigger.Conditions><Setter TargetName="ZeroLayer" Property="Visibility" Value="Visible" /></MultiTrigger>
+      </ControlTemplate.Triggers>
+    </ControlTemplate></Setter.Value></Setter>
+  </Style>
+</ResourceDictionary>

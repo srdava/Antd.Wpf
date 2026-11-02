@@ -1,0 +1,21 @@
+{
+  "version": "6.6.8",
+  "checkedAt": "2026-11-02",
+  "sources": [
+    {
+      "source": "https://raw.githubusercontent.com/ant-design/ant-design/6.6.8/components/grid/row.tsx",
+      "file": "components__grid__row.tsx",
+      "sha256": "1D4A602C669E7FFA61812DF8D3901BF5940B095737E7A3403B6E80D2252A67B6"
+    },
+    {
+      "source": "https://raw.githubusercontent.com/ant-design/ant-design/6.6.8/components/grid/col.tsx",
+      "file": "components__grid__col.tsx",
+      "sha256": "169165B3A6E7695AA5584DEE0CB7905AD16FE08E46B1B500D518D35F3C29F789"
+    },
+    {
+      "source": "https://raw.githubusercontent.com/ant-design/ant-design/6.6.8/components/grid/style/index.ts",
+      "file": "components__grid__style__index.ts",
+      "sha256": "EBF4A5186FFFCFC4B2DA4AC7C94BB5310570BB9406AEE271506BE4DE3D2A2CC2"
+    }
+  ]
+}

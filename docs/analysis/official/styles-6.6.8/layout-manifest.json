@@ -1,0 +1,64 @@
+{
+  "version": "6.6.8",
+  "checkedAt": "2026-11-02",
+  "sources": [
+    {
+      "source": "https://raw.githubusercontent.com/ant-design/ant-design/6.6.8/components/layout/layout.tsx",
+      "file": "components__layout__layout.tsx",
+      "sha256": "41DA6D0F5F1FE3BD6B88D74DE3ABBCE021BD2610F3C7D01BC1E388FEA192A351"
+    },
+    {
+      "source": "https://raw.githubusercontent.com/ant-design/ant-design/6.6.8/components/layout/Sider.tsx",
+      "file": "components__layout__Sider.tsx",
+      "sha256": "03DFF971345EA87B61C564D705587FDFC887FFAE25D80782DC466EC694D44593"
+    },
+    {
+      "source": "https://raw.githubusercontent.com/ant-design/ant-design/6.6.8/components/layout/style/index.ts",
+      "file": "components__layout__style__index.ts",
+      "sha256": "7E865426AE48F137E83CC1932E122846E95CA43094FEB24A98D914BC470CE70E"
+    },
+    {
+      "source": "https://raw.githubusercontent.com/ant-design/ant-design/6.6.8/components/layout/style/sider.ts",
+      "file": "components__layout__style__sider.ts",
+      "sha256": "677DAD22B3F50AA896E496238E59A957318C914FBB741448B40922C011774471"
+    }
+  ],
+  "icons": [
+    {
+      "source": "https://unpkg.com/@ant-design/icons-svg@4.6.0/es/asn/LeftOutlined.js",
+      "file": "icons-svg-4.6.0__LeftOutlined.js",
+      "sha256": "BA18251E7B1A92D1A7961D6F70F2D6654991F2615B7C103632BB7F28C2FEE698",
+      "method": "Official npm package 4.6.0 from existing temporary install; source snapshot only, no product dependency"
+    },
+    {
+      "source": "https://unpkg.com/@ant-design/icons-svg@4.6.0/es/asn/BarsOutlined.js",
+      "file": "icons-svg-4.6.0__BarsOutlined.js",
+      "sha256": "91FC79648DB32E8A24097014C90A7C52E74096C8B989DCED29C462842D60EF62",
+      "method": "Official npm package 4.6.0 from existing temporary install; source snapshot only, no product dependency"
+    }
+  ],
+  "generated": [
+    {
+      "file": "resolve-layout-tokens.cjs",
+      "sha256": "99F1BC71FAE0631286056FAC50EDD09CCFB40BB224F9FE0A7E424CD84E17FBD3",
+      "method": "Official antd@6.6.8 getDesignToken and Layout.prepareComponentToken"
+    },
+    {
+      "file": "layout-tokens.json",
+      "sha256": "3C9F3B26542541EAB0A7C3F283BCBE4BF0532C98CB321B48C2E929DF2059FC4E",
+      "method": "Official antd@6.6.8 getDesignToken and Layout.prepareComponentToken"
+    }
+  ],
+  "licenses": [
+    {
+      "source": "https://raw.githubusercontent.com/ant-design/ant-design/6.6.8/LICENSE",
+      "file": "antd-LICENSE.txt",
+      "sha256": "3C82654BB472EBBCACC4C1FF00F94AA8C60C4B7EE011B16BAFCBACECC3703458"
+    },
+    {
+      "source": "https://raw.githubusercontent.com/ant-design/ant-design-icons/master/LICENSE",
+      "file": "icons-LICENSE.txt",
+      "sha256": "5D367FB0A07340571542EB4EE8EB1ADD62D37B71BAD6786A57C2E9A86BF76C70"
+    }
+  ]
+}

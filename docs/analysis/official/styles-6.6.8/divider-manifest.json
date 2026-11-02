@@ -1,0 +1,28 @@
+{
+  "version": "6.6.8",
+  "checkedAt": "2026-10-30",
+  "sources": [
+    {
+      "source": "https://raw.githubusercontent.com/ant-design/ant-design/6.6.8/components/divider/style/index.ts",
+      "file": "components__divider__style__index.ts",
+      "sha256": "F3BCE2397FC5B040EA70BE268DE74106F5FDE6189582CAE54FD69D684219297E"
+    },
+    {
+      "source": "https://raw.githubusercontent.com/ant-design/ant-design/6.6.8/components/divider/index.tsx",
+      "file": "components__divider__index.tsx",
+      "sha256": "990DA7F633812C8ABF14B800EDAB5BAFE78AC1F10A80A9B6AC2D819084D3F7E8"
+    }
+  ],
+  "generated": [
+    {
+      "file": "resolve-divider-tokens.cjs",
+      "sha256": "1E10C41577669699A646F6960DA9054B15EC29CF9B84A20B5B3BD563316C10A6",
+      "method": "Official antd@6.6.8 getDesignToken and Divider.prepareComponentToken; reuse temporary npm install, no product dependency"
+    },
+    {
+      "file": "divider-tokens.json",
+      "sha256": "691D4AC05A618C29181B506E1E60C763DDB2937474C3B8A5EA3796ECCA1FE362",
+      "method": "Official antd@6.6.8 getDesignToken and Divider.prepareComponentToken; reuse temporary npm install, no product dependency"
+    }
+  ]
+}

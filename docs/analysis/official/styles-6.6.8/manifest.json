@@ -1,0 +1,269 @@
+{
+  "date": "2026-10-30",
+  "version": "6.6.8",
+  "repository": "https://github.com/ant-design/ant-design/tree/6.6.8",
+  "entries": [
+    {
+      "path": "components/button/style/token.ts",
+      "source": "https://raw.githubusercontent.com/ant-design/ant-design/6.6.8/components/button/style/token.ts",
+      "file": "docs\\analysis\\official\\styles-6.6.8\\components__button__style__token.ts",
+      "status": "downloaded",
+      "sha256": "D63EA1F1714FBD78C1016F52F28D4EEAEDEBF5BF073D89C6E88E134C0294031D",
+      "bytes": 11450
+    },
+    {
+      "path": "components/button/style/index.ts",
+      "source": "https://raw.githubusercontent.com/ant-design/ant-design/6.6.8/components/button/style/index.ts",
+      "file": "docs\\analysis\\official\\styles-6.6.8\\components__button__style__index.ts",
+      "status": "downloaded",
+      "sha256": "3ADF2B5F9A3A94BE52B5DFAD806F0D3E487B6F63AE69068C741455874AC97E29",
+      "bytes": 7862
+    },
+    {
+      "path": "components/input/style/index.ts",
+      "source": "https://raw.githubusercontent.com/ant-design/ant-design/6.6.8/components/input/style/index.ts",
+      "file": "docs\\analysis\\official\\styles-6.6.8\\components__input__style__index.ts",
+      "status": "downloaded",
+      "sha256": "A32DD54CAD4A1E8690C088C0965EDC901399DB50E00EDBDE845079078C535602",
+      "bytes": 17836
+    },
+    {
+      "path": "components/input/style/token.ts",
+      "source": "https://raw.githubusercontent.com/ant-design/ant-design/6.6.8/components/input/style/token.ts",
+      "file": "docs\\analysis\\official\\styles-6.6.8\\components__input__style__token.ts",
+      "status": "downloaded",
+      "sha256": "2BBB8BCAB910AC5AF811440FDB2C10D45C1BFB3492E32752138560F45BC0BD67",
+      "bytes": 4594
+    },
+    {
+      "path": "components/input/style/variants.ts",
+      "source": "https://raw.githubusercontent.com/ant-design/ant-design/6.6.8/components/input/style/variants.ts",
+      "file": "docs\\analysis\\official\\styles-6.6.8\\components__input__style__variants.ts",
+      "status": "downloaded",
+      "sha256": "09A9D1B0626C3B7AF22D3A87F2D39C6F732DA5EA5E00B5586771E9B23ABDBAC6",
+      "bytes": 13827
+    },
+    {
+      "path": "components/select/style/token.ts",
+      "source": "https://raw.githubusercontent.com/ant-design/ant-design/6.6.8/components/select/style/token.ts",
+      "file": "docs\\analysis\\official\\styles-6.6.8\\components__select__style__token.ts",
+      "status": "downloaded",
+      "sha256": "BB0ED56FC4AE886A19E36FC0909E9B4574C42AD993F858E78B57F9F1CC2CA64E",
+      "bytes": 5982
+    },
+    {
+      "path": "components/select/style/index.ts",
+      "source": "https://raw.githubusercontent.com/ant-design/ant-design/6.6.8/components/select/style/index.ts",
+      "file": "docs\\analysis\\official\\styles-6.6.8\\components__select__style__index.ts",
+      "status": "downloaded",
+      "sha256": "FC8075D3E875525C563BCDAFE96710A3E596EDB47B96DAD6A6D658B0E3FF8C12",
+      "bytes": 5529
+    },
+    {
+      "path": "components/checkbox/style/index.ts",
+      "source": "https://raw.githubusercontent.com/ant-design/ant-design/6.6.8/components/checkbox/style/index.ts",
+      "file": "docs\\analysis\\official\\styles-6.6.8\\components__checkbox__style__index.ts",
+      "status": "downloaded",
+      "sha256": "3AF2ACD08FF6C59D1801EF88D69EC0CAF58AA63771D536B7CDBE85AF81172ABE",
+      "bytes": 8171
+    },
+    {
+      "path": "components/radio/style/index.ts",
+      "source": "https://raw.githubusercontent.com/ant-design/ant-design/6.6.8/components/radio/style/index.ts",
+      "file": "docs\\analysis\\official\\styles-6.6.8\\components__radio__style__index.ts",
+      "status": "downloaded",
+      "sha256": "DD32E2F318E0A9C8DC55FAF04386619B6ECCAEC9691D813F2D175D7872E93CB6",
+      "bytes": 18791
+    },
+    {
+      "path": "components/switch/style/index.ts",
+      "source": "https://raw.githubusercontent.com/ant-design/ant-design/6.6.8/components/switch/style/index.ts",
+      "file": "docs\\analysis\\official\\styles-6.6.8\\components__switch__style__index.ts",
+      "status": "downloaded",
+      "sha256": "CE0EF07E05672007BDEA2FAE4AAC58E20297FE27C84531729A8B0EBF4A43214B",
+      "bytes": 13344
+    },
+    {
+      "path": "components/theme/themes/seed.ts",
+      "source": "https://raw.githubusercontent.com/ant-design/ant-design/6.6.8/components/theme/themes/seed.ts",
+      "file": "docs\\analysis\\official\\styles-6.6.8\\components__theme__themes__seed.ts",
+      "status": "downloaded",
+      "sha256": "A39BD3B0C29F23B22F4A78B68F0AF7DF46E90BB51E0F129C9DA5E568FB0E11F1",
+      "bytes": 1967
+    },
+    {
+      "path": "components/theme/themes/default/index.ts",
+      "source": "https://raw.githubusercontent.com/ant-design/ant-design/6.6.8/components/theme/themes/default/index.ts",
+      "file": "docs\\analysis\\official\\styles-6.6.8\\components__theme__themes__default__index.ts",
+      "status": "downloaded",
+      "sha256": "2A5511D9A6E320FD194011FC9949E8192075BE650760FB066AE9EF9E5430D163",
+      "bytes": 1838
+    },
+    {
+      "path": "components/theme/themes/default/colors.ts",
+      "source": "https://raw.githubusercontent.com/ant-design/ant-design/6.6.8/components/theme/themes/default/colors.ts",
+      "file": "docs\\analysis\\official\\styles-6.6.8\\components__theme__themes__default__colors.ts",
+      "status": "downloaded",
+      "sha256": "DB4659868600A810C6424E5F99B0FECE420EC5419AF6A898132C0CE48E76F343",
+      "bytes": 1918
+    },
+    {
+      "path": "components/theme/themes/dark/index.ts",
+      "source": "https://raw.githubusercontent.com/ant-design/ant-design/6.6.8/components/theme/themes/dark/index.ts",
+      "file": "docs\\analysis\\official\\styles-6.6.8\\components__theme__themes__dark__index.ts",
+      "status": "downloaded",
+      "sha256": "25D7CFC48EBFF4B03BEC571EE8D9CD9CF60F9246E7DDBB35DECCF7649D89536A",
+      "bytes": 2096
+    },
+    {
+      "path": "components/theme/themes/dark/colors.ts",
+      "source": "https://raw.githubusercontent.com/ant-design/ant-design/6.6.8/components/theme/themes/dark/colors.ts",
+      "file": "docs\\analysis\\official\\styles-6.6.8\\components__theme__themes__dark__colors.ts",
+      "status": "downloaded",
+      "sha256": "9F0FEE41BC5460628FBD270F2D9447C6879A9F1312E94CB9F0C5E34C52896F13",
+      "bytes": 1975
+    },
+    {
+      "path": "components/theme/themes/shared/genFontSizes.ts",
+      "source": "https://raw.githubusercontent.com/ant-design/ant-design/6.6.8/components/theme/themes/shared/genFontSizes.ts",
+      "file": "docs\\analysis\\official\\styles-6.6.8\\components__theme__themes__shared__genFontSizes.ts",
+      "status": "downloaded",
+      "sha256": "E95469B8561AF33067CF3CD69E3EC0AA0AB59D0B9A2E1F053C8C7514D39223D0",
+      "bytes": 585
+    },
+    {
+      "path": "components/theme/themes/shared/genCommonMapToken.ts",
+      "source": "https://raw.githubusercontent.com/ant-design/ant-design/6.6.8/components/theme/themes/shared/genCommonMapToken.ts",
+      "file": "docs\\analysis\\official\\styles-6.6.8\\components__theme__themes__shared__genCommonMapToken.ts",
+      "status": "downloaded",
+      "sha256": "25FA0F077B19047839C3263D1262198A3B98B9C09E7071AC1CDEC0CC08A91837",
+      "bytes": 589
+    },
+    {
+      "path": "components/theme/themes/shared/genColorMapToken.ts",
+      "source": "https://raw.githubusercontent.com/ant-design/ant-design/6.6.8/components/theme/themes/shared/genColorMapToken.ts",
+      "file": "docs\\analysis\\official\\styles-6.6.8\\components__theme__themes__shared__genColorMapToken.ts",
+      "status": "downloaded",
+      "sha256": "AB13C30C9D8066982372D6F0CB946EED42FB081DE05F447E2A7432E684DD2D34",
+      "bytes": 4124
+    },
+    {
+      "path": "components/theme/themes/shared/genControlHeight.ts",
+      "source": "https://raw.githubusercontent.com/ant-design/ant-design/6.6.8/components/theme/themes/shared/genControlHeight.ts",
+      "file": "docs\\analysis\\official\\styles-6.6.8\\components__theme__themes__shared__genControlHeight.ts",
+      "status": "downloaded",
+      "sha256": "50C6C72DFB9F5311E27912F51A2A9A8C6B0DE111CFF86A8C9639D41C73B0CCDC",
+      "bytes": 349
+    },
+    {
+      "path": "components/theme/util/alias.ts",
+      "source": "https://raw.githubusercontent.com/ant-design/ant-design/6.6.8/components/theme/util/alias.ts",
+      "file": "docs\\analysis\\official\\styles-6.6.8\\components__theme__util__alias.ts",
+      "status": "downloaded",
+      "sha256": "90C7B1AABD241FB1AF71F137EF1BBBE237506C22F1BAB1A545213F8601724F86",
+      "bytes": 7693
+    },
+    {
+      "path": "components/style/index.ts",
+      "source": "https://raw.githubusercontent.com/ant-design/ant-design/6.6.8/components/style/index.ts",
+      "status": "unavailable",
+      "error": "Response status code does not indicate success: 404 (Not Found)."
+    },
+    {
+      "path": "components/theme/themes/shared/genRadius.ts",
+      "source": "https://raw.githubusercontent.com/ant-design/ant-design/6.6.8/components/theme/themes/shared/genRadius.ts",
+      "file": "docs\\analysis\\official\\styles-6.6.8\\components__theme__themes__shared__genRadius.ts",
+      "status": "downloaded",
+      "sha256": "CB7816A66771DB3B3CD92654DCF1C4CEA2105E9BB81C3AB55289170F558FC6E6",
+      "bytes": 1371
+    },
+    {
+      "path": "components/theme/themes/shared/genSizeMapToken.ts",
+      "source": "https://raw.githubusercontent.com/ant-design/ant-design/6.6.8/components/theme/themes/shared/genSizeMapToken.ts",
+      "file": "docs\\analysis\\official\\styles-6.6.8\\components__theme__themes__shared__genSizeMapToken.ts",
+      "status": "downloaded",
+      "sha256": "62C847BCBB4B6694D34D1582B22EFEFC847EDCE206F6856CAC5FD25C6FEDE23D",
+      "bytes": 589
+    },
+    {
+      "path": "components/theme/themes/shared/genFontMapToken.ts",
+      "source": "https://raw.githubusercontent.com/ant-design/ant-design/6.6.8/components/theme/themes/shared/genFontMapToken.ts",
+      "file": "docs\\analysis\\official\\styles-6.6.8\\components__theme__themes__shared__genFontMapToken.ts",
+      "status": "downloaded",
+      "sha256": "109D7C1CB0CAD5420E24E796971329CAA648C2E2707A538D0863EBE724938640",
+      "bytes": 1300
+    },
+    {
+      "path": "components/style/index.tsx",
+      "source": "https://raw.githubusercontent.com/ant-design/ant-design/6.6.8/components/style/index.tsx",
+      "file": "docs\\analysis\\official\\styles-6.6.8\\components__style__index.tsx",
+      "status": "downloaded",
+      "sha256": "01787D0B5EF07DC98E18F89FA25113C6C2EEF7D99BC591E76808DE91DC594180",
+      "bytes": 5200
+    },
+    {
+      "path": "components/select/style/select-input.ts",
+      "source": "https://raw.githubusercontent.com/ant-design/ant-design/6.6.8/components/select/style/select-input.ts",
+      "file": "docs\\analysis\\official\\styles-6.6.8\\components__select__style__select-input.ts",
+      "status": "downloaded",
+      "sha256": "54AE620DC82D9FEB660802E4E224111E418F6788140A4B980679F3517EC7AD91",
+      "bytes": 15642
+    },
+    {
+      "path": "components/select/style/dropdown.ts",
+      "source": "https://raw.githubusercontent.com/ant-design/ant-design/6.6.8/components/select/style/dropdown.ts",
+      "file": "docs\\analysis\\official\\styles-6.6.8\\components__select__style__dropdown.ts",
+      "status": "downloaded",
+      "sha256": "25C8D3BBF43781E874D0BE8EB35AA6256DE76280F40CD64941921A4228C28BE1",
+      "bytes": 5885
+    },
+    {
+      "path": "components/button/style/variant.ts",
+      "source": "https://raw.githubusercontent.com/ant-design/ant-design/6.6.8/components/button/style/variant.ts",
+      "file": "docs\\analysis\\official\\styles-6.6.8\\components__button__style__variant.ts",
+      "status": "downloaded",
+      "sha256": "829BD05CED1469F68133EBCB7E9956BCF33D3357AA5C3545D305D6B9988697B5",
+      "bytes": 12980
+    },
+    {
+      "path": "components/theme/themes/default/colorAlgorithm.ts",
+      "source": "https://raw.githubusercontent.com/ant-design/ant-design/6.6.8/components/theme/themes/default/colorAlgorithm.ts",
+      "file": "docs\\analysis\\official\\styles-6.6.8\\components__theme__themes__default__colorAlgorithm.ts",
+      "status": "downloaded",
+      "sha256": "53C58B694DAEAAE2B7E77B4C2651CD3525DE0C4A557568D7AE2CC17EE6734385",
+      "bytes": 349
+    },
+    {
+      "path": "components/theme/themes/dark/colorAlgorithm.ts",
+      "source": "https://raw.githubusercontent.com/ant-design/ant-design/6.6.8/components/theme/themes/dark/colorAlgorithm.ts",
+      "file": "docs\\analysis\\official\\styles-6.6.8\\components__theme__themes__dark__colorAlgorithm.ts",
+      "status": "downloaded",
+      "sha256": "AE4C339F6336115BACE99D2DC82DD24DC7E23108EDB7285397DF90A324D7A4D2",
+      "bytes": 350
+    }
+  ],
+  "npm": {
+    "metadata": "https://registry.npmjs.org/antd/6.6.8",
+    "tarball": "https://registry.npmjs.org/antd/-/antd-6.6.8.tgz",
+    "integrity": "sha512-e+hDj/0myqbLBn8UGS0dYhPROAENruNscWe4gzyTnwx7yTip7D72wJUNxtsTplPXwRM1Mo4tXNSgaSb3UmV3RQ==",
+    "shasum": "efdd0397de161b52b853a56554cdcfa980c58229",
+    "method": "npm install --ignore-scripts in OS temp; execute official getDesignToken default/dark; no production dependency added"
+  },
+  "generated": [
+    {
+      "file": "docs\\analysis\\official\\styles-6.6.8\\resolved-alias-tokens.json",
+      "sha256": "14F044243B856D276C978D1D738613E87C15370EE06C136E76ACE7C2FDC75E20",
+      "classification": "local reproducible token probe artifact"
+    },
+    {
+      "file": "docs\\analysis\\official\\styles-6.6.8\\resolve-alias-tokens.cjs",
+      "sha256": "CBB2A4804B9D95895A3611C32B45E808502ACA3951E33B370008DB7C0F18993F",
+      "classification": "local reproducible token probe artifact"
+    },
+    {
+      "file": "docs\\analysis\\official\\styles-6.6.8\\npm-package.json",
+      "sha256": "2025D31E42F50DE9618D05C7A6C0B397BE60F7F915CA4FD3CE0F8F5631910531",
+      "classification": "official registry metadata"
+    }
+  ]
+}

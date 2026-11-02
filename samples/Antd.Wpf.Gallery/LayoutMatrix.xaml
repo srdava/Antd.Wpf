@@ -1,0 +1,68 @@
+<Window xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:antd="https://antd-wpf.dev/xaml"
+        Title="Antd.Wpf · Layout" Width="1320" Height="900" UseLayoutRounding="True"
+        FontFamily="Segoe UI, Microsoft YaHei UI" FontSize="14">
+  <ScrollViewer VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Auto">
+  <ItemsControl MinWidth="1200" Width="{Binding ViewportWidth, RelativeSource={RelativeSource AncestorType=ScrollViewer}}">
+    <ItemsControl.Items><x:Static Member="antd:ThemeMode.Light" /><x:Static Member="antd:ThemeMode.Dark" /></ItemsControl.Items>
+    <ItemsControl.ItemsPanel><ItemsPanelTemplate><UniformGrid Columns="2" /></ItemsPanelTemplate></ItemsControl.ItemsPanel>
+    <ItemsControl.ItemTemplate><DataTemplate>
+      <antd:AntThemeScope Mode="{Binding}" MotionEnabled="False">
+        <Border Background="{DynamicResource Antd.Brush.Container}" Padding="20" TextElement.Foreground="{DynamicResource Antd.Brush.Text}">
+          <StackPanel>
+            <TextBlock Text="{Binding StringFormat='Layout · {0}'}" FontSize="24" FontWeight="SemiBold" Margin="0,0,0,12" />
+            <TextBlock Text="Header / footer · Sider 200 → 80" Foreground="{DynamicResource Antd.Brush.Secondary}" Margin="0,0,0,8" />
+            <antd:AntLayout Height="270">
+              <antd:AntHeader Content="Header · 64 DIP" Foreground="White" />
+              <antd:AntFooter Content="Footer · padding 24 / 50" HorizontalContentAlignment="Center" />
+              <antd:AntSider IsCollapsible="True">
+                <ScrollViewer VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Disabled">
+                  <Grid Margin="12">
+                    <Grid.RowDefinitions><RowDefinition Height="Auto" /><RowDefinition Height="Auto" /></Grid.RowDefinitions>
+                    <TextBlock Text="Navigation" TextWrapping="Wrap">
+                      <TextBlock.Style><Style TargetType="TextBlock">
+                        <Setter Property="Foreground" Value="{DynamicResource Antd.Brush.Text}" />
+                        <Setter Property="Margin" Value="0,0,0,8" />
+                        <Style.Triggers><DataTrigger Binding="{Binding IsCollapsed, RelativeSource={RelativeSource AncestorType=antd:AntSider}}" Value="True"><Setter Property="Visibility" Value="Collapsed" /></DataTrigger></Style.Triggers>
+                      </Style></TextBlock.Style>
+                    </TextBlock>
+                    <antd:AntButton Grid.Row="1" Icon="⌂" ToolTip="Overview" AutomationProperties.Name="Overview">
+                      <antd:AntButton.Style><Style TargetType="antd:AntButton">
+                        <Setter Property="Content" Value="Overview" /><Setter Property="Variant" Value="Text" />
+                        <Style.Triggers><DataTrigger Binding="{Binding IsCollapsed, RelativeSource={RelativeSource AncestorType=antd:AntSider}}" Value="True"><Setter Property="Content" Value="{x:Null}" /></DataTrigger></Style.Triggers>
+                      </Style></antd:AntButton.Style>
+                    </antd:AntButton>
+                  </Grid>
+                </ScrollViewer>
+              </antd:AntSider>
+              <antd:AntContent>
+                <Border Padding="16" Background="{DynamicResource Antd.Brush.Background}">
+                  <StackPanel><TextBlock Text="Content / 内容" /><antd:AntInput Text="Input survives collapse" Margin="0,8,0,0" /></StackPanel>
+                </Border>
+              </antd:AntContent>
+            </antd:AntLayout>
+            <antd:AntDivider Content="Zero width · left · expand with keyboard" IsPlain="True" Margin="0,8" />
+            <antd:AntLayout Height="112">
+              <antd:AntSider IsCollapsible="True" IsCollapsed="True" CollapsedWidth="0"><TextBlock Text="Preserved sidebar" Margin="16" Foreground="{DynamicResource Antd.Brush.Text}" /></antd:AntSider>
+              <antd:AntContent Background="{DynamicResource Antd.Brush.Background}">
+                <Border Padding="56,16,16,16"><StackPanel><TextBlock Text="40 × 40 trigger at 64 DIP" /><antd:AntInput Text="Sidebar content stays alive" Margin="0,8,0,0" /></StackPanel></Border>
+              </antd:AntContent>
+            </antd:AntLayout>
+            <antd:AntDivider Content="Right · independent Light · collapsed 80" IsPlain="True" Margin="0,8" />
+            <antd:AntLayout Height="112">
+              <antd:AntSider DockPanel.Dock="Right" IsCollapsible="True" IsCollapsed="True" Mode="Light"><TextBlock Text="Light" Margin="16" Foreground="{DynamicResource Antd.Brush.Text}" /></antd:AntSider>
+              <antd:AntContent Background="{DynamicResource Antd.Brush.Background}"><TextBlock Text="Content uses its parent palette" Margin="16" /></antd:AntContent>
+            </antd:AntLayout>
+            <antd:AntDivider Content="Zero width · right" IsPlain="True" Margin="0,8" />
+            <antd:AntLayout Height="112">
+              <antd:AntSider DockPanel.Dock="Right" IsCollapsible="True" IsCollapsed="True" CollapsedWidth="0"><TextBlock Text="Right sidebar" Margin="16" Foreground="{DynamicResource Antd.Brush.Text}" /></antd:AntSider>
+              <antd:AntContent Background="{DynamicResource Antd.Brush.Background}"><TextBlock Text="Trigger extends into the content edge" Margin="16" /></antd:AntContent>
+            </antd:AntLayout>
+          </StackPanel>
+        </Border>
+      </antd:AntThemeScope>
+    </DataTemplate></ItemsControl.ItemTemplate>
+  </ItemsControl>
+  </ScrollViewer>
+</Window>

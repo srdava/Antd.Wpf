@@ -1,0 +1,13 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFrameworks>net48;net8.0-windows</TargetFrameworks>
+    <IsPackable>false</IsPackable>
+    <UseWPF>true</UseWPF>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="../../src/Antd.Wpf/Antd.Wpf.csproj" />
+  </ItemGroup>
+</Project>

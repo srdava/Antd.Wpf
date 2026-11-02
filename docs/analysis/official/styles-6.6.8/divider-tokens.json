@@ -1,0 +1,38 @@
+{
+  "version": "6.6.8",
+  "method": "Official getDesignToken + Divider prepareComponentToken",
+  "modes": {
+    "Light": {
+      "colorSplit": "rgba(5,5,5,0.06)",
+      "colorTextHeading": "rgba(0,0,0,0.88)",
+      "fontSize": 14,
+      "fontSizeLG": 16,
+      "lineHeight": 1.5714285714285714,
+      "marginXS": 8,
+      "margin": 16,
+      "marginLG": 24,
+      "lineWidth": 1,
+      "component": {
+        "textPaddingInline": "1em",
+        "orientationMargin": 0.05,
+        "verticalMarginInline": 8
+      }
+    },
+    "Dark": {
+      "colorSplit": "rgba(253,253,253,0.12)",
+      "colorTextHeading": "rgba(255,255,255,0.85)",
+      "fontSize": 14,
+      "fontSizeLG": 16,
+      "lineHeight": 1.5714285714285714,
+      "marginXS": 8,
+      "margin": 16,
+      "marginLG": 24,
+      "lineWidth": 1,
+      "component": {
+        "textPaddingInline": "1em",
+        "orientationMargin": 0.05,
+        "verticalMarginInline": 8
+      }
+    }
+  }
+}

@@ -1,0 +1,13 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <DisableWinExeOutputInference>true</DisableWinExeOutputInference>
+    <TargetFrameworks>net48;net481;net8.0-windows;net10.0-windows</TargetFrameworks>
+    <UseWPF>true</UseWPF>
+    <IsPackable>false</IsPackable>
+    <RestorePackagesPath>$(MSBuildProjectDirectory)/../../../artifacts/consumer-packages</RestorePackagesPath>
+  </PropertyGroup>
+  <ItemGroup>
+    <PackageReference Include="Antd.Wpf" Version="0.1.0-alpha.1" />
+  </ItemGroup>
+</Project>

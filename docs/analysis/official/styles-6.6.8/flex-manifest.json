@@ -1,0 +1,21 @@
+{
+  "version": "6.6.8",
+  "checkedAt": "2026-11-02",
+  "sources": [
+    {
+      "source": "https://raw.githubusercontent.com/ant-design/ant-design/6.6.8/components/flex/index.tsx",
+      "file": "components__flex__index.tsx",
+      "sha256": "2B9686EBBCFB556B19827AAC378BFE5B4F26E18302752F0BD450BF7E64A13FBB"
+    },
+    {
+      "source": "https://raw.githubusercontent.com/ant-design/ant-design/6.6.8/components/flex/utils.ts",
+      "file": "components__flex__utils.ts",
+      "sha256": "FF1CEB5097D1719B0E173F2CC21EE77620AC5D7BEEBD47E95E0D51958F2F2470"
+    },
+    {
+      "source": "https://raw.githubusercontent.com/ant-design/ant-design/6.6.8/components/flex/style/index.ts",
+      "file": "components__flex__style__index.ts",
+      "sha256": "3BB40B8FE27B6FBAADB799C2DC31D120E1A646F83D3FF2F3C634F9A774E5ACB4"
+    }
+  ]
+}

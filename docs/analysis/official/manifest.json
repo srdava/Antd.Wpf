@@ -1,0 +1,591 @@
+{
+  "date": "2026-10-29",
+  "version": "6.6.8",
+  "overview": "https://ant.design/components/overview/",
+  "entries": [
+    {
+      "slug": "_util",
+      "page": "https://ant.design/components/_util/",
+      "source": "https://ant.design/components/_util.md",
+      "status": "downloaded",
+      "bytes": 2695,
+      "sha256": "4acff15476e753f68a80eb99be5303787e16d0764f6eb5acb8be1b637e2a6fe0"
+    },
+    {
+      "slug": "affix",
+      "page": "https://ant.design/components/affix/",
+      "source": "https://ant.design/components/affix.md",
+      "status": "downloaded",
+      "bytes": 4389,
+      "sha256": "b075dde9b2ef3cb5503f381f6ac9a72fc8958d6079d1719df6863bf9b9183190"
+    },
+    {
+      "slug": "alert",
+      "page": "https://ant.design/components/alert/",
+      "source": "https://ant.design/components/alert.md",
+      "status": "downloaded",
+      "bytes": 18740,
+      "sha256": "357ab69b54591a29803e15b7db3d91854cc14b4f31f911ba165690da7344b341"
+    },
+    {
+      "slug": "anchor",
+      "page": "https://ant.design/components/anchor/",
+      "source": "https://ant.design/components/anchor.md",
+      "status": "downloaded",
+      "bytes": 16368,
+      "sha256": "1f61f7a77cdf9f59ea3a901def06c83ccb86ff4ac1f4dd77d49e363c9bcfcb31"
+    },
+    {
+      "slug": "app",
+      "page": "https://ant.design/components/app/",
+      "source": "https://ant.design/components/app.md",
+      "status": "downloaded",
+      "bytes": 6646,
+      "sha256": "bbc00f9236d634cbd8773dd7bf16e7bd7f21ce4efc991b90ab6a69f4888706c8"
+    },
+    {
+      "slug": "auto-complete",
+      "page": "https://ant.design/components/auto-complete/",
+      "source": "https://ant.design/components/auto-complete.md",
+      "status": "downloaded",
+      "bytes": 29744,
+      "sha256": "f261caf5b0793c2a4f7ab2cb221d879b9401e3604625a6e55a425cf20aa35a03"
+    },
+    {
+      "slug": "avatar",
+      "page": "https://ant.design/components/avatar/",
+      "source": "https://ant.design/components/avatar.md",
+      "status": "downloaded",
+      "bytes": 14108,
+      "sha256": "64895a0c9fc2eda753c32af7d0af98897101c98bc58b684af1914c02e455db09"
+    },
+    {
+      "slug": "badge",
+      "page": "https://ant.design/components/badge/",
+      "source": "https://ant.design/components/badge.md",
+      "status": "downloaded",
+      "bytes": 17167,
+      "sha256": "5523771d3c2795d3dc4913b7a8c3c7fd04ed2643d12b3bfc61f6bba87bf20e5c"
+    },
+    {
+      "slug": "border-beam",
+      "page": "https://ant.design/components/border-beam/",
+      "source": "https://ant.design/components/border-beam.md",
+      "status": "downloaded",
+      "bytes": 15315,
+      "sha256": "1b01d64ae413f19185c4b4198a0974b4d1aa249b55d3ac975ccacf0108e3d7c9"
+    },
+    {
+      "slug": "breadcrumb",
+      "page": "https://ant.design/components/breadcrumb/",
+      "source": "https://ant.design/components/breadcrumb.md",
+      "status": "downloaded",
+      "bytes": 12135,
+      "sha256": "9b203fbe1f039c00884925870642976607e097b76d6ed9d9dd402150f9a67ca1"
+    },
+    {
+      "slug": "button",
+      "page": "https://ant.design/components/button/",
+      "source": "https://ant.design/components/button.md",
+      "status": "downloaded",
+      "bytes": 37635,
+      "sha256": "bcbeca09e8a1ffd47ab66e38970d5da0c7f625b1b20a65fe7dc81a3d95d82b16"
+    },
+    {
+      "slug": "calendar",
+      "page": "https://ant.design/components/calendar/",
+      "source": "https://ant.design/components/calendar.md",
+      "status": "downloaded",
+      "bytes": 31263,
+      "sha256": "9afe950f35cd6c9655fd7f098c422afe871f44c20da49ccd1995051c0936429a"
+    },
+    {
+      "slug": "card",
+      "page": "https://ant.design/components/card/",
+      "source": "https://ant.design/components/card.md",
+      "status": "downloaded",
+      "bytes": 17772,
+      "sha256": "00b468923e746d0eb4a278ec97442c2087ad010c0f9bc8358614ababa76bff05"
+    },
+    {
+      "slug": "carousel",
+      "page": "https://ant.design/components/carousel/",
+      "source": "https://ant.design/components/carousel.md",
+      "status": "downloaded",
+      "bytes": 9662,
+      "sha256": "5e31d5fc6b5cc0adbe998ba9168937e21299cf4e85459d8ddcfded31e02eb03e"
+    },
+    {
+      "slug": "cascader",
+      "page": "https://ant.design/components/cascader/",
+      "source": "https://ant.design/components/cascader.md",
+      "status": "downloaded",
+      "bytes": 40056,
+      "sha256": "4dbfde009c59477f22adbf6a1fb2fa7bc4cd52f684b2b38c6ad68c40280c32dc"
+    },
+    {
+      "slug": "checkbox",
+      "page": "https://ant.design/components/checkbox/",
+      "source": "https://ant.design/components/checkbox.md",
+      "status": "downloaded",
+      "bytes": 13820,
+      "sha256": "ad1119e5606f5b9769bcafaf55b68366000cea65155f44666e0e698af62e97e2"
+    },
+    {
+      "slug": "collapse",
+      "page": "https://ant.design/components/collapse/",
+      "source": "https://ant.design/components/collapse.md",
+      "status": "downloaded",
+      "bytes": 22750,
+      "sha256": "1d57ff91ab61477beb63c53ebe3f0b0f9eec4fca2448e273e57b1b2b956a4be9"
+    },
+    {
+      "slug": "color-picker",
+      "page": "https://ant.design/components/color-picker/",
+      "source": "https://ant.design/components/color-picker.md",
+      "status": "downloaded",
+      "bytes": 16669,
+      "sha256": "7174b9e0bb5ed3fead9dc2caff78a202aa1b475ae351c3ab93fc021aebbd81cc"
+    },
+    {
+      "slug": "config-provider",
+      "page": "https://ant.design/components/config-provider/",
+      "source": "https://ant.design/components/config-provider.md",
+      "status": "downloaded",
+      "bytes": 47626,
+      "sha256": "024f71e36c939ccb0db9721db5a8d8a9ff90b0217264a5b40e454b389dceecaf"
+    },
+    {
+      "slug": "date-picker",
+      "page": "https://ant.design/components/date-picker/",
+      "source": "https://ant.design/components/date-picker.md",
+      "status": "downloaded",
+      "bytes": 63346,
+      "sha256": "641a22c8db4374b732a2b72f7df66c1d6010013fa723589b9b50e19d2cd0d4be"
+    },
+    {
+      "slug": "descriptions",
+      "page": "https://ant.design/components/descriptions/",
+      "source": "https://ant.design/components/descriptions.md",
+      "status": "downloaded",
+      "bytes": 17630,
+      "sha256": "4d8a9ccffd0a4bc88707aec2db97d9d5b4e32779b232e4eb63384eef60643513"
+    },
+    {
+      "slug": "divider",
+      "page": "https://ant.design/components/divider/",
+      "source": "https://ant.design/components/divider.md",
+      "status": "downloaded",
+      "bytes": 12105,
+      "sha256": "9e644b63e07bb4cf38ebadf7b8b1e5fba4e0d2cc68410a6195023c0f552ee2c9"
+    },
+    {
+      "slug": "drawer",
+      "page": "https://ant.design/components/drawer/",
+      "source": "https://ant.design/components/drawer.md",
+      "status": "downloaded",
+      "bytes": 35441,
+      "sha256": "51ad31ac30a7ec001d25224220b6bc2eb9b16140d414c68adf515449a84b337b"
+    },
+    {
+      "slug": "dropdown",
+      "page": "https://ant.design/components/dropdown/",
+      "source": "https://ant.design/components/dropdown.md",
+      "status": "downloaded",
+      "bytes": 35595,
+      "sha256": "fea46d3a827a9d791c57e9ee58ab8183d3bb3f5a8f72e8d8145578775495a1ce"
+    },
+    {
+      "slug": "empty",
+      "page": "https://ant.design/components/empty/",
+      "source": "https://ant.design/components/empty.md",
+      "status": "downloaded",
+      "bytes": 7498,
+      "sha256": "b679d2ccfe09c0dbe8a3637f3dfd4858eab52edd5b51a960d2005b9430e532cf"
+    },
+    {
+      "slug": "flex",
+      "page": "https://ant.design/components/flex/",
+      "source": "https://ant.design/components/flex.md",
+      "status": "downloaded",
+      "bytes": 7304,
+      "sha256": "9e28342b7794e7a7b779de9bb2621d1a036b87c2164ba63f1ddfedb4f2683091"
+    },
+    {
+      "slug": "float-button",
+      "page": "https://ant.design/components/float-button/",
+      "source": "https://ant.design/components/float-button.md",
+      "status": "downloaded",
+      "bytes": 19883,
+      "sha256": "1930412a7a1b7ddfa286d69c8028842d2d740ceb5460670040c6c2173d1a510a"
+    },
+    {
+      "slug": "form",
+      "page": "https://ant.design/components/form/",
+      "source": "https://ant.design/components/form.md",
+      "status": "downloaded",
+      "bytes": 136955,
+      "sha256": "e339e7a9614eb29ef1cb15b38dc4b418f954d7acca7b287fee011593a652ed73"
+    },
+    {
+      "slug": "grid",
+      "page": "https://ant.design/components/grid/",
+      "source": "https://ant.design/components/grid.md",
+      "status": "downloaded",
+      "bytes": 23315,
+      "sha256": "32c1cbdcb0e752685c919b92c324373cfee97099f82ffbf22c4384452433f6db"
+    },
+    {
+      "slug": "icon",
+      "page": "https://ant.design/components/icon/",
+      "source": "https://ant.design/components/icon.md",
+      "status": "downloaded",
+      "bytes": 14574,
+      "sha256": "8cd06a2c1e8e68fb5df07c81d4ac16b1645797eba85d965dbada71a4ce45e210"
+    },
+    {
+      "slug": "image",
+      "page": "https://ant.design/components/image/",
+      "source": "https://ant.design/components/image.md",
+      "status": "downloaded",
+      "bytes": 33511,
+      "sha256": "08690f1cf3dfb5008631de4962bc87fad60d811ab93debca12d212db71b3a31f"
+    },
+    {
+      "slug": "input",
+      "page": "https://ant.design/components/input/",
+      "source": "https://ant.design/components/input.md",
+      "status": "downloaded",
+      "bytes": 35718,
+      "sha256": "6e80d1cdebac626aed542fce2ba48e6640bca11787c31f20484e512123f429ba"
+    },
+    {
+      "slug": "input-number",
+      "page": "https://ant.design/components/input-number/",
+      "source": "https://ant.design/components/input-number.md",
+      "status": "downloaded",
+      "bytes": 23099,
+      "sha256": "9032307ec99b00f0e2625d74bdca082f13ea98bd9ef9b820ea50f59a5429b028"
+    },
+    {
+      "slug": "layout",
+      "page": "https://ant.design/components/layout/",
+      "source": "https://ant.design/components/layout.md",
+      "status": "downloaded",
+      "bytes": 28911,
+      "sha256": "a3641de0b5478b34a7950c667b28cef5e0542220859794a0e740d3776083b185"
+    },
+    {
+      "slug": "list",
+      "page": "https://ant.design/components/list/",
+      "source": "https://ant.design/components/list.md",
+      "status": "downloaded",
+      "bytes": 38952,
+      "sha256": "d795a559eefc8c658649184c31a6694818ef9fd35fd9536c0acc37c1269fada2"
+    },
+    {
+      "slug": "listy",
+      "page": "https://ant.design/components/listy/",
+      "source": "https://ant.design/components/listy.md",
+      "status": "downloaded",
+      "bytes": 15929,
+      "sha256": "486b5ed66e1d1ea033e94e9743521b35569252f41188466726a16ce2c80691e1"
+    },
+    {
+      "slug": "masonry",
+      "page": "https://ant.design/components/masonry/",
+      "source": "https://ant.design/components/masonry.md",
+      "status": "downloaded",
+      "bytes": 11227,
+      "sha256": "df5c54ade7a18e1e18aa79901f0786092640b065ecaecd18b2273df04e8dc483"
+    },
+    {
+      "slug": "mentions",
+      "page": "https://ant.design/components/mentions/",
+      "source": "https://ant.design/components/mentions.md",
+      "status": "downloaded",
+      "bytes": 23617,
+      "sha256": "e77825c2a06aec620af83797ae1623950ed235d3b5250c2022d0c2eead5cf48f"
+    },
+    {
+      "slug": "menu",
+      "page": "https://ant.design/components/menu/",
+      "source": "https://ant.design/components/menu.md",
+      "status": "downloaded",
+      "bytes": 39523,
+      "sha256": "31a6aebf4dd6e4b6782bee0df5d168b53df7ec5df8160331f43d4cee30aa4e9f"
+    },
+    {
+      "slug": "message",
+      "page": "https://ant.design/components/message/",
+      "source": "https://ant.design/components/message.md",
+      "status": "downloaded",
+      "bytes": 18163,
+      "sha256": "7fd94bca7955197b3965090642d57955608112dfb442b2ed0fe5cc133eb7314f"
+    },
+    {
+      "slug": "modal",
+      "page": "https://ant.design/components/modal/",
+      "source": "https://ant.design/components/modal.md",
+      "status": "downloaded",
+      "bytes": 41475,
+      "sha256": "a55b9b9e8ef61c28beabbcf84ce48f4cd3f8ca31e35dbaf29de8dcd9aa1ba05a"
+    },
+    {
+      "slug": "notification",
+      "page": "https://ant.design/components/notification/",
+      "source": "https://ant.design/components/notification.md",
+      "status": "downloaded",
+      "bytes": 30819,
+      "sha256": "269c0f613a8e659fa1cec3539a3ccddd6b257bcf645b2e2112597a35c6afb37e"
+    },
+    {
+      "slug": "pagination",
+      "page": "https://ant.design/components/pagination/",
+      "source": "https://ant.design/components/pagination.md",
+      "status": "downloaded",
+      "bytes": 16149,
+      "sha256": "04c3426da3bc98157ac9c3e4c7bb4400b0f5290af4c7c3955e0d54faba18862f"
+    },
+    {
+      "slug": "popconfirm",
+      "page": "https://ant.design/components/popconfirm/",
+      "source": "https://ant.design/components/popconfirm.md",
+      "status": "downloaded",
+      "bytes": 15043,
+      "sha256": "8e63218ea57be0bfcd765da65e987845218343fe8e86f4eb52492fb73331d393"
+    },
+    {
+      "slug": "popover",
+      "page": "https://ant.design/components/popover/",
+      "source": "https://ant.design/components/popover.md",
+      "status": "downloaded",
+      "bytes": 14842,
+      "sha256": "556b3cf2ae8273f2766332fcbfac0d8f15e8fb015ff625b36442e69311e7fb5f"
+    },
+    {
+      "slug": "progress",
+      "page": "https://ant.design/components/progress/",
+      "source": "https://ant.design/components/progress.md",
+      "status": "downloaded",
+      "bytes": 20718,
+      "sha256": "3c1b5cc107b3fdffc3adfb9bf3ddeeef1c9d7c75fdf0dcef11baccb79ee0b8d2"
+    },
+    {
+      "slug": "qr-code",
+      "page": "https://ant.design/components/qr-code/",
+      "source": "https://ant.design/components/qr-code.md",
+      "status": "downloaded",
+      "bytes": 14310,
+      "sha256": "fa6520d8604f6404379812ffa5541ff1af55ef0b6ff097e377dd17a13a209a05"
+    },
+    {
+      "slug": "radio",
+      "page": "https://ant.design/components/radio/",
+      "source": "https://ant.design/components/radio.md",
+      "status": "downloaded",
+      "bytes": 22959,
+      "sha256": "402202ba7f579de6f1bae001dee5fc96e557d191ae1f2bbd405acdd6fc676bb8"
+    },
+    {
+      "slug": "rate",
+      "page": "https://ant.design/components/rate/",
+      "source": "https://ant.design/components/rate.md",
+      "status": "downloaded",
+      "bytes": 6829,
+      "sha256": "d990d0dd783d32fe9c0ab7ef952f482694a3ad8d320eeada9cd114f04e1eb076"
+    },
+    {
+      "slug": "result",
+      "page": "https://ant.design/components/result/",
+      "source": "https://ant.design/components/result.md",
+      "status": "downloaded",
+      "bytes": 9676,
+      "sha256": "684e35c3ffed188f62570a0c6ed5c97979687e79f535f3a9ed8bc1ad2560d10d"
+    },
+    {
+      "slug": "segmented",
+      "page": "https://ant.design/components/segmented/",
+      "source": "https://ant.design/components/segmented.md",
+      "status": "downloaded",
+      "bytes": 16467,
+      "sha256": "8785aaa3c5f8b80c37372f4a52cacd2cf2bcbcb86fa7fa50844fad6899fdaa41"
+    },
+    {
+      "slug": "select",
+      "page": "https://ant.design/components/select/",
+      "source": "https://ant.design/components/select.md",
+      "status": "downloaded",
+      "bytes": 56531,
+      "sha256": "d3706641f387f766edab74a89db6d5fc90670637e98d2031492331d66669a221"
+    },
+    {
+      "slug": "skeleton",
+      "page": "https://ant.design/components/skeleton/",
+      "source": "https://ant.design/components/skeleton.md",
+      "status": "downloaded",
+      "bytes": 14011,
+      "sha256": "327370216877b221585c75a0ed5513c7e52fa97eb991dbab52fcb887d6210786"
+    },
+    {
+      "slug": "slider",
+      "page": "https://ant.design/components/slider/",
+      "source": "https://ant.design/components/slider.md",
+      "status": "downloaded",
+      "bytes": 21956,
+      "sha256": "525e36c78a241147fdfa59cb29613a95c253303f422baab636662495bfab0fc7"
+    },
+    {
+      "slug": "space",
+      "page": "https://ant.design/components/space/",
+      "source": "https://ant.design/components/space.md",
+      "status": "downloaded",
+      "bytes": 22056,
+      "sha256": "05167e8c56535af95145c2007d87c7777c231027a707e8831a6964396b344aa8"
+    },
+    {
+      "slug": "spin",
+      "page": "https://ant.design/components/spin/",
+      "source": "https://ant.design/components/spin.md",
+      "status": "downloaded",
+      "bytes": 11595,
+      "sha256": "4a7c66da0060d96d2f1a3eb7f15e90b161932b2f2bf803b14c2d88881882e370"
+    },
+    {
+      "slug": "splitter",
+      "page": "https://ant.design/components/splitter/",
+      "source": "https://ant.design/components/splitter.md",
+      "status": "downloaded",
+      "bytes": 19471,
+      "sha256": "b21f34d441736364f64905b54a5f366264744b78fc4ab9a63d13d85afc908eeb"
+    },
+    {
+      "slug": "statistic",
+      "page": "https://ant.design/components/statistic/",
+      "source": "https://ant.design/components/statistic.md",
+      "status": "downloaded",
+      "bytes": 12404,
+      "sha256": "097d6f9d386098f37db55812fa266567712f7d73f55d139eff234fb379dfad32"
+    },
+    {
+      "slug": "steps",
+      "page": "https://ant.design/components/steps/",
+      "source": "https://ant.design/components/steps.md",
+      "status": "downloaded",
+      "bytes": 24575,
+      "sha256": "cecb99d9d0fde0dd9519995e1bab5a8a28ac68e918412b1dccf0b94e6b4ac37e"
+    },
+    {
+      "slug": "switch",
+      "page": "https://ant.design/components/switch/",
+      "source": "https://ant.design/components/switch.md",
+      "status": "downloaded",
+      "bytes": 10622,
+      "sha256": "6c3515fc11b51d03d11f5e38698cf2add0d6ee533b3a68e8c5e4c17ddc287642"
+    },
+    {
+      "slug": "table",
+      "page": "https://ant.design/components/table/",
+      "source": "https://ant.design/components/table.md",
+      "status": "downloaded",
+      "bytes": 153131,
+      "sha256": "0db8f3ec108114ee763753573d896865320891245beed0211981c2c7c45458ea"
+    },
+    {
+      "slug": "tabs",
+      "page": "https://ant.design/components/tabs/",
+      "source": "https://ant.design/components/tabs.md",
+      "status": "downloaded",
+      "bytes": 35354,
+      "sha256": "edf154a9a7a8a512aa0a50fd9ab729bd768b0084f83f41f643e313a29d629b2f"
+    },
+    {
+      "slug": "tag",
+      "page": "https://ant.design/components/tag/",
+      "source": "https://ant.design/components/tag.md",
+      "status": "downloaded",
+      "bytes": 27791,
+      "sha256": "efdec5fa854eff508dc74219ef657edaed9e33d2af78dea56a16b0c52d705410"
+    },
+    {
+      "slug": "time-picker",
+      "page": "https://ant.design/components/time-picker/",
+      "source": "https://ant.design/components/time-picker.md",
+      "status": "downloaded",
+      "bytes": 25770,
+      "sha256": "f70e012df41233e069d5a8460555472ac5267acf538e3f8e5a1f2061a0b57f2d"
+    },
+    {
+      "slug": "timeline",
+      "page": "https://ant.design/components/timeline/",
+      "source": "https://ant.design/components/timeline.md",
+      "status": "downloaded",
+      "bytes": 15402,
+      "sha256": "962dd9ac0acfbc78ac62edbb80f42b9b0e1108f44b021a4ffc6eca87e6675b37"
+    },
+    {
+      "slug": "tooltip",
+      "page": "https://ant.design/components/tooltip/",
+      "source": "https://ant.design/components/tooltip.md",
+      "status": "downloaded",
+      "bytes": 17721,
+      "sha256": "a1b5894fefd5faf73a7f4539b248e82ad21e8329c2a4d8d84679b3564f8f5a03"
+    },
+    {
+      "slug": "tour",
+      "page": "https://ant.design/components/tour/",
+      "source": "https://ant.design/components/tour.md",
+      "status": "downloaded",
+      "bytes": 24953,
+      "sha256": "fceec2ba7e18ecc33616fba022bf8c3640585f11a36077c698481c8f79b54294"
+    },
+    {
+      "slug": "transfer",
+      "page": "https://ant.design/components/transfer/",
+      "source": "https://ant.design/components/transfer.md",
+      "status": "downloaded",
+      "bytes": 36537,
+      "sha256": "da3da48d24a751480f13b49c3caa9d8a991b505ad277911beb9cc4fac83e750c"
+    },
+    {
+      "slug": "tree",
+      "page": "https://ant.design/components/tree/",
+      "source": "https://ant.design/components/tree.md",
+      "status": "downloaded",
+      "bytes": 40194,
+      "sha256": "67d9eef513f3ee071e478660508d9b1a5fc978ce74dd2c0823eb8d9b6f54676e"
+    },
+    {
+      "slug": "tree-select",
+      "page": "https://ant.design/components/tree-select/",
+      "source": "https://ant.design/components/tree-select.md",
+      "status": "downloaded",
+      "bytes": 34789,
+      "sha256": "15eebd5472f8523348e8871dea414ad74f28e24130b584c071c40cb51d3f852d"
+    },
+    {
+      "slug": "typography",
+      "page": "https://ant.design/components/typography/",
+      "source": "https://ant.design/components/typography.md",
+      "status": "downloaded",
+      "bytes": 32680,
+      "sha256": "0a8f09f00fceba4333730b15e5a4240e7bfa77f8c418b06c57043ca84f6bc197"
+    },
+    {
+      "slug": "upload",
+      "page": "https://ant.design/components/upload/",
+      "source": "https://ant.design/components/upload.md",
+      "status": "downloaded",
+      "bytes": 53561,
+      "sha256": "0e60bb3066b6a4a9669672ec8cdd90e69ab7baafe2c123d2d493b45df26f131b"
+    },
+    {
+      "slug": "watermark",
+      "page": "https://ant.design/components/watermark/",
+      "source": "https://ant.design/components/watermark.md",
+      "status": "downloaded",
+      "bytes": 11967,
+      "sha256": "e9b7ba8f36dd65c02dcab946dc10ae688ca8cf491073917106ed7f44c09ddb05"
+    }
+  ]
+}

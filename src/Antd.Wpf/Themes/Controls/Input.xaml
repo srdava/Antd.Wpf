@@ -29,6 +29,7 @@
     <Setter Property="Template"><Setter.Value>
       <ControlTemplate TargetType="{x:Type c:AntInput}">
         <Grid>
+          <Grid.ColumnDefinitions><ColumnDefinition Width="*" /><ColumnDefinition Width="Auto" /></Grid.ColumnDefinitions>
           <Border x:Name="FocusRing" Margin="-2" BorderThickness="2" BorderBrush="{DynamicResource Antd.Brush.Outline}"
                   CornerRadius="8" Opacity="0" IsHitTestVisible="False" />
           <Border x:Name="Chrome" Background="{TemplateBinding Background}" BorderBrush="{TemplateBinding BorderBrush}"
@@ -49,10 +50,24 @@
                          Foreground="{DynamicResource Antd.Brush.Tertiary}" Margin="4,0,0,0" VerticalAlignment="Center" Visibility="Collapsed"><Run Text="{Binding Text.Length, Mode=OneWay}" /><Run x:Name="CountLimit" Text="{Binding MaxLength, StringFormat=' / {0}', Mode=OneWay}" /></TextBlock>
             </Grid>
           </Border>
+          <c:AntButton x:Name="PART_SearchButton" Grid.Column="1" Margin="-1,0,0,0" Visibility="Collapsed"
+                       Content="{TemplateBinding SearchButtonContent}" Style="{TemplateBinding SearchButtonStyle}"
+                       Variant="Solid" SemanticColor="Primary" Size="{TemplateBinding Size}"
+                       IsEnabled="{TemplateBinding CanSearch}" IsLoading="{TemplateBinding IsLoading}"
+                       AutomationProperties.Name="Search">
+            <c:AntButton.Resources>
+              <CornerRadius x:Key="Antd.CornerRadius">0,6,6,0</CornerRadius>
+              <CornerRadius x:Key="{ComponentResourceKey TypeInTargetAssembly={x:Type t:AntThemeScope}, ResourceId=Antd.CornerRadius.Small}">0,4,4,0</CornerRadius>
+              <CornerRadius x:Key="{ComponentResourceKey TypeInTargetAssembly={x:Type t:AntThemeScope}, ResourceId=Antd.CornerRadius.Large}">0,8,8,0</CornerRadius>
+            </c:AntButton.Resources>
+          </c:AntButton>
         </Grid>
         <ControlTemplate.Triggers>
           <Trigger Property="Size" Value="Small"><Setter TargetName="Chrome" Property="CornerRadius" Value="{DynamicResource {ComponentResourceKey TypeInTargetAssembly={x:Type t:AntThemeScope}, ResourceId=Antd.CornerRadius.Small}}" /><Setter TargetName="FocusRing" Property="CornerRadius" Value="6" /></Trigger>
           <Trigger Property="Size" Value="Large"><Setter TargetName="Chrome" Property="CornerRadius" Value="{DynamicResource {ComponentResourceKey TypeInTargetAssembly={x:Type t:AntThemeScope}, ResourceId=Antd.CornerRadius.Large}}" /><Setter TargetName="FocusRing" Property="CornerRadius" Value="10" /></Trigger>
+          <Trigger Property="IsSearchEnabled" Value="True"><Setter TargetName="PART_SearchButton" Property="Visibility" Value="Visible" /><Setter TargetName="Chrome" Property="CornerRadius" Value="6,0,0,6" /></Trigger>
+          <MultiTrigger><MultiTrigger.Conditions><Condition Property="IsSearchEnabled" Value="True" /><Condition Property="Size" Value="Small" /></MultiTrigger.Conditions><Setter TargetName="Chrome" Property="CornerRadius" Value="4,0,0,4" /></MultiTrigger>
+          <MultiTrigger><MultiTrigger.Conditions><Condition Property="IsSearchEnabled" Value="True" /><Condition Property="Size" Value="Large" /></MultiTrigger.Conditions><Setter TargetName="Chrome" Property="CornerRadius" Value="8,0,0,8" /></MultiTrigger>
           <Trigger Property="Status" Value="Error"><Setter TargetName="FocusRing" Property="BorderBrush" Value="{DynamicResource Antd.Brush.ErrorOutline}" /></Trigger>
           <Trigger Property="Status" Value="Warning"><Setter TargetName="FocusRing" Property="BorderBrush" Value="{DynamicResource Antd.Brush.WarningOutline}" /></Trigger>
           <Trigger Property="Prefix" Value="{x:Null}"><Setter TargetName="Prefix" Property="Visibility" Value="Collapsed" /></Trigger>
@@ -66,7 +81,13 @@
           <Trigger Property="Text" Value=""><Setter TargetName="PART_ClearButton" Property="Visibility" Value="Collapsed" /></Trigger>
           <Trigger Property="IsReadOnly" Value="True"><Setter TargetName="PART_ClearButton" Property="Visibility" Value="Collapsed" /></Trigger>
           <Trigger Property="IsEnabled" Value="False"><Setter TargetName="PART_ClearButton" Property="Visibility" Value="Collapsed" /></Trigger>
+          <MultiTrigger><MultiTrigger.Conditions><Condition Property="IsSearchEnabled" Value="True" /><Condition Property="IsLoading" Value="True" /></MultiTrigger.Conditions><Setter TargetName="PART_ClearButton" Property="Visibility" Value="Collapsed" /></MultiTrigger>
           <Trigger Property="Variant" Value="Underlined"><Setter TargetName="Chrome" Property="CornerRadius" Value="0" /></Trigger>
+          <Trigger Property="Variant" Value="Borderless"><Setter TargetName="PART_SearchButton" Property="Variant" Value="Text" /></Trigger>
+          <Trigger Property="Variant" Value="Underlined"><Setter TargetName="PART_SearchButton" Property="Variant" Value="Text" /></Trigger>
+          <Trigger Property="Variant" Value="Filled"><Setter TargetName="PART_SearchButton" Property="Variant" Value="Text" /><Setter TargetName="PART_SearchButton" Property="Background" Value="{DynamicResource Antd.Brush.Fill}" /></Trigger>
+          <MultiTrigger><MultiTrigger.Conditions><Condition Property="Variant" Value="Filled" /><Condition SourceName="PART_SearchButton" Property="IsMouseOver" Value="True" /></MultiTrigger.Conditions><Setter TargetName="PART_SearchButton" Property="Background" Value="{DynamicResource Antd.Brush.HoverFill}" /></MultiTrigger>
+          <MultiTrigger><MultiTrigger.Conditions><Condition Property="Variant" Value="Filled" /><Condition SourceName="PART_SearchButton" Property="IsPressed" Value="True" /></MultiTrigger.Conditions><Setter TargetName="PART_SearchButton" Property="Background" Value="{DynamicResource Antd.Brush.ActiveFill}" /></MultiTrigger>
           <Trigger Property="IsKeyboardFocusWithin" Value="True"><Setter TargetName="FocusRing" Property="Opacity" Value="1" /></Trigger>
         </ControlTemplate.Triggers>
       </ControlTemplate>

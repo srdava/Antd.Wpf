@@ -10,7 +10,7 @@ using Antd.Wpf.Internal;
 namespace Antd.Wpf.Controls;
 
 [TemplatePart(Name = ClearButtonPartName, Type = typeof(Button))]
-public class AntInput : TextBox
+public partial class AntInput : TextBox
 {
     private const string ClearButtonPartName = "PART_ClearButton";
     private Button? _clearButton;
@@ -109,6 +109,7 @@ public class AntInput : TextBox
     public override void OnApplyTemplate()
     {
         DetachClearButton();
+        DetachSearchButton();
         base.OnApplyTemplate();
         ResetContentHostPadding();
         (GetTemplateChild("PART_ContentHost") as InputScrollViewer)?.UpdateLineBounds();
@@ -117,6 +118,7 @@ public class AntInput : TextBox
         {
             _clearButton.Click += OnClearClick;
         }
+        ApplySearchTemplate();
     }
 
     protected override AutomationPeer OnCreateAutomationPeer() => new AntInputAutomationPeer(this);
@@ -131,6 +133,10 @@ public class AntInput : TextBox
             {
                 SetValue(IsOverMaxLengthPropertyKey, overflow);
             }
+        }
+        if (args.Property == TextProperty || args.Property == IsEnabledProperty)
+        {
+            UpdateSearchAvailability();
         }
         if (args.Property == PaddingProperty)
         {
@@ -153,8 +159,12 @@ public class AntInput : TextBox
         }
     }
 
-    private static void OnTemplateChanged(DependencyObject sender, DependencyPropertyChangedEventArgs args) =>
-        ((AntInput)sender).DetachClearButton();
+    private static void OnTemplateChanged(DependencyObject sender, DependencyPropertyChangedEventArgs args)
+    {
+        var input = (AntInput)sender;
+        input.DetachClearButton();
+        input.DetachSearchButton();
+    }
 
     private static void OnStatusChanged(DependencyObject sender, DependencyPropertyChangedEventArgs args)
     {
@@ -162,7 +172,7 @@ public class AntInput : TextBox
         AutomationPeer? peer = UIElementAutomationPeer.FromElement(input);
         if (peer != null && AutomationPeer.ListenerExists(AutomationEvents.PropertyChanged) && !Validation.GetHasError(input) && !input.IsOverMaxLength)
         {
-            string fallback = AutomationProperties.GetItemStatus(input);
+            string fallback = input.DefaultItemStatus;
             peer.RaisePropertyChangedEvent(AutomationElementIdentifiers.ItemStatusProperty,
                 (ControlStatus)args.OldValue == ControlStatus.Default ? fallback : args.OldValue.ToString(),
                 (ControlStatus)args.NewValue == ControlStatus.Default ? fallback : args.NewValue.ToString());
@@ -176,7 +186,7 @@ public class AntInput : TextBox
         if (peer != null && AutomationPeer.ListenerExists(AutomationEvents.PropertyChanged) &&
             !Validation.GetHasError(input) && input.Status != ControlStatus.Error)
         {
-            string fallback = input.Status == ControlStatus.Default ? AutomationProperties.GetItemStatus(input) : input.Status.ToString();
+            string fallback = input.Status == ControlStatus.Default ? input.DefaultItemStatus : input.Status.ToString();
             peer.RaisePropertyChangedEvent(AutomationElementIdentifiers.ItemStatusProperty,
                 (bool)args.OldValue ? "Error" : fallback, (bool)args.NewValue ? "Error" : fallback);
         }
@@ -193,11 +203,12 @@ public class AntInput : TextBox
 
     private void OnClearClick(object sender, RoutedEventArgs args)
     {
-        if (IsEnabled && !IsReadOnly)
+        if (IsEnabled && !IsReadOnly && Text.Length > 0 && !(IsSearchEnabled && IsLoading))
         {
             Clear();
             Focus();
             args.Handled = true;
+            TrySearch(InputSearchReason.Clear);
         }
     }
 }

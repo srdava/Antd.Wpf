@@ -1,0 +1,23 @@
+{
+  "date": "2026-11-03",
+  "version": "6.6.8",
+  "repository": "https://github.com/ant-design/ant-design/tree/6.6.8",
+  "entries": [
+    {
+      "path": "components/input/style/search.ts",
+      "source": "https://raw.githubusercontent.com/ant-design/ant-design/6.6.8/components/input/style/search.ts",
+      "file": "docs\\analysis\\official\\styles-6.6.8\\components__input__style__search.ts",
+      "status": "downloaded",
+      "sha256": "54806E345ED34F65A66CECC1E1BFE47B43142E76CB5A2A74E65586980386F3EF",
+      "bytes": 2256
+    },
+    {
+      "path": "components/input/Search.tsx",
+      "source": "https://raw.githubusercontent.com/ant-design/ant-design/6.6.8/components/input/Search.tsx",
+      "file": "docs\\analysis\\official\\styles-6.6.8\\components__input__Search.tsx",
+      "status": "downloaded",
+      "sha256": "4E1A6334692EFA297929C3A757E6C9CF9D38D870FAF9C8E0F6086D0C7863791D",
+      "bytes": 9152
+    }
+  ]
+}

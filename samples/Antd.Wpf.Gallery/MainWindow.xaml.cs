@@ -17,6 +17,9 @@ public partial class MainWindow : Window, INotifyPropertyChanged
     private bool _isFeatureEnabled;
     private string _inputText = "你好，Ant Design";
     private string _saveStatus = "Ready";
+    private bool _isSearchBusy;
+    private int _searchVersion;
+    private string _searchStatus = "Ready · 搜索只在显式触发时执行";
     private string? _selectedOption;
 
     public MainWindow()
@@ -39,6 +42,18 @@ public partial class MainWindow : Window, INotifyPropertyChanged
     {
         get => _isFeatureEnabled;
         set { _isFeatureEnabled = value; Changed(nameof(IsFeatureEnabled)); }
+    }
+
+    public bool IsSearchBusy
+    {
+        get => _isSearchBusy;
+        private set { _isSearchBusy = value; Changed(nameof(IsSearchBusy)); }
+    }
+
+    public string SearchStatus
+    {
+        get => _searchStatus;
+        private set { _searchStatus = value; Changed(nameof(SearchStatus)); }
     }
 
     public string SaveStatus
@@ -135,6 +150,37 @@ public partial class MainWindow : Window, INotifyPropertyChanged
     {
         _lifetime.Cancel();
         _lifetime.Dispose();
+    }
+
+    private void CancelSearch(object sender, RoutedEventArgs args) => SearchInput.CancelSearch();
+
+    private async void Search(object? sender, InputSearchEventArgs args)
+    {
+        int version = ++_searchVersion;
+        IsSearchBusy = true;
+        SearchStatus = "Searching… · " + args.Reason;
+        try
+        {
+            await Task.Delay(650, args.CancellationToken);
+            if (version == _searchVersion && !args.CancellationToken.IsCancellationRequested && !_lifetime.IsCancellationRequested)
+            {
+                SearchStatus = args.Reason + " · " + args.Text;
+            }
+        }
+        catch (OperationCanceledException)
+        {
+            if (version == _searchVersion && !_lifetime.IsCancellationRequested)
+            {
+                SearchStatus = "Cancelled · 已取消";
+            }
+        }
+        finally
+        {
+            if (version == _searchVersion)
+            {
+                IsSearchBusy = false;
+            }
+        }
     }
 
     private void Changed(string name) => PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(name));

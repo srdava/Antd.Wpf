@@ -20,6 +20,10 @@ internal static class Program
             var app = new Application { ShutdownMode = ShutdownMode.OnExplicitShutdown };
             var button = new AntButton { Content = "Packaged button", Variant = ButtonVariant.Solid };
             var input = new AntInput { Text = "中文 package", AllowClear = true };
+            var search = new AntInput { IsSearchEnabled = true, AllowClear = true, Text = "Package search" };
+            InputSearchEventArgs? searchRequest = null;
+            int searchCalls = 0;
+            search.SearchRequested += (_, args) => { searchRequest = args; searchCalls++; };
             var select = new AntSelect { ItemsSource = new[] { "Alpha", "Beta" }, SelectedIndex = 1 };
             var toggle = new AntSwitch { IsChecked = true, CheckedContent = "开", UncheckedContent = "关" };
             var checkbox = new AntCheckBox { Content = "Check", IsChecked = null };
@@ -38,6 +42,7 @@ internal static class Program
             };
             panel.Children.Add(button);
             panel.Children.Add(input);
+            panel.Children.Add(search);
             panel.Children.Add(multiline);
             panel.Children.Add(select);
             panel.Children.Add(toggle);
@@ -121,6 +126,22 @@ internal static class Program
             Pump();
             Require(packagedSider.ActualWidth == 200 && ((AntInput)packagedSider.Content).Text == "Retained", "Sider packaged restore failed");
             Require(input.Template?.FindName("PART_ContentHost", input) is ScrollViewer, "Input BAML unavailable");
+            var searchButton = search.Template?.FindName("PART_SearchButton", search) as Button
+                ?? throw new InvalidOperationException("Search BAML unavailable");
+            searchButton.RaiseEvent(new RoutedEventArgs(ButtonBase.ClickEvent));
+            Require(searchCalls == 1 && searchRequest is { Reason: InputSearchReason.Button, Text: "Package search" }, "Packaged search dispatch failed");
+            search.IsLoading = true;
+            searchButton.RaiseEvent(new RoutedEventArgs(ButtonBase.ClickEvent));
+            Require(searchCalls == 1 && !search.CanSearch, "Packaged loading search reentered");
+            search.CancelSearch();
+            Require(searchRequest!.CancellationToken.IsCancellationRequested, "Packaged search cancellation failed");
+            search.IsLoading = false;
+            var searchClear = search.Template?.FindName("PART_ClearButton", search) as Button
+                ?? throw new InvalidOperationException("Search clear BAML unavailable");
+            searchClear.RaiseEvent(new RoutedEventArgs(ButtonBase.ClickEvent));
+            Require(searchCalls == 2 && searchRequest is { Reason: InputSearchReason.Clear, Text: "" }, "Packaged clear reason failed");
+            search.IsSearchEnabled = false;
+            Require(searchRequest!.CancellationToken.IsCancellationRequested, "Packaged search mode cleanup failed");
             input.ShowCount = true;
             input.MaxLength = 4;
             Pump();

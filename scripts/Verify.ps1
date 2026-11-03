@@ -158,7 +158,7 @@ try {
     })
     $report = [ordered]@{
         validatedAt = (Get-Date).ToString('o'); command = 'pwsh -File scripts/Verify.ps1'; exitCode = 0
-        scope = 'M0, P1 native selection/layout, Switch label typography/thumb motion, Input count/length hints and multiline row bounds/scrolling, Flex wrapping/distributed justification, manual Sider collapse and Gallery scrolling/compact-navigation regression; not full catalog or release acceptance'
+        scope = 'M0, P1 native selection/layout, Switch label typography/thumb motion, Input search dispatch/cancellation, count/length hints and multiline row bounds/scrolling, Flex wrapping/distributed justification, manual Sider collapse and Gallery scrolling/compact-navigation regression; not full catalog or release acceptance'
         sdk = (& dotnet --version); machine = $env:COMPUTERNAME
         tests = @($testResults); package = 'artifacts/packages/Antd.Wpf.0.1.0-alpha.1.nupkg'
         packageSha256 = (Get-FileHash -LiteralPath $package -Algorithm SHA256).Hash

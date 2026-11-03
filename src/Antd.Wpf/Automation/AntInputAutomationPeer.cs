@@ -18,6 +18,10 @@ public sealed class AntInputAutomationPeer : TextBoxAutomationPeer
             return "Error";
         }
 
-        return input.Status == ControlStatus.Default ? base.GetItemStatusCore() : input.Status.ToString();
+        if (input.Status != ControlStatus.Default)
+        {
+            return input.Status.ToString();
+        }
+        return input.IsSearchEnabled && input.IsLoading ? "Loading" : base.GetItemStatusCore();
     }
 }

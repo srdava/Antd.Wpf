@@ -13,7 +13,7 @@ public sealed class AntInputAutomationPeer : TextBoxAutomationPeer
     protected override string GetItemStatusCore()
     {
         var input = (AntInput)Owner;
-        if (Validation.GetHasError(input))
+        if (Validation.GetHasError(input) || input.IsOverMaxLength)
         {
             return "Error";
         }

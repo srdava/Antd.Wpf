@@ -11,7 +11,7 @@
 | 工程 | Antd.Wpf.sln、一个双目标库、Gallery、STA测试、包Consumer、Verify脚本 | net48/net8.0-windows；Consumer在pack后独立构建 |
 | AntThemeScope | Light/Dark、继承尺寸/动画、局部覆盖、系统高对比度资源、按作用域缓存 | 任意种子调色板、Culture配置、全部组件token未实现 |
 | AntButton | 六种变体、常用语义色、圆形/胶囊、三尺寸、图标位置、Ghost、加载延迟、防命令重入 | 完整IconTemplate/LoadingIcon、预设全调色板、波纹/渐变/中文自动间距未完成 |
-| AntInput | TextBox原生编辑/绑定/撤销、占位、前后缀、清除、计数、变体/状态、AutomationPeer状态；多行自动高度、MinLines/MaxLines及超限滚动 | Search/Password/OTP及完整计数策略、所有高对比度交互矩阵未完成 |
+| AntInput | TextBox原生编辑/绑定/撤销、占位、前后缀、清除、UTF-16长度/上限提示、只读超限状态与UIA错误、变体/状态；多行自动高度、MinLines/MaxLines及超限滚动 | Search/Password/OTP、独立软上限/字素计数/外置TextArea计数、所有高对比度交互矩阵未完成 |
 | AntSelect | ComboBox单选语义、默认模板、虚拟化/回收、Popup主题桥接、Esc/卸载/重模板化清理 | 清除、多选/Tags、分组、搜索、远程加载与完整状态矩阵未完成 |
 | AntSwitch | ToggleButton原生命令/TogglePattern、两态绑定、null按关展示、开关内容/尺寸/RTL、加载防重入、忙碌UIA状态；200ms拨钮动画、关闭动画及隐藏/卸载/重模板化清理 | 颜色/标签过渡、按压拉伸、把手阴影和加载旋转待实现；真实输入、高对比度动态矩阵及硬件帧率/GC待验收 |
 | AntCheckBox | 原生CheckBox绑定、Command、Space、三态；16DIP框、4圆角、8DIP标签内距、8×8半选方块；原生TogglePattern | Checkbox.Group/SelectedKeys与跨页全选未实现 |
@@ -27,6 +27,8 @@
 2026-11-03本批修复Switch文字偏下，按WPF自然字体行框居中，保留官方轨道和拨钮几何。Input新增多行自动高度、MinLines/MaxLines及超限滚动，行距仍为22/24DIP；绑定、选区、焦点和Undo保留。完整Verify通过：Release零警告/零错误，net48/net8各237/237，零失败/跳过；四个真实NuGet消费宿主、14张截图和70份源码hash一致性检查通过。包SHA256为`DC21240088D4CDA771A164C4833E2CFC9859D540D35CBE4D0E3FA29D95111746`。新增11项用例及限制见[多行输入实施](analysis/input-multiline-implementation.md)和[Switch排版修复](analysis/switch-motion-implementation.md)。PF02/PF05布局代理暂定预算内，未将其转记为硬件帧率/GC验收；最新原始摘要为m0-validation.json，既有历史计数/hash保留为历史记录。
 
 库不引用浏览器或MVVM框架，没有外部运行时NuGet依赖。不是把全部规格批量变成空壳类。
+
+2026-11-03 09:37计数批次完整Verify通过：新增ShowCount+MaxLength组合、只读IsOverMaxLength、超限文字/计数色及UIA错误，绑定原文不截断。net48/net8各240/240，Release零警告/零错误，四个真实包宿主及14张截图通过，71份源码hash一致；包SHA256为`B3AB0AEA2155AB4BEC06D1128C6B90D953AC279BA3C0C2D2080F5C13BEFB5D6B`。对PF02/PF05同构建追加两轮复采，均在暂定代理预算内，但存在明显波动，未形成稳定对比基线。逐项用例、来源及三轮数据见[计数与长度提示](analysis/input-count-implementation.md)。此前计数/hash均为历史，最新完整摘要为m0-validation.json。
 
 Divider来源、默认数值、WPF边界及验收见[Divider实施说明](analysis/divider-implementation.md)。新增Gallery的Divider examples及双端明暗矩阵；无标题上下24、标题16、小号8，竖向左右8；Split颜色来自官方实际算法（Light rgba5,5,5,.06 / Dark rgba253,253,253,.12），没有沿用近似纯黑/纯白。自定义标题变宽、零宽和窄容器均有实际渲染/布局断言，不以属性存在当作行为完成。
 

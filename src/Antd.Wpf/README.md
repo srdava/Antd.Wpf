@@ -6,7 +6,7 @@ This alpha implements a foundation slice, not the complete Ant Design component 
 
 - `AntThemeScope`: Light/Dark resources, inherited size/motion settings, nested scopes, system high-contrast resources.
 - `AntButton`: variants, semantic colors, shapes, icons, loading delay and command suppression.
-- `AntInput`: native TextBox editing/binding, placeholder, prefix/suffix, clear, counter, sizes and validation presentation. Multiline input grows between MinLines/MaxLines using the theme line pitch and scrolls at the limit.
+- `AntInput`: native TextBox editing/binding, placeholder, prefix/suffix, clear, UTF-16 counter with optional MaxLength display, sizes and validation presentation. Bound over-limit text is preserved; IsOverMaxLength exposes the derived error state and UI Automation reports it. Multiline input grows between MinLines/MaxLines using the theme line pitch and scrolls at the limit.
 - `AntSelect`: native ComboBox selection, a recycled virtual item panel, scoped Popup resources and owner cleanup.
 - `AntSwitch`: native ToggleButton commands and accessibility, two-state binding, checked/unchecked content, loading interaction guard and 200 ms thumb motion. MotionEnabled disables transitions; hiding, unloading and retemplating release clocks. Color/label transitions, pressed-handle stretch, shadow and busy rotation are pending.
 - `AntCheckBox` / `AntRadioButton`: native checked/group/command/accessibility semantics with source-aligned geometry, gaps and theme resources. Group wrapper components are pending.
@@ -25,7 +25,7 @@ Third-party style and vector notices are included in `THIRD-PARTY-NOTICES.txt`.
 <antd:AntThemeScope xmlns:antd="https://antd-wpf.dev/xaml" Mode="Light">
   <StackPanel>
     <antd:AntButton Content="Save" Variant="Solid" SemanticColor="Primary" Command="{Binding SaveCommand}" />
-    <antd:AntInput Text="{Binding Name}" Placeholder="Name" AllowClear="True" />
+    <antd:AntInput Text="{Binding Name}" Placeholder="Name" AllowClear="True" ShowCount="True" MaxLength="20" />
     <antd:AntInput AcceptsReturn="True" TextWrapping="Wrap" MinLines="2" MaxLines="4"
                    VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Disabled" VerticalContentAlignment="Top" />
     <antd:AntSelect ItemsSource="{Binding Options}" SelectedItem="{Binding SelectedOption}" />

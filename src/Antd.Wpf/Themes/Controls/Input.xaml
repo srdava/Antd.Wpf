@@ -44,9 +44,9 @@
                            IsHitTestVisible="False" Visibility="Collapsed" VerticalAlignment="{TemplateBinding VerticalContentAlignment}" />
               </Grid>
               <Button x:Name="PART_ClearButton" Grid.Column="2" Style="{StaticResource Antd.ClearButton}" Margin="4,0,0,0" Visibility="Collapsed" />
-              <ContentPresenter x:Name="Suffix" Grid.Column="3" Content="{TemplateBinding Suffix}" VerticalAlignment="Center" Margin="4,0,0,0" />
-              <TextBlock x:Name="Count" Grid.Column="4" Text="{Binding Text.Length, RelativeSource={RelativeSource TemplatedParent}}"
-                         Foreground="{DynamicResource Antd.Brush.Secondary}" Margin="8,0,0,0" VerticalAlignment="Center" Visibility="Collapsed" />
+              <ContentPresenter x:Name="Suffix" Grid.Column="4" Content="{TemplateBinding Suffix}" VerticalAlignment="Center" Margin="4,0,0,0" />
+              <TextBlock x:Name="Count" Grid.Column="3" FlowDirection="LeftToRight" DataContext="{Binding RelativeSource={RelativeSource TemplatedParent}}"
+                         Foreground="{DynamicResource Antd.Brush.Tertiary}" Margin="4,0,0,0" VerticalAlignment="Center" Visibility="Collapsed"><Run Text="{Binding Text.Length, Mode=OneWay}" /><Run x:Name="CountLimit" Text="{Binding MaxLength, StringFormat=' / {0}', Mode=OneWay}" /></TextBlock>
             </Grid>
           </Border>
         </Grid>
@@ -59,6 +59,9 @@
           <Trigger Property="Suffix" Value="{x:Null}"><Setter TargetName="Suffix" Property="Visibility" Value="Collapsed" /></Trigger>
           <Trigger Property="Text" Value=""><Setter TargetName="Placeholder" Property="Visibility" Value="Visible" /></Trigger>
           <Trigger Property="ShowCount" Value="True"><Setter TargetName="Count" Property="Visibility" Value="Visible" /></Trigger>
+          <Trigger Property="MaxLength" Value="0"><Setter TargetName="CountLimit" Property="Text" Value="" /></Trigger>
+          <Trigger Property="IsOverMaxLength" Value="True"><Setter TargetName="Count" Property="Foreground" Value="{DynamicResource Antd.Brush.Danger}" /></Trigger>
+          <Trigger Property="IsEnabled" Value="False"><Setter TargetName="Count" Property="Foreground" Value="{DynamicResource Antd.Brush.DisabledText}" /></Trigger>
           <Trigger Property="AllowClear" Value="True"><Setter TargetName="PART_ClearButton" Property="Visibility" Value="Visible" /></Trigger>
           <Trigger Property="Text" Value=""><Setter TargetName="PART_ClearButton" Property="Visibility" Value="Collapsed" /></Trigger>
           <Trigger Property="IsReadOnly" Value="True"><Setter TargetName="PART_ClearButton" Property="Visibility" Value="Collapsed" /></Trigger>
@@ -83,6 +86,7 @@
       <Trigger Property="Status" Value="Warning"><Setter Property="BorderBrush" Value="{DynamicResource Antd.Brush.Warning}" /></Trigger>
       <Trigger Property="Status" Value="Error"><Setter Property="BorderBrush" Value="{DynamicResource Antd.Brush.Danger}" /></Trigger>
       <Trigger Property="Validation.HasError" Value="True"><Setter Property="BorderBrush" Value="{DynamicResource Antd.Brush.Danger}" /></Trigger>
+      <Trigger Property="IsOverMaxLength" Value="True"><Setter Property="Foreground" Value="{DynamicResource Antd.Brush.Danger}" /></Trigger>
       <MultiDataTrigger><MultiDataTrigger.Conditions><Condition Binding="{Binding Path=(t:AntThemeScope.IsHighContrast), RelativeSource={RelativeSource Self}}" Value="True" /><Condition Binding="{Binding Status, RelativeSource={RelativeSource Self}}" Value="Error" /></MultiDataTrigger.Conditions><Setter Property="BorderThickness" Value="2" /></MultiDataTrigger>
       <Trigger Property="IsEnabled" Value="False"><Setter Property="Foreground" Value="{DynamicResource Antd.Brush.DisabledText}" /><Setter Property="Background" Value="{DynamicResource Antd.Brush.DisabledFill}" /></Trigger>
     </Style.Triggers>

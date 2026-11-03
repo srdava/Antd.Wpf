@@ -79,6 +79,13 @@ public class AntInput : TextBox
         set => SetValue(ShowCountProperty, value);
     }
 
+    private static readonly DependencyPropertyKey IsOverMaxLengthPropertyKey = DependencyProperty.RegisterReadOnly(
+        nameof(IsOverMaxLength), typeof(bool), typeof(AntInput), new FrameworkPropertyMetadata(false, OnOverflowChanged));
+
+    public static readonly DependencyProperty IsOverMaxLengthProperty = IsOverMaxLengthPropertyKey.DependencyProperty;
+
+    public bool IsOverMaxLength => (bool)GetValue(IsOverMaxLengthProperty);
+
     public static readonly DependencyProperty VariantProperty = DependencyProperty.Register(
         nameof(Variant), typeof(InputVariant), typeof(AntInput),
         new FrameworkPropertyMetadata(global::Antd.Wpf.Controls.InputVariant.Outlined, null), value => Enum.IsDefined(typeof(InputVariant), value));
@@ -117,6 +124,14 @@ public class AntInput : TextBox
     protected override void OnPropertyChanged(DependencyPropertyChangedEventArgs args)
     {
         base.OnPropertyChanged(args);
+        if (args.Property == TextProperty || args.Property == MaxLengthProperty)
+        {
+            bool overflow = MaxLength > 0 && Text.Length > MaxLength;
+            if (overflow != IsOverMaxLength)
+            {
+                SetValue(IsOverMaxLengthPropertyKey, overflow);
+            }
+        }
         if (args.Property == PaddingProperty)
         {
             ResetContentHostPadding();
@@ -145,12 +160,25 @@ public class AntInput : TextBox
     {
         var input = (AntInput)sender;
         AutomationPeer? peer = UIElementAutomationPeer.FromElement(input);
-        if (peer != null && AutomationPeer.ListenerExists(AutomationEvents.PropertyChanged) && !Validation.GetHasError(input))
+        if (peer != null && AutomationPeer.ListenerExists(AutomationEvents.PropertyChanged) && !Validation.GetHasError(input) && !input.IsOverMaxLength)
         {
             string fallback = AutomationProperties.GetItemStatus(input);
             peer.RaisePropertyChangedEvent(AutomationElementIdentifiers.ItemStatusProperty,
                 (ControlStatus)args.OldValue == ControlStatus.Default ? fallback : args.OldValue.ToString(),
                 (ControlStatus)args.NewValue == ControlStatus.Default ? fallback : args.NewValue.ToString());
+        }
+    }
+
+    private static void OnOverflowChanged(DependencyObject sender, DependencyPropertyChangedEventArgs args)
+    {
+        var input = (AntInput)sender;
+        AutomationPeer? peer = UIElementAutomationPeer.FromElement(input);
+        if (peer != null && AutomationPeer.ListenerExists(AutomationEvents.PropertyChanged) &&
+            !Validation.GetHasError(input) && input.Status != ControlStatus.Error)
+        {
+            string fallback = input.Status == ControlStatus.Default ? AutomationProperties.GetItemStatus(input) : input.Status.ToString();
+            peer.RaisePropertyChangedEvent(AutomationElementIdentifiers.ItemStatusProperty,
+                (bool)args.OldValue ? "Error" : fallback, (bool)args.NewValue ? "Error" : fallback);
         }
     }
 

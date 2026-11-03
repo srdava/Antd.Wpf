@@ -35,6 +35,8 @@ Input 横向/纵向数值包含对边框的扣除；输入行框仍由字号和 
 
 WPF单行Input的实施映射：外框高度、字号、Padding继续使用上表；`AcceptsReturn=False`时使用原生字体行框（LineHeight=Auto），避免WPF固定行高产生不对称leading，使编辑文字和Placeholder垂直居中。内部ScrollViewer传递VerticalContentAlignment，保留调用方Top/Center/Bottom选择。多行仍保留22/24的行高。此为WPF排版适配，不是修改官方token。
 
+Input计数采用colorTextDescription（Tertiary，明/暗黑/白45%）、固定LTR及4DIP affix间隔；超过MaxLength时输入文字和计数使用colorError。禁用文字优先，调用方Status和边框状态独立保留。来源为官方input/style/index.ts的show-count-suffix和genRangeStyle；实现/验收见[计数与长度提示](input-count-implementation.md)。
+
 Button 的所有 variant 均保留 `lineWidth=1`，Solid/Filled/Text/Link 通过透明 border 色隐藏，不是把边框宽度清零。参见 [Button variant:20](https://github.com/ant-design/ant-design/blob/6.6.8/components/button/style/variant.ts#L20)。WPF 去掉 BorderThickness 会改变其内容和外部尺寸关系，必须用对应透明边框代替。
 
 Round/Circle 的 CSS 大圆角被浏览器夹到实际边长的一半；WPF `CornerRadius=999` 不保证与浏览器算法一致。默认高度下 Round 应取12/16/20；Switch 轨道取8/11。内容被放大后的自动增高与自定义圆角需另行验证。

@@ -121,6 +121,19 @@ internal static class Program
             Pump();
             Require(packagedSider.ActualWidth == 200 && ((AntInput)packagedSider.Content).Text == "Retained", "Sider packaged restore failed");
             Require(input.Template?.FindName("PART_ContentHost", input) is ScrollViewer, "Input BAML unavailable");
+            input.ShowCount = true;
+            input.MaxLength = 4;
+            Pump();
+            var count = input.Template?.FindName("Count", input) as TextBlock
+                ?? throw new InvalidOperationException("Input count BAML unavailable");
+            Require(new System.Windows.Documents.TextRange(count.ContentStart, count.ContentEnd).Text == "10 / 4" &&
+                input.IsOverMaxLength && input.Text == "中文 package", "Packaged count/overflow destroyed text or failed to display");
+            Require(System.Windows.Automation.Peers.UIElementAutomationPeer.CreatePeerForElement(input).GetItemStatus() == "Error",
+                "Packaged overflow automation status unavailable");
+            input.MaxLength = 0;
+            Pump();
+            Require(!input.IsOverMaxLength && new System.Windows.Documents.TextRange(count.ContentStart, count.ContentEnd).Text == "10",
+                "Packaged unlimited count did not restore");
             Require(Math.Abs(multiline.ActualHeight - 54) <= 1, "Packaged multiline minimum rows failed");
             multiline.Text = "一\r\n二\r\n三\r\n四\r\n五";
             Pump();

@@ -50,10 +50,12 @@
               <Grid><Grid.ColumnDefinitions><ColumnDefinition Width="*" /><ColumnDefinition Width="24" /><ColumnDefinition Width="*" /></Grid.ColumnDefinitions>
                 <StackPanel>
                   <Label Content="_Name" Target="{Binding ElementName=NameInput}" Foreground="{DynamicResource Antd.Brush.Text}" Padding="0,0,0,8" />
-                  <antd:AntInput x:Name="NameInput" Placeholder="请输入内容 / Type here" Text="{Binding InputText, UpdateSourceTrigger=PropertyChanged}" AllowClear="True" ShowCount="True" AutomationProperties.Name="Name" />
+                  <antd:AntInput x:Name="NameInput" Placeholder="请输入内容 / Type here" Text="{Binding InputText, UpdateSourceTrigger=PropertyChanged}" AllowClear="True" ShowCount="True" MaxLength="20" AutomationProperties.Name="Name" />
                   <TextBlock Text="{Binding InputText, StringFormat='Bound value: {0}'}" Foreground="{DynamicResource Antd.Brush.Secondary}" Margin="0,8,0,12" />
                   <antd:AntInput Placeholder="name@example.com" AutomationProperties.Name="Email" />
                   <antd:AntInput Text="Read-only content" IsReadOnly="True" AllowClear="True" Margin="0,12,0,0" AutomationProperties.Name="Read only" />
+                  <TextBlock Text="超限绑定值保留原文 / Bound values are preserved" Margin="0,12,0,8" />
+                  <antd:AntInput Text="超出长度限制 / Over limit" MaxLength="8" ShowCount="True" AllowClear="True" AutomationProperties.Name="Over limit input" />
                   <TextBlock Text="多行输入 · 2–4 行自动高度，超出后滚动" Margin="0,12,0,8" />
                   <antd:AntInput AcceptsReturn="True" TextWrapping="Wrap" MinLines="2" MaxLines="4"
                                  VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Disabled"

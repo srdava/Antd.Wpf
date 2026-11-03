@@ -158,7 +158,7 @@ try {
     })
     $report = [ordered]@{
         validatedAt = (Get-Date).ToString('o'); command = 'pwsh -File scripts/Verify.ps1'; exitCode = 0
-        scope = 'M0, P1 native selection/layout, Switch thumb motion, Flex wrapping/distributed justification, manual Sider collapse and Gallery scrolling/compact-navigation regression; not full catalog or release acceptance'
+        scope = 'M0, P1 native selection/layout, Switch label typography/thumb motion, Input multiline row bounds/scrolling, Flex wrapping/distributed justification, manual Sider collapse and Gallery scrolling/compact-navigation regression; not full catalog or release acceptance'
         sdk = (& dotnet --version); machine = $env:COMPUTERNAME
         tests = @($testResults); package = 'artifacts/packages/Antd.Wpf.0.1.0-alpha.1.nupkg'
         packageSha256 = (Get-FileHash -LiteralPath $package -Algorithm SHA256).Hash
@@ -180,7 +180,8 @@ try {
             'Layout uses native docking, container-relative triggers and immediate manual collapse; responsive collapse, motion and standalone Layout time/GC/heap gates are pending.'
         )
     }
-    $report | ConvertTo-Json -Depth 8 | Set-Content -LiteralPath 'docs/m0-validation.json' -Encoding utf8
+    $reportJson = ($report | ConvertTo-Json -Depth 8).Replace("`r`n", "`n") + "`n"
+    [IO.File]::WriteAllText((Join-Path $repository 'docs/m0-validation.json'), $reportJson, [Text.UTF8Encoding]::new($false))
     Write-Host 'PASS: solution, dual-target tests, package assets, four consumers and Gallery captures.'
 }
 finally {

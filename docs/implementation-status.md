@@ -1,6 +1,6 @@
 # 实施状态：M0 基础与 P1 原生选择/基础布局/Layout切片
 
-日期：2026-11-02。这是实际代码状态，区别于组件规格和早期静态分析。产品版本为`0.1.0-alpha.1`，尚未公开发布，也未完成全部79项入口。
+日期：2026-11-03。这是实际代码状态，区别于组件规格和早期静态分析。产品版本为`0.1.0-alpha.1`，尚未公开发布，也未完成全部79项入口。
 
 2026-11-02复核：Divider批次完整Verify报告记录于2026-10-30 16:00（exit0），net48/net8各95项通过，四个包消费宿主及六张截图完成；49个源码快照hash和包SHA256与当前文件一致。本次复核没有重复执行整套测试。Divider独立200控件场景p95为45.06/23.265ms（net48/net8），均低于200ms暂定布局代理预算，尚不代表真实帧率或硬件验收。两端Divider矩阵已目视检查。Button测试补充键盘Focus前置条件，并将窗口移出指针区域以隔离Space鼠标捕获的影响，保留释放后IsPressed、IsMouseOver及原画刷恢复断言。
 
@@ -11,7 +11,7 @@
 | 工程 | Antd.Wpf.sln、一个双目标库、Gallery、STA测试、包Consumer、Verify脚本 | net48/net8.0-windows；Consumer在pack后独立构建 |
 | AntThemeScope | Light/Dark、继承尺寸/动画、局部覆盖、系统高对比度资源、按作用域缓存 | 任意种子调色板、Culture配置、全部组件token未实现 |
 | AntButton | 六种变体、常用语义色、圆形/胶囊、三尺寸、图标位置、Ghost、加载延迟、防命令重入 | 完整IconTemplate/LoadingIcon、预设全调色板、波纹/渐变/中文自动间距未完成 |
-| AntInput | TextBox原生编辑/绑定/撤销、占位、前后缀、清除、计数、变体/状态、AutomationPeer状态 | Search/Password/OTP及完整计数策略、所有高对比度交互矩阵未完成 |
+| AntInput | TextBox原生编辑/绑定/撤销、占位、前后缀、清除、计数、变体/状态、AutomationPeer状态；多行自动高度、MinLines/MaxLines及超限滚动 | Search/Password/OTP及完整计数策略、所有高对比度交互矩阵未完成 |
 | AntSelect | ComboBox单选语义、默认模板、虚拟化/回收、Popup主题桥接、Esc/卸载/重模板化清理 | 清除、多选/Tags、分组、搜索、远程加载与完整状态矩阵未完成 |
 | AntSwitch | ToggleButton原生命令/TogglePattern、两态绑定、null按关展示、开关内容/尺寸/RTL、加载防重入、忙碌UIA状态；200ms拨钮动画、关闭动画及隐藏/卸载/重模板化清理 | 颜色/标签过渡、按压拉伸、把手阴影和加载旋转待实现；真实输入、高对比度动态矩阵及硬件帧率/GC待验收 |
 | AntCheckBox | 原生CheckBox绑定、Command、Space、三态；16DIP框、4圆角、8DIP标签内距、8×8半选方块；原生TogglePattern | Checkbox.Group/SelectedKeys与跨页全选未实现 |
@@ -23,6 +23,8 @@
 | AntLayout/Header/Content/Footer | 原生DockPanel区域与嵌套、Header MinHeight64/水平padding50、Footer padding24/50及字体相对行框；正文显式滚动 | 容器相对固定；不自动插入ScrollViewer，真实DPI/读屏待验收 |
 | AntSider | 默认200/80、手动/零宽折叠、Width/IsCollapsed绑定、左右/RTL、独立主题、两态边缘触发器、焦点转移、UIA/原因事件、自定义触发模板与旧命令清理 | 响应式/遮罩/动画、完整物理输入与文化配置、独立耗时/GC/堆根验收待完成 |
 | Gallery | 明暗/尺寸切换、加载演示、绑定输入、万项选项、局部主题及可重复PNG渲染 | 展示当前切片，不展示未实现控件 |
+
+2026-11-03本批修复Switch文字偏下，按WPF自然字体行框居中，保留官方轨道和拨钮几何。Input新增多行自动高度、MinLines/MaxLines及超限滚动，行距仍为22/24DIP；绑定、选区、焦点和Undo保留。完整Verify通过：Release零警告/零错误，net48/net8各237/237，零失败/跳过；四个真实NuGet消费宿主、14张截图和70份源码hash一致性检查通过。包SHA256为`DC21240088D4CDA771A164C4833E2CFC9859D540D35CBE4D0E3FA29D95111746`。新增11项用例及限制见[多行输入实施](analysis/input-multiline-implementation.md)和[Switch排版修复](analysis/switch-motion-implementation.md)。PF02/PF05布局代理暂定预算内，未将其转记为硬件帧率/GC验收；最新原始摘要为m0-validation.json，既有历史计数/hash保留为历史记录。
 
 库不引用浏览器或MVVM框架，没有外部运行时NuGet依赖。不是把全部规格批量变成空壳类。
 
@@ -159,4 +161,4 @@ pwsh -File scripts/Verify.ps1
 
 ## 后续顺序
 
-继续PF05复现与M0手动验收；P1已先推进不依赖Popup的Switch切片。后续补齐基础布局/输入及Switch动画，再做AntHost消息队列与P2弹层/复杂选择。Table和AntVirtualTree遵守既定分批路线，不以换肤代替大数据能力。未冻结基础主题、绑定与Popup的完整发布契约。
+继续PF05复现与M0手动验收；Switch拨钮动画和文本居中、多行输入行数限制切片已有实现。后续补齐基础布局/输入、Switch剩余状态动画，再做AntHost消息队列与P2弹层/复杂选择。Table和AntVirtualTree遵守既定分批路线，不以换肤代替大数据能力。未冻结基础主题、绑定与Popup的完整发布契约。

@@ -26,8 +26,19 @@ internal static class Program
             var radio = new AntRadioButton { Content = "Radio", IsChecked = true };
             var divider = new AntDivider { Content = "Packaged section", TitlePlacement = DividerTitlePlacement.Start };
             var panel = new StackPanel();
+            var multiline = new AntInput
+            {
+                AcceptsReturn = true,
+                TextWrapping = TextWrapping.Wrap,
+                MinLines = 2,
+                MaxLines = 3,
+                VerticalScrollBarVisibility = ScrollBarVisibility.Auto,
+                HorizontalScrollBarVisibility = ScrollBarVisibility.Disabled,
+                VerticalContentAlignment = VerticalAlignment.Top,
+            };
             panel.Children.Add(button);
             panel.Children.Add(input);
+            panel.Children.Add(multiline);
             panel.Children.Add(select);
             panel.Children.Add(toggle);
             panel.Children.Add(checkbox);
@@ -110,6 +121,15 @@ internal static class Program
             Pump();
             Require(packagedSider.ActualWidth == 200 && ((AntInput)packagedSider.Content).Text == "Retained", "Sider packaged restore failed");
             Require(input.Template?.FindName("PART_ContentHost", input) is ScrollViewer, "Input BAML unavailable");
+            Require(Math.Abs(multiline.ActualHeight - 54) <= 1, "Packaged multiline minimum rows failed");
+            multiline.Text = "一\r\n二\r\n三\r\n四\r\n五";
+            Pump();
+            var multilineHost = (ScrollViewer)multiline.Template.FindName("PART_ContentHost", multiline);
+            Require(Math.Abs(multiline.ActualHeight - 76) <= 1 && multilineHost.ExtentHeight > multilineHost.ViewportHeight,
+                "Packaged multiline maximum rows failed");
+            multiline.ScrollToEnd();
+            Pump();
+            Require(multilineHost.VerticalOffset > 0, "Packaged multiline scrolling failed");
             Require(toggle.Template?.FindName("Label", toggle) is ContentPresenter { Content: "开" }, "Switch BAML unavailable");
             var thumbTranslation = (toggle.Template?.FindName("Thumb", toggle) as Border)?.RenderTransform as TranslateTransform
                 ?? throw new InvalidOperationException("Switch thumb translation unavailable");

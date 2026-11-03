@@ -1,5 +1,7 @@
 # Switch 拨钮动画实施
 
+后续排版修复：标签取消固定22/16行框，改用自然字体度量和垂直居中。默认轨道、拨钮、Padding、圆角和颜色数值保持原值，放大字体可撑高轨道。`Switch_LabelsUseNaturalFontMetricsAndStayVerticallyCentered`覆盖中英文、Small/默认/Large、明暗、RTL和字号24；`Switch_CustomContentKeepsItsSizeBindingAndVerticalCenter`验证自定义内容尺寸与绑定。最新完整验证以`../m0-validation.json`为准，下方226项为此前动画批次历史记录。
+
 本批实现switch的P1拨钮位移切片，对应组件验收①原生输入/绑定、②Loading约束、③关闭动画/主题/RTL和④禁用状态。颜色与标签过渡、按压拉伸、把手阴影、Loading旋转继续保留为后续能力。
 
 ## 官方依据与WPF映射

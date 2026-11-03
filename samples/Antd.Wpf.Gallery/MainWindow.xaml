@@ -54,6 +54,11 @@
                   <TextBlock Text="{Binding InputText, StringFormat='Bound value: {0}'}" Foreground="{DynamicResource Antd.Brush.Secondary}" Margin="0,8,0,12" />
                   <antd:AntInput Placeholder="name@example.com" AutomationProperties.Name="Email" />
                   <antd:AntInput Text="Read-only content" IsReadOnly="True" AllowClear="True" Margin="0,12,0,0" AutomationProperties.Name="Read only" />
+                  <TextBlock Text="多行输入 · 2–4 行自动高度，超出后滚动" Margin="0,12,0,8" />
+                  <antd:AntInput AcceptsReturn="True" TextWrapping="Wrap" MinLines="2" MaxLines="4"
+                                 VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Disabled"
+                                 VerticalContentAlignment="Top" Placeholder="输入多行内容 / Type multiple lines"
+                                 AutomationProperties.Name="Multiline input" />
                 </StackPanel>
                 <StackPanel Grid.Column="2">
                   <TextBlock Text="Variants and validation" Margin="0,0,0,8" />

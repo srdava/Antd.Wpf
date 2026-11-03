@@ -5,6 +5,7 @@ using System.Windows.Automation.Peers;
 using System.Windows.Controls;
 using Antd.Wpf.Theming;
 using Antd.Wpf.Automation;
+using Antd.Wpf.Internal;
 
 namespace Antd.Wpf.Controls;
 
@@ -103,6 +104,7 @@ public class AntInput : TextBox
         DetachClearButton();
         base.OnApplyTemplate();
         ResetContentHostPadding();
+        (GetTemplateChild("PART_ContentHost") as InputScrollViewer)?.UpdateLineBounds();
         _clearButton = GetTemplateChild(ClearButtonPartName) as Button;
         if (_clearButton != null)
         {
@@ -118,6 +120,12 @@ public class AntInput : TextBox
         if (args.Property == PaddingProperty)
         {
             ResetContentHostPadding();
+        }
+        if (args.Property == MinLinesProperty || args.Property == MaxLinesProperty ||
+            args.Property == AcceptsReturnProperty || args.Property == TextBlock.LineHeightProperty ||
+            args.Property == HeightProperty || args.Property == MinHeightProperty || args.Property == MaxHeightProperty)
+        {
+            (GetTemplateChild("PART_ContentHost") as InputScrollViewer)?.UpdateLineBounds();
         }
     }
 

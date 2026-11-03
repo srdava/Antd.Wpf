@@ -6,7 +6,7 @@ This alpha implements a foundation slice, not the complete Ant Design component 
 
 - `AntThemeScope`: Light/Dark resources, inherited size/motion settings, nested scopes, system high-contrast resources.
 - `AntButton`: variants, semantic colors, shapes, icons, loading delay and command suppression.
-- `AntInput`: native TextBox editing/binding, placeholder, prefix/suffix, clear, counter, sizes and validation presentation.
+- `AntInput`: native TextBox editing/binding, placeholder, prefix/suffix, clear, counter, sizes and validation presentation. Multiline input grows between MinLines/MaxLines using the theme line pitch and scrolls at the limit.
 - `AntSelect`: native ComboBox selection, a recycled virtual item panel, scoped Popup resources and owner cleanup.
 - `AntSwitch`: native ToggleButton commands and accessibility, two-state binding, checked/unchecked content, loading interaction guard and 200 ms thumb motion. MotionEnabled disables transitions; hiding, unloading and retemplating release clocks. Color/label transitions, pressed-handle stretch, shadow and busy rotation are pending.
 - `AntCheckBox` / `AntRadioButton`: native checked/group/command/accessibility semantics with source-aligned geometry, gaps and theme resources. Group wrapper components are pending.
@@ -26,6 +26,8 @@ Third-party style and vector notices are included in `THIRD-PARTY-NOTICES.txt`.
   <StackPanel>
     <antd:AntButton Content="Save" Variant="Solid" SemanticColor="Primary" Command="{Binding SaveCommand}" />
     <antd:AntInput Text="{Binding Name}" Placeholder="Name" AllowClear="True" />
+    <antd:AntInput AcceptsReturn="True" TextWrapping="Wrap" MinLines="2" MaxLines="4"
+                   VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Disabled" VerticalContentAlignment="Top" />
     <antd:AntSelect ItemsSource="{Binding Options}" SelectedItem="{Binding SelectedOption}" />
     <antd:AntSwitch IsChecked="{Binding Enabled}" CheckedContent="On" UncheckedContent="Off" />
   </StackPanel>
@@ -34,4 +36,4 @@ Third-party style and vector notices are included in `THIRD-PARTY-NOTICES.txt`.
 
 The XAML URI is an assembly namespace identifier and does not require a network connection. Default styles load from the assembly. For C# hosts that also import newer WPF's ThemeMode, use `using ThemeMode = Antd.Wpf.Theming.ThemeMode;`.
 
-Known limits: multiple selection, search/remote loading, advanced tokens, host message/modal services and the remaining catalog are not implemented in this slice. Historical PF02/PF05 slow samples remain unexplained. Switch maps inherited Large size to its official default size; it uses immediate transitions and a static busy indicator. Group controls, blurred shadows and full motion states are pending. Full keyboard/IME/DPI/screen-reader and long-running leak validation is still required before a stable release.
+Known limits: multiple selection, search/remote loading, advanced tokens, host message/modal services and the remaining catalog are not implemented in this slice. Historical PF02/PF05 slow samples remain unexplained. Switch maps inherited Large size to its official default size and uses a static busy indicator. Group controls, blurred shadows and full motion states are pending. Multiline auto-height needs an auto-sized parent slot; a locally specified Height/MinHeight/MaxHeight takes precedence over row bounds, following native TextBox sizing policy. Full keyboard/IME/DPI/screen-reader and long-running leak validation is still required before a stable release.

@@ -7,7 +7,7 @@
     <Setter Property="Foreground" Value="{DynamicResource Antd.Brush.White}" />
     <Setter Property="BorderBrush" Value="{DynamicResource Antd.Brush.Border}" />
     <Setter Property="FontFamily" Value="Segoe UI, Microsoft YaHei UI" /><Setter Property="FontSize" Value="{DynamicResource {ComponentResourceKey TypeInTargetAssembly={x:Type t:AntThemeScope}, ResourceId=Antd.FontSize.Small}}" />
-    <Setter Property="TextBlock.LineHeight" Value="22" /><Setter Property="TextBlock.LineStackingStrategy" Value="BlockLineHeight" />
+    <Setter Property="TextBlock.LineHeight" Value="NaN" /><Setter Property="TextBlock.LineStackingStrategy" Value="MaxHeight" />
     <Setter Property="MinWidth" Value="44" /><Setter Property="MinHeight" Value="22" />
     <Setter Property="Padding" Value="24,0,9,0" />
     <Setter Property="HorizontalAlignment" Value="Left" /><Setter Property="VerticalAlignment" Value="Center" />
@@ -46,7 +46,7 @@
       </ControlTemplate.Triggers>
     </ControlTemplate></Setter.Value></Setter>
     <Style.Triggers>
-      <Trigger Property="Size" Value="Small"><Setter Property="MinWidth" Value="28" /><Setter Property="MinHeight" Value="16" /><Setter Property="TextBlock.LineHeight" Value="16" /></Trigger>
+      <Trigger Property="Size" Value="Small"><Setter Property="MinWidth" Value="28" /><Setter Property="MinHeight" Value="16" /></Trigger>
       <Trigger Property="IsMouseOver" Value="True"><Setter Property="Background" Value="{DynamicResource Antd.Brush.Tertiary}" /></Trigger>
       <Trigger Property="IsChecked" Value="True"><Setter Property="Background" Value="{DynamicResource Antd.Brush.Primary}" /><Setter Property="Foreground" Value="{DynamicResource Antd.Brush.White}" /></Trigger>
       <MultiTrigger><MultiTrigger.Conditions><Condition Property="IsChecked" Value="True" /><Condition Property="IsMouseOver" Value="True" /></MultiTrigger.Conditions>

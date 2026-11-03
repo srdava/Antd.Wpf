@@ -2,7 +2,7 @@
 
 原生WPF控件库，保留.NET Framework4.8+，现代.NET最低8，包目标为`net48;net8.0-windows`。
 
-已有可构建的控件库、Gallery、双目标STA行为验证、真实NuGet消费工程和性能采样。当前实现AntThemeScope、AntButton、AntInput、AntSelect、AntSwitch、原生AntCheckBox/AntRadioButton、AntDivider、支持换行及分散对齐的AntFlexPanel、AntSpace、AntRow/AntCol及Layout/Sider基础切片；79项入口的全量要求尚未完成。视觉数值按Ant Design6.6.8官方样式及实际默认/暗色token核对，见[来源与映射](docs/analysis/visual-token-mapping.md)。
+已有可构建的控件库、Gallery、双目标STA行为验证、真实NuGet消费工程和性能采样。当前实现AntThemeScope、AntButton、AntInput、AntPasswordBox（掩码输入）、AntSelect、AntSwitch、原生AntCheckBox/AntRadioButton、AntDivider、支持换行及分散对齐的AntFlexPanel、AntSpace、AntRow/AntCol及Layout/Sider基础切片；79项入口的全量要求尚未完成。视觉数值按Ant Design6.6.8官方样式及实际默认/暗色token核对，见[来源与映射](docs/analysis/visual-token-mapping.md)。
 
 ## 运行
 

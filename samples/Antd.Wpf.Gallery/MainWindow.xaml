@@ -74,6 +74,8 @@
                                  SearchRequested="Search" AutomationProperties.Name="Search query" />
                   <antd:AntButton Content="取消搜索" Click="CancelSearch" IsEnabled="{Binding IsSearchBusy}" Margin="0,8,0,0" HorizontalAlignment="Left" />
                   <TextBlock Text="{Binding SearchStatus}" TextWrapping="Wrap" Foreground="{DynamicResource Antd.Brush.Secondary}" Margin="0,8,0,0" />
+                  <TextBlock Text="Password · 原生掩码输入，卸载时清除" Margin="0,16,0,8" />
+                  <antd:AntPasswordBox Placeholder="输入密码" AllowClear="True" MaxLength="128" AutomationProperties.Name="Account password" />
                 </StackPanel>
               </Grid>
             </StackPanel>

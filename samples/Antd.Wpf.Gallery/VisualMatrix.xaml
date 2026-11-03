@@ -35,6 +35,7 @@
             <antd:AntInput AcceptsReturn="True" TextWrapping="Wrap" MinLines="2" MaxLines="3"
                            VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Disabled" VerticalContentAlignment="Top"
                            Text="多行输入 / Multiline&#13;&#10;第二行 / Second&#13;&#10;第三行 / Third&#13;&#10;第四行 / Scroll to view" Margin="0,0,0,20" />
+            <antd:AntPasswordBox Placeholder="Password / 密码" AllowClear="True" Margin="0,0,0,20" />
             <TextBlock Text="Select · Small / Default / Large" FontWeight="SemiBold" Margin="0,0,0,8" />
             <antd:AntSelect Size="Small" SelectedIndex="0" Margin="0,0,0,8"><ComboBoxItem Content="Small option" /></antd:AntSelect>
             <antd:AntSelect SelectedIndex="0" Margin="0,0,0,8"><ComboBoxItem Content="Default option" /></antd:AntSelect>

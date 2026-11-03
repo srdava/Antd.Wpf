@@ -130,9 +130,9 @@ try {
     }
     $snapshotPath = 'artifacts/performance/verified-' + (Get-Date -Format 'yyyyMMdd-HHmmss')
     New-Item -ItemType Directory -Path $snapshotPath | Out-Null
-    Copy-Item -LiteralPath 'artifacts/performance/m0', 'artifacts/performance/popup-comparison', 'artifacts/performance/divider' -Destination $snapshotPath -Recurse
+    Copy-Item -LiteralPath 'artifacts/performance/m0', 'artifacts/performance/popup-comparison', 'artifacts/performance/divider', 'artifacts/performance/password' -Destination $snapshotPath -Recurse
     $performance = foreach ($framework in @('net48', 'net8.0-windows')) {
-        foreach ($sceneFolder in @('m0', 'divider')) {
+        foreach ($sceneFolder in @('m0', 'divider', 'password')) {
             $csvPath = "$snapshotPath/$sceneFolder/$framework/samples.csv"
             foreach ($group in (Import-Csv -LiteralPath $csvPath | Group-Object scenario)) {
                 $times = @($group.Group | ForEach-Object { [double]$_.milliseconds } | Sort-Object)

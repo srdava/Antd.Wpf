@@ -1,5 +1,5 @@
 {
-  "validatedAt": "2026-11-03T14:25:21.9098030+08:00",
+  "validatedAt": "2026-11-03T14:44:30.4905187+08:00",
   "command": "pwsh -File scripts/Verify.ps1",
   "exitCode": 0,
   "scope": "M0, P1 native selection/layout, Switch label typography/thumb motion, Input search dispatch/cancellation, count/length hints and multiline row bounds/scrolling, Flex wrapping/distributed justification, manual Sider collapse and Gallery scrolling/compact-navigation regression; not full catalog or release acceptance",
@@ -8,19 +8,19 @@
   "tests": [
     {
       "target": "net48",
-      "passed": 259,
-      "total": 259,
+      "passed": 267,
+      "total": 267,
       "report": "artifacts/test-results/verified-net48.trx"
     },
     {
       "target": "net8.0-windows",
-      "passed": 259,
-      "total": 259,
+      "passed": 267,
+      "total": 267,
       "report": "artifacts/test-results/verified-net8.0-windows.trx"
     }
   ],
   "package": "artifacts/packages/Antd.Wpf.0.1.0-alpha.1.nupkg",
-  "packageSha256": "6D529BDED8EC5A6A56FA9E14856CE8B66BA90EC8960B8E1FA26A7A8FC69117B2",
+  "packageSha256": "FE7EA7A908FED30D33AADE857ADDD14CA1CA7ABBE2F2310888C124763DC68678",
   "thirdPartyNotices": {
     "source": "src/Antd.Wpf/THIRD-PARTY-NOTICES.txt",
     "sha256": "F1FA1B2E14D11E90F16E3F8DFC0C74C164E3E41012C3093A3987B35D991DEF43",
@@ -53,108 +53,134 @@
       "target": "net48",
       "scenario": "PF02.layout-proxy",
       "samples": 30,
-      "p50Milliseconds": 88.793,
-      "p95Milliseconds": 122.689,
+      "p50Milliseconds": 89.286,
+      "p95Milliseconds": 235.336,
       "provisionalBudgetMilliseconds": 200,
-      "proxyWithinBudget": true,
-      "maxMilliseconds": 156.822,
-      "raw": "artifacts/performance/verified-20261103-142521/m0/net48/samples.csv",
-      "environment": "artifacts/performance/verified-20261103-142521/m0/net48/environment.txt",
+      "proxyWithinBudget": false,
+      "maxMilliseconds": 250.113,
+      "raw": "artifacts/performance/verified-20261103-144429/m0/net48/samples.csv",
+      "environment": "artifacts/performance/verified-20261103-144429/m0/net48/environment.txt",
       "qualification": "Hidden-window layout/Dispatcher proxy; not full PF acceptance"
     },
     {
       "target": "net48",
       "scenario": "PF02.mixed-layout-proxy",
       "samples": 30,
-      "p50Milliseconds": 88.991,
-      "p95Milliseconds": 198.463,
+      "p50Milliseconds": 176.645,
+      "p95Milliseconds": 471.955,
       "provisionalBudgetMilliseconds": 200,
-      "proxyWithinBudget": true,
-      "maxMilliseconds": 208.272,
-      "raw": "artifacts/performance/verified-20261103-142521/m0/net48/samples.csv",
-      "environment": "artifacts/performance/verified-20261103-142521/m0/net48/environment.txt",
+      "proxyWithinBudget": false,
+      "maxMilliseconds": 777.341,
+      "raw": "artifacts/performance/verified-20261103-144429/m0/net48/samples.csv",
+      "environment": "artifacts/performance/verified-20261103-144429/m0/net48/environment.txt",
       "qualification": "Hidden-window layout/Dispatcher proxy; not full PF acceptance"
     },
     {
       "target": "net48",
       "scenario": "PF05.layout-proxy",
       "samples": 30,
-      "p50Milliseconds": 25.439,
-      "p95Milliseconds": 29.761,
+      "p50Milliseconds": 23.853,
+      "p95Milliseconds": 58.721,
       "provisionalBudgetMilliseconds": 300,
       "proxyWithinBudget": true,
-      "maxMilliseconds": 30.564,
-      "raw": "artifacts/performance/verified-20261103-142521/m0/net48/samples.csv",
-      "environment": "artifacts/performance/verified-20261103-142521/m0/net48/environment.txt",
+      "maxMilliseconds": 63.286,
+      "raw": "artifacts/performance/verified-20261103-144429/m0/net48/samples.csv",
+      "environment": "artifacts/performance/verified-20261103-144429/m0/net48/environment.txt",
       "qualification": "Hidden-window layout/Dispatcher proxy; not full PF acceptance"
     },
     {
       "target": "net48",
       "scenario": "PF02.divider-layout-proxy",
       "samples": 30,
-      "p50Milliseconds": 27.308,
-      "p95Milliseconds": 33.788,
+      "p50Milliseconds": 13.162,
+      "p95Milliseconds": 18.862,
       "provisionalBudgetMilliseconds": 200,
       "proxyWithinBudget": true,
-      "maxMilliseconds": 39.406,
-      "raw": "artifacts/performance/verified-20261103-142521/divider/net48/samples.csv",
-      "environment": "artifacts/performance/verified-20261103-142521/divider/net48/environment.txt",
+      "maxMilliseconds": 19.714,
+      "raw": "artifacts/performance/verified-20261103-144429/divider/net48/samples.csv",
+      "environment": "artifacts/performance/verified-20261103-144429/divider/net48/environment.txt",
+      "qualification": "Hidden-window layout/Dispatcher proxy; not full PF acceptance"
+    },
+    {
+      "target": "net48",
+      "scenario": "PF02.password-layout-proxy",
+      "samples": 30,
+      "p50Milliseconds": 46.863,
+      "p95Milliseconds": 71.394,
+      "provisionalBudgetMilliseconds": 200,
+      "proxyWithinBudget": true,
+      "maxMilliseconds": 80.446,
+      "raw": "artifacts/performance/verified-20261103-144429/password/net48/samples.csv",
+      "environment": "artifacts/performance/verified-20261103-144429/password/net48/environment.txt",
       "qualification": "Hidden-window layout/Dispatcher proxy; not full PF acceptance"
     },
     {
       "target": "net8.0-windows",
       "scenario": "PF02.layout-proxy",
       "samples": 30,
-      "p50Milliseconds": 74.28,
-      "p95Milliseconds": 121.191,
+      "p50Milliseconds": 85.641,
+      "p95Milliseconds": 134.978,
       "provisionalBudgetMilliseconds": 200,
       "proxyWithinBudget": true,
-      "maxMilliseconds": 132.585,
-      "raw": "artifacts/performance/verified-20261103-142521/m0/net8.0-windows/samples.csv",
-      "environment": "artifacts/performance/verified-20261103-142521/m0/net8.0-windows/environment.txt",
+      "maxMilliseconds": 137.411,
+      "raw": "artifacts/performance/verified-20261103-144429/m0/net8.0-windows/samples.csv",
+      "environment": "artifacts/performance/verified-20261103-144429/m0/net8.0-windows/environment.txt",
       "qualification": "Hidden-window layout/Dispatcher proxy; not full PF acceptance"
     },
     {
       "target": "net8.0-windows",
       "scenario": "PF02.mixed-layout-proxy",
       "samples": 30,
-      "p50Milliseconds": 62.229,
-      "p95Milliseconds": 81.287,
+      "p50Milliseconds": 54.464,
+      "p95Milliseconds": 95.168,
       "provisionalBudgetMilliseconds": 200,
       "proxyWithinBudget": true,
-      "maxMilliseconds": 82.903,
-      "raw": "artifacts/performance/verified-20261103-142521/m0/net8.0-windows/samples.csv",
-      "environment": "artifacts/performance/verified-20261103-142521/m0/net8.0-windows/environment.txt",
+      "maxMilliseconds": 120.922,
+      "raw": "artifacts/performance/verified-20261103-144429/m0/net8.0-windows/samples.csv",
+      "environment": "artifacts/performance/verified-20261103-144429/m0/net8.0-windows/environment.txt",
       "qualification": "Hidden-window layout/Dispatcher proxy; not full PF acceptance"
     },
     {
       "target": "net8.0-windows",
       "scenario": "PF05.layout-proxy",
       "samples": 30,
-      "p50Milliseconds": 17.077,
-      "p95Milliseconds": 30.767,
+      "p50Milliseconds": 12.906,
+      "p95Milliseconds": 17.495,
       "provisionalBudgetMilliseconds": 300,
       "proxyWithinBudget": true,
-      "maxMilliseconds": 39.731,
-      "raw": "artifacts/performance/verified-20261103-142521/m0/net8.0-windows/samples.csv",
-      "environment": "artifacts/performance/verified-20261103-142521/m0/net8.0-windows/environment.txt",
+      "maxMilliseconds": 19.625,
+      "raw": "artifacts/performance/verified-20261103-144429/m0/net8.0-windows/samples.csv",
+      "environment": "artifacts/performance/verified-20261103-144429/m0/net8.0-windows/environment.txt",
       "qualification": "Hidden-window layout/Dispatcher proxy; not full PF acceptance"
     },
     {
       "target": "net8.0-windows",
       "scenario": "PF02.divider-layout-proxy",
       "samples": 30,
-      "p50Milliseconds": 19.852,
-      "p95Milliseconds": 32.499,
+      "p50Milliseconds": 16.925,
+      "p95Milliseconds": 28.931,
       "provisionalBudgetMilliseconds": 200,
       "proxyWithinBudget": true,
-      "maxMilliseconds": 32.655,
-      "raw": "artifacts/performance/verified-20261103-142521/divider/net8.0-windows/samples.csv",
-      "environment": "artifacts/performance/verified-20261103-142521/divider/net8.0-windows/environment.txt",
+      "maxMilliseconds": 31.845,
+      "raw": "artifacts/performance/verified-20261103-144429/divider/net8.0-windows/samples.csv",
+      "environment": "artifacts/performance/verified-20261103-144429/divider/net8.0-windows/environment.txt",
+      "qualification": "Hidden-window layout/Dispatcher proxy; not full PF acceptance"
+    },
+    {
+      "target": "net8.0-windows",
+      "scenario": "PF02.password-layout-proxy",
+      "samples": 30,
+      "p50Milliseconds": 57.837,
+      "p95Milliseconds": 107.945,
+      "provisionalBudgetMilliseconds": 200,
+      "proxyWithinBudget": true,
+      "maxMilliseconds": 122.025,
+      "raw": "artifacts/performance/verified-20261103-144429/password/net8.0-windows/samples.csv",
+      "environment": "artifacts/performance/verified-20261103-144429/password/net8.0-windows/environment.txt",
       "qualification": "Hidden-window layout/Dispatcher proxy; not full PF acceptance"
     }
   ],
-  "popupComparisonDirectory": "artifacts/performance/verified-20261103-142521/popup-comparison",
+  "popupComparisonDirectory": "artifacts/performance/verified-20261103-144429/popup-comparison",
   "sourceSnapshot": [
     {
       "path": "samples\\Antd.Wpf.Gallery\\Antd.Wpf.Gallery.csproj",
@@ -190,7 +216,7 @@
     },
     {
       "path": "samples\\Antd.Wpf.Gallery\\MainWindow.xaml",
-      "sha256": "469AE77B3CC0B0CD8F14CBBD1A70514FCA1BFD5CE83D73943A9338FF079A7CC3"
+      "sha256": "756011D31E2972C8FF70379C8B5007F51DBAFFFAE65DF2E9DA48BE42498666AD"
     },
     {
       "path": "samples\\Antd.Wpf.Gallery\\MainWindow.xaml.cs",
@@ -202,7 +228,7 @@
     },
     {
       "path": "samples\\Antd.Wpf.Gallery\\VisualMatrix.xaml",
-      "sha256": "2BDC448F2ED4E41D4D1721A0C5B7DBD623F8C702760F74A8F4ED586324C719F2"
+      "sha256": "E5869FF257EBF806D489CEA223154F88BE0D37F39741A5EE43DABA90491E9BD9"
     },
     {
       "path": "src\\Antd.Wpf\\Antd.Wpf.csproj",
@@ -259,6 +285,10 @@
     {
       "path": "src\\Antd.Wpf\\Controls\\AntLayout.cs",
       "sha256": "7BD374B17B1ECF4F54BA01A2F9261E238302DAA479F65C614AC72C03ACAD8A44"
+    },
+    {
+      "path": "src\\Antd.Wpf\\Controls\\AntPasswordBox.cs",
+      "sha256": "3AFD068FBB13277739D5F4A197CAC81A2CE7165FD10D10963605B54D21CCC529"
     },
     {
       "path": "src\\Antd.Wpf\\Controls\\AntRadioButton.cs",
@@ -325,6 +355,10 @@
       "sha256": "3EE365FF4482567C1D103F486F59FC020F507106EBE141C0BD7F96FF0370B8A6"
     },
     {
+      "path": "src\\Antd.Wpf\\Themes\\Controls\\PasswordBox.xaml",
+      "sha256": "49B5D985A21453FFF8498FE0BD84AE442B3A74634AFAE614E49B1592CC5F7C6C"
+    },
+    {
       "path": "src\\Antd.Wpf\\Themes\\Controls\\RadioButton.xaml",
       "sha256": "5513A395E50572B449F15A0531A84BC2A55A4AAC7EABD557AB89EF7B20B053C6"
     },
@@ -338,7 +372,7 @@
     },
     {
       "path": "src\\Antd.Wpf\\Themes\\Generic.xaml",
-      "sha256": "25FADD5279B6B6F5D58C498DBFBF4417CB3D2BBCD2388FDA70E8E826AE20B44B"
+      "sha256": "3F1749E58DAB064A59234DDC59BE11E70E2BC75F3C7B9BFF97C1D3A0FF1D71DE"
     },
     {
       "path": "src\\Antd.Wpf\\Themes\\Tokens\\Dark.xaml",
@@ -413,6 +447,14 @@
       "sha256": "29C99F8101A209DB7C1B468136BF07061A246FB11C98317E8E529B7E83F2B4C6"
     },
     {
+      "path": "tests\\Antd.Wpf.Tests\\PasswordBoxTests.cs",
+      "sha256": "F6D5432A6B353242AF2607572390C0ACFE21681A34697BB7EB25A0DB720147F5"
+    },
+    {
+      "path": "tests\\Antd.Wpf.Tests\\PasswordPerformanceScenarios.cs",
+      "sha256": "A9D37E979DB4963BCFE416D3D7B23A9EB9B711E37E610F3E7DAD1C84251006BF"
+    },
+    {
       "path": "tests\\Antd.Wpf.Tests\\PerformanceScenarios.cs",
       "sha256": "C67324D33CC6AAF8EA609572249159EFB351DBBA77675EBC79E695C79F7C3074"
     },
@@ -450,7 +492,7 @@
     },
     {
       "path": "tests\\Consumers\\Antd.Wpf.Consumer\\Program.cs",
-      "sha256": "38B3392DA916A0A912FB10A202A56645C550EFCB14CFC7C862B6177237385351"
+      "sha256": "456E3F92F3B44C66A78E1060FA0A0AA56154A9179A0A1894AFD048546FFAB388"
     }
   ],
   "limitations": [

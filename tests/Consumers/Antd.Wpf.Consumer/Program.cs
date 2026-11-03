@@ -21,6 +21,7 @@ internal static class Program
             var button = new AntButton { Content = "Packaged button", Variant = ButtonVariant.Solid };
             var input = new AntInput { Text = "中文 package", AllowClear = true };
             var search = new AntInput { IsSearchEnabled = true, AllowClear = true, Text = "Package search" };
+            var password = new AntPasswordBox { Placeholder = "Packaged password", AllowClear = true };
             InputSearchEventArgs? searchRequest = null;
             int searchCalls = 0;
             search.SearchRequested += (_, args) => { searchRequest = args; searchCalls++; };
@@ -43,6 +44,7 @@ internal static class Program
             panel.Children.Add(button);
             panel.Children.Add(input);
             panel.Children.Add(search);
+            panel.Children.Add(password);
             panel.Children.Add(multiline);
             panel.Children.Add(select);
             panel.Children.Add(toggle);
@@ -142,6 +144,14 @@ internal static class Program
             Require(searchCalls == 2 && searchRequest is { Reason: InputSearchReason.Clear, Text: "" }, "Packaged clear reason failed");
             search.IsSearchEnabled = false;
             Require(searchRequest!.CancellationToken.IsCancellationRequested, "Packaged search mode cleanup failed");
+            var passwordHost = password.Template?.FindName("PART_PasswordHost", password) as ContentPresenter
+                ?? throw new InvalidOperationException("Password BAML unavailable");
+            var passwordEditor = passwordHost.Content as PasswordBox
+                ?? throw new InvalidOperationException("Native password editor unavailable");
+            passwordEditor.Password = "test-only";
+            using (var secret = password.SecurePassword) { Require(secret.Length == 9 && !password.IsEmpty, "Packaged secure password failed"); }
+            password.Clear();
+            Require(password.IsEmpty, "Packaged password clear failed");
             input.ShowCount = true;
             input.MaxLength = 4;
             Pump();

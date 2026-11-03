@@ -5,6 +5,7 @@
     <ResourceDictionary Source="/Antd.Wpf;component/Themes/Tokens/Metrics.xaml" />
     <ResourceDictionary Source="/Antd.Wpf;component/Themes/Controls/Button.xaml" />
     <ResourceDictionary Source="/Antd.Wpf;component/Themes/Controls/Input.xaml" />
+    <ResourceDictionary Source="/Antd.Wpf;component/Themes/Controls/PasswordBox.xaml" />
     <ResourceDictionary Source="/Antd.Wpf;component/Themes/Controls/Select.xaml" />
     <ResourceDictionary Source="/Antd.Wpf;component/Themes/Controls/Switch.xaml" />
     <ResourceDictionary Source="/Antd.Wpf;component/Themes/Controls/CheckBox.xaml" />

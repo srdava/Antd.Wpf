@@ -129,6 +129,8 @@
 
 **验收**：①中文输入、撤销/重做、选区和粘贴保留；②输入中切换Suffix/ShowCount不丢焦点或选区；③Search Enter/Button/Clear各只发一次相应原因，IME确认不误搜索；④OTP整串粘贴、超长粘贴、跨格删除和填满通知正确；⑤Password显隐/卸载无残留可视明文与日志。
 
+实施记录：`AntPasswordBox`已开始交付原生掩码输入基础，SecurePassword返回调用方负责Dispose的副本，卸载清除；显隐及验收⑤完整矩阵仍未完成，见[Password实施](../analysis/password-implementation.md)。
+
 <a id="input-number"></a>
 
 ## input-number — InputNumber

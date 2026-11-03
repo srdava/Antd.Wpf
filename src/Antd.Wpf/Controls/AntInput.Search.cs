@@ -53,7 +53,7 @@ public partial class AntInput
     }
 
     public static readonly DependencyProperty SearchButtonContentProperty = DependencyProperty.Register(
-        nameof(SearchButtonContent), typeof(object), typeof(AntInput), new FrameworkPropertyMetadata("Search"));
+        nameof(SearchButtonContent), typeof(object), typeof(AntInput), new FrameworkPropertyMetadata(null));
 
     public object? SearchButtonContent
     {

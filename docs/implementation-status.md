@@ -2,6 +2,8 @@
 
 日期：2026-11-03。这是实际代码状态，区别于组件规格和早期静态分析。产品版本为`0.1.0-alpha.1`，尚未公开发布，也未完成全部79项入口。
 
+2026-11-03 14:25追加Input.Search默认中性图标按钮：采用官方SearchOutlined矢量及字体大小，24/32/40默认宽高；显式SearchButtonContent保留主色文本按钮，加载时仅显示既有Spinner。完整Verify exit0，Release零警告/错误，net48/net8各259/259，四个包消费目标通过、14张截图生成，两端明暗矩阵已目视检查。PF02/PF05代理均在暂定预算内，其中net48混合p95为198.463ms，接近200ms预算，硬件帧率/GC仍未验收。来源、行为及限制见[Search实施](analysis/input-search-implementation.md)，最新hash与原始结果见m0-validation.json。
+
 2026-11-02复核：Divider批次完整Verify报告记录于2026-10-30 16:00（exit0），net48/net8各95项通过，四个包消费宿主及六张截图完成；49个源码快照hash和包SHA256与当前文件一致。本次复核没有重复执行整套测试。Divider独立200控件场景p95为45.06/23.265ms（net48/net8），均低于200ms暂定布局代理预算，尚不代表真实帧率或硬件验收。两端Divider矩阵已目视检查。Button测试补充键盘Focus前置条件，并将窗口移出指针区域以隔离Space鼠标捕获的影响，保留释放后IsPressed、IsMouseOver及原画刷恢复断言。
 
 ## 已落地
@@ -11,7 +13,7 @@
 | 工程 | Antd.Wpf.sln、一个双目标库、Gallery、STA测试、包Consumer、Verify脚本 | net48/net8.0-windows；Consumer在pack后独立构建 |
 | AntThemeScope | Light/Dark、继承尺寸/动画、局部覆盖、系统高对比度资源、按作用域缓存 | 任意种子调色板、Culture配置、全部组件token未实现 |
 | AntButton | 六种变体、常用语义色、圆形/胶囊、三尺寸、图标位置、Ghost、加载延迟、防命令重入 | 完整IconTemplate/LoadingIcon、预设全调色板、波纹/渐变/中文自动间距未完成 |
-| AntInput | TextBox原生编辑/绑定/撤销、占位、前后缀、清除、UTF-16长度/上限提示、只读超限状态与UIA错误、变体/状态；多行自动高度及行数限制；Search文本按钮、命令/三种原因/取消令牌、Loading防重入和UIA忙碌状态 | Search默认中性图标形式及完整Addon组合、Password/OTP、独立软上限/字素计数/外置TextArea计数、所有高对比度交互矩阵未完成 |
+| AntInput | TextBox原生编辑/绑定/撤销、占位、前后缀、清除、UTF-16长度/上限提示、只读超限状态与UIA错误、变体/状态；多行自动高度及行数限制；Search默认中性图标及显式文本按钮、命令/三种原因/取消令牌、Loading防重入和UIA忙碌状态 | Search完整Addon组合、Password/OTP、独立软上限/字素计数/外置TextArea计数、所有高对比度交互矩阵未完成 |
 | AntSelect | ComboBox单选语义、默认模板、虚拟化/回收、Popup主题桥接、Esc/卸载/重模板化清理 | 清除、多选/Tags、分组、搜索、远程加载与完整状态矩阵未完成 |
 | AntSwitch | ToggleButton原生命令/TogglePattern、两态绑定、null按关展示、开关内容/尺寸/RTL、加载防重入、忙碌UIA状态；200ms拨钮动画、关闭动画及隐藏/卸载/重模板化清理 | 颜色/标签过渡、按压拉伸、把手阴影和加载旋转待实现；真实输入、高对比度动态矩阵及硬件帧率/GC待验收 |
 | AntCheckBox | 原生CheckBox绑定、Command、Space、三态；16DIP框、4圆角、8DIP标签内距、8×8半选方块；原生TogglePattern | Checkbox.Group/SelectedKeys与跨页全选未实现 |

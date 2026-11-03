@@ -30,7 +30,7 @@
             <antd:AntInput Text="默认输入 / Default input" Prefix="@" Suffix=".com" Margin="0,0,0,8" />
             <antd:AntInput Text="超限 / Over limit" Size="Large" ShowCount="True" MaxLength="8" Margin="0,0,0,8" />
             <antd:AntInput Text="Disabled" IsEnabled="False" Margin="0,0,0,20" />
-            <antd:AntInput IsSearchEnabled="True" Placeholder="Search / 搜索" SearchButtonContent="Search" AllowClear="True" Margin="0,0,0,8" />
+            <antd:AntInput IsSearchEnabled="True" Placeholder="Search / 搜索" AllowClear="True" Margin="0,0,0,8" />
             <antd:AntInput IsSearchEnabled="True" Text="Loading / 加载中" SearchButtonContent="Search" IsLoading="True" Margin="0,0,0,20" />
             <antd:AntInput AcceptsReturn="True" TextWrapping="Wrap" MinLines="2" MaxLines="3"
                            VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Disabled" VerticalContentAlignment="Top"

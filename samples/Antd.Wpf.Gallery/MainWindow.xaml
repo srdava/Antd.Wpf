@@ -68,6 +68,7 @@
                   <antd:AntInput Text="Validation error" Status="Error" Margin="0,0,0,12" AutomationProperties.Name="Invalid input" />
                   <antd:AntInput Placeholder="Underlined" Variant="Underlined" AutomationProperties.Name="Underlined input" />
                   <TextBlock Text="Search · Enter / 按钮 / 清除，Esc 取消" Margin="0,16,0,8" />
+                  <antd:AntInput IsSearchEnabled="True" Placeholder="默认图标搜索" Margin="0,0,0,8" AutomationProperties.Name="Icon search query" />
                   <antd:AntInput x:Name="SearchInput" IsSearchEnabled="True" SearchButtonContent="搜索"
                                  Placeholder="输入搜索内容" AllowClear="True" IsLoading="{Binding IsSearchBusy}"
                                  SearchRequested="Search" AutomationProperties.Name="Search query" />

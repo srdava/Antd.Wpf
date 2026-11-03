@@ -1,0 +1,8 @@
+{
+  "retrievedAt": "2026-11-03",
+  "source": "https://github.com/ant-design/ant-design-icons/blob/92bcdb742d5cb8be2fecdaf7446a33ed08a07deb/packages/icons-svg/svg/outlined/search.svg",
+  "file": "search-outlined.svg",
+  "sha256": "4AF97789E6EFA0077555D5148288CF2263399E6FF67DEC8B74A657E034B5E20B",
+  "license": "icons-LICENSE.txt",
+  "adaptation": "WPF Path in a 1024x1024 Canvas and font-sized Viewbox; fill follows AntButton.Foreground"
+}

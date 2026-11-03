@@ -1,6 +1,10 @@
 # Input Search 实施
 
-本批对应input P2 Search及验收③，采用`AntInput.IsSearchEnabled=True`启用搜索，复用同一个TextBox编辑器和已有AntButton。默认映射官网`enterButton="Search"`的主色文本按钮形式；官网默认的中性图标形式和完整Addon组合继续保留为后续能力，不把本切片描述为整个Input.Search完成。
+本批对应input P2 Search及验收③，采用`AntInput.IsSearchEnabled=True`启用搜索，复用同一个TextBox编辑器和已有AntButton。默认采用官网中性图标按钮；显式设置`SearchButtonContent="Search"`映射主色文本按钮形式。完整Addon组合仍未实现，不把本切片描述为整个Input.Search完成。
+
+2026-11-03追加：`SearchButtonContent`默认值从`"Search"`改为`null`，这是预览API默认外观变化；旧宿主需要文本按钮时显式设置内容。null使用Outlined/Default、Padding0与既有24/32/40最小宽高；Filled/Borderless/Underlined仍为Text。加载时隐藏图标内容模板，仅显示既有Spinner，避免双图标或宽度跳动；清除Loading后恢复图标。非null（含空字符串）属于显式内容，不隐式更改宿主数据。
+
+矢量路径直接适配官方SearchOutlined，保留1024×1024画布的留白与比例，随按钮FontSize/Foreground缩放换色。来源commit、快照SHA256见`official/styles-6.6.8/search-icon-manifest.json`；许可复用该目录`icons-LICENSE.txt`并随NuGet第三方声明打包。每次图标模板实例只创建Viewbox/Canvas/Path，无位图解码、转换器、事件订阅或新增时钟；普通Input未启用Search时不展开图标模板。
 
 ## 官方事实与平台设计
 
@@ -35,6 +39,7 @@ CanExecute的按钮可用性查询使用CancellationToken.None，调用方应只
 
 | Requirement | Evidence |
 | --- | --- |
+| 默认图标三尺寸/RTL、主题换色、文本切换与加载恢复、焦点/选区/编辑器保留及UIA名称 | `Input_SearchDefaultIconAndTextSwitchPreserveEditor` |
 | 三种原因/快照、替换取消、绑定与Undo不受影响 | `Input_SearchReportsDistinctReasonsAndPreservesBindingUndo` |
 | CanExecute、事件取消、同步递归防重入 | `Input_SearchCanExecuteEventCancellationAndReentrancyAreGuarded` |
 | Loading屏蔽、Esc令牌、绑定保留、只读/禁用与UIA优先级 | `Input_SearchLoadingEscapeAndDisabledKeepHostBindings` |
@@ -48,7 +53,7 @@ CanExecute的按钮可用性查询使用CancellationToken.None，调用方应只
 | 普通Input初始折叠按钮不展开子视觉树 | `Input_SearchInitiallyCollapsedDoesNotExpandButtonVisuals` |
 | Gallery真实Dispatcher上下文中的取消/再次搜索/关闭清理 | `Gallery_SearchCancellationAndCompletionKeepLatestStatus` |
 
-定向16项通过，最初Gallery合成点击未经过Dispatcher，async回调缺少WPF同步上下文；测试改为从Dispatcher触发并保留取消、Loading恢复及最终文本断言后通过。完整双端、四个真实包消费和截图以`../m0-validation.json`为准。
+初始文本按钮切片定向16项通过，默认图标追加3尺寸用例后为19项。最初Gallery合成点击未经过Dispatcher，async回调缺少WPF同步上下文；测试改为从Dispatcher触发并保留取消、Loading恢复及最终文本断言后通过。完整双端、四个真实包消费和截图以`../m0-validation.json`为准。
 
 ## 性能与剩余验收
 
@@ -69,6 +74,8 @@ CanExecute的按钮可用性查询使用CancellationToken.None，调用方应只
 以上静态检查由AI辅助，可能漏报/误报，不替代运行采样与人工复核。连接角目前按默认4/6/8映射；自定义圆角token的组合裁切尚未验收，可通过整体模板定制。
 
 ## 最终验证
+
+默认图标追加批次于2026-11-03 14:25完成`pwsh -NoProfile -File scripts/Verify.ps1`，exit0。Release零警告/错误，net48/net8各259/259、失败0、跳过0；其中Search各19项，新增`Input_SearchDefaultIconAndTextSwitchPreserveEditor`覆盖3尺寸。四个实际包消费宿主通过，14张截图生成，双端明暗矩阵已目视核对；包SHA256为`6D529BDED8EC5A6A56FA9E14856CE8B66BA90EC8960B8E1FA26A7A8FC69117B2`。PF02 Input p95为122.689/121.191ms、混合198.463/81.287ms，PF05为29.761/30.767ms（net48/net8）；精确原始值见`../m0-validation.json`。均为暂定布局代理，net48混合已接近200ms预算；未测独立Search逐帧/GC，不作性能改善声明。
 
 2026-11-03 10:02完整`pwsh -NoProfile -File scripts/Verify.ps1` exit0。Release零警告/零错误，net48/net8各256/256，无失败/跳过；其中Search定向各16项。四个实际nupkg消费宿主net48/net481/net8/net10通过，14张截图重新生成，双端明暗Search/Loading矩阵已目视核对。74份源码hash与报告一致，包SHA256为`FB879C20164E9611D531074564867A8C9B20F7341ECDEC9B793CC755219BF06B`。
 

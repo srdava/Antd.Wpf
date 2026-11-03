@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Threading;
 using System.Windows;
 using System.Windows.Automation.Peers;
@@ -18,6 +19,55 @@ namespace Antd.Wpf.Tests;
 [Trait("Category", "UIIntegration")]
 public sealed class InputSearchTests
 {
+    [Theory]
+    [InlineData(ControlSize.Small, 24, FlowDirection.LeftToRight)]
+    [InlineData(ControlSize.Middle, 32, FlowDirection.RightToLeft)]
+    [InlineData(ControlSize.Large, 40, FlowDirection.LeftToRight)]
+    public void Input_SearchDefaultIconAndTextSwitchPreserveEditor(ControlSize size, double height, FlowDirection direction) => Sta.Run(() =>
+    {
+        var input = new AntInput { IsSearchEnabled = true, Size = size, FlowDirection = direction, Width = 300, Text = "查询" };
+        var scope = new AntThemeScope { Content = input };
+        Window window = Sta.Show(scope);
+        try
+        {
+            var button = (AntButton)input.Template.FindName("PART_SearchButton", input);
+            object editor = input.Template.FindName("PART_ContentHost", input);
+            Assert.Null(input.SearchButtonContent);
+            Assert.Equal(ButtonVariant.Outlined, button.Variant);
+            Assert.Equal(SemanticColor.Default, button.SemanticColor);
+            Assert.InRange(button.ActualWidth, height - 0.8, height + 0.8);
+            Assert.InRange(button.ActualHeight, height - 0.8, height + 0.8);
+            var icon = Descendants(button).OfType<System.Windows.Shapes.Path>().Single(path => path.IsVisible);
+            Assert.True(icon.ActualWidth > 0);
+            Assert.Equal(button.Foreground, icon.Fill);
+            Assert.Equal("Search", new ButtonAutomationPeer(button).GetName());
+            Assert.True(input.Focus());
+            input.Select(0, 1);
+            scope.Mode = ThemeMode.Dark;
+            Sta.Pump();
+            Assert.Equal(button.Foreground, icon.Fill);
+            input.SearchButtonContent = "搜索";
+            Sta.Pump();
+            Assert.Equal(ButtonVariant.Solid, button.Variant);
+            Assert.Equal(SemanticColor.Primary, button.SemanticColor);
+            Assert.Null(button.ContentTemplate);
+            input.SearchButtonContent = null;
+            input.IsLoading = true;
+            Sta.Pump();
+            Assert.Null(button.ContentTemplate);
+            Assert.True(button.IsLoadingVisible);
+            Assert.False(button.IsEnabled);
+            Assert.InRange(button.ActualWidth, height - 0.8, height + 0.8);
+            input.IsLoading = false;
+            Sta.Pump();
+            Assert.NotNull(button.ContentTemplate);
+            Assert.Equal(1, input.SelectionLength);
+            Assert.True(input.IsKeyboardFocused);
+            Assert.Same(editor, input.Template.FindName("PART_ContentHost", input));
+        }
+        finally { window.Close(); }
+    });
+
     [Fact]
     public void Input_SearchInitiallyCollapsedDoesNotExpandButtonVisuals() => Sta.Run(() =>
     {
@@ -365,7 +415,7 @@ public sealed class InputSearchTests
     [InlineData(ControlSize.Large, 40, 8, FlowDirection.LeftToRight)]
     public void Input_SearchSizesCornersAndThemePreserveEditor(ControlSize size, double height, double radius, FlowDirection direction) => Sta.Run(() =>
     {
-        var input = new SearchInput { IsSearchEnabled = true, Size = size, FlowDirection = direction, Width = 300, Text = "查询" };
+        var input = new SearchInput { IsSearchEnabled = true, SearchButtonContent = "Search", Size = size, FlowDirection = direction, Width = 300, Text = "查询" };
         var panel = new StackPanel();
         panel.Children.Add(input);
         var scope = new AntThemeScope { Content = panel };
@@ -428,6 +478,16 @@ public sealed class InputSearchTests
 
     private static void Click(AntInput input, string name) =>
         ((Button)input.Template.FindName(name, input)).RaiseEvent(new RoutedEventArgs(ButtonBase.ClickEvent));
+
+    private static IEnumerable<DependencyObject> Descendants(DependencyObject element)
+    {
+        for (int i = 0; i < VisualTreeHelper.GetChildrenCount(element); i++)
+        {
+            DependencyObject child = VisualTreeHelper.GetChild(element, i);
+            yield return child;
+            foreach (DependencyObject descendant in Descendants(child)) { yield return descendant; }
+        }
+    }
 
     private sealed class SearchInput : AntInput
     {

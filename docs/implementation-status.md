@@ -2,6 +2,10 @@
 
 日期：2026-11-03。这是实际代码状态，区别于组件规格和早期静态分析。产品版本为`0.1.0-alpha.1`，尚未公开发布，也未完成全部79项入口。
 
+M0剩余门槛按[专用验收清单](m0-acceptance.md)跟踪。本批补充100次页面/Select弹层生命周期探针，覆盖请求取消、主题桥接解绑、Loading/密码收尾和命令弱订阅。初始最后一页/Owner保留已通过net8堆快照定位到外部UIA COM引用；原生ComboBox对照后901个项目对象及100个命令可回收，原生对照也观察到保留。条件性证据见[PF09调查](analysis/m0-lifecycle-validation.md)，不把它转记为无条件Owner/全进程堆验收通过。
+
+2026-11-03 15:02本批完整Verify exit0：Release零警告/错误，net48/net8各269/269、无失败/跳过，四个真实包消费目标通过，14张既有截图生成，79个源码hash一致；两端生命周期观察均为对照前10/901、对照后0/901、命令释放后0/100，原生对照9/9保留。本轮代理预算内，历史波动与M0实机门槛继续保留。
+
 2026-11-03 14:44追加AntPasswordBox掩码输入基础：原生编辑器、安全副本、清除/占位、主题及卸载清除，显隐未实现。完整Verify功能exit0，Release零警告/错误，net48/net8各267/267，四个包消费目标和14张截图完成，78个源码hash一致；两端明暗矩阵已目视检查。Password独立200控件PF02 p95为71.394/107.945ms，在暂定预算内。既有net48 Input/混合页同轮为235.336/471.955ms超预算；同构建定向复采为122.491/112.256ms，保留原失败样本，未关闭稳定性能/硬件/GC门槛。详见[Password实施与验证](analysis/password-implementation.md)。
 
 2026-11-03 14:25追加Input.Search默认中性图标按钮：采用官方SearchOutlined矢量及字体大小，24/32/40默认宽高；显式SearchButtonContent保留主色文本按钮，加载时仅显示既有Spinner。完整Verify exit0，Release零警告/错误，net48/net8各259/259，四个包消费目标通过、14张截图生成，两端明暗矩阵已目视检查。PF02/PF05代理均在暂定预算内，其中net48混合p95为198.463ms，接近200ms预算，硬件帧率/GC仍未验收。来源、行为及限制见[Search实施](analysis/input-search-implementation.md)，最新hash与原始结果见m0-validation.json。
@@ -158,7 +162,7 @@ pwsh -File scripts/Verify.ps1
 - PF02保留200个Input场景，并新增200个Button/Input/CheckBox/Radio混合场景；原始CSV分别记名，不将两种场景互相替代或计算改善比例。静态节点/冻结共享及0次Measure不等同GPU帧率或堆占用上限验收。
 - 新增PF02.divider-layout-proxy独立场景，源数据在artifacts/performance/divider；Verify统一归档及报告。Divider颜色/线型切换只重绘，30次变化的控件Measure次数为0；线段间隙随标题实际布局变化更新，不通过每帧订阅扫描。
 - 历史PF05反复打开存在约700ms的样本；2026-10-30在相同实现的新进程中未复现，原生/无作用域/有作用域的对照也未复现。最新数值随Verify写入m0-validation.json，历史原始数据保留在artifacts/performance/m0-before-resource-replace。没有证据归因于资源桥接或声称已修复，代码保留shortcut；首次冷展开与真实交互终点还需独立采样。
-- PF01/PF03/PF04/PF06–PF10未完成；实际键盘/中文IME、100/150/200%DPI、高对比度动态切换、屏幕阅读器、x86和100次循环堆根泄漏调查待验收。
+- PF01/PF03/PF04/PF06–PF08/PF10未完成；PF09已有100次循环与原生UIA对照后的托管回收证据，外部UIA仍持有引用时的无条件Owner释放、完整进程堆/原生句柄尚未关闭。实际键盘/中文IME、100/150/200%DPI、高对比度动态切换、屏幕阅读器及x86仍待验收。
 
 功能构建和测试通过只证明当前切片。M0完整发布门槛没有全部通过，不能把本预览当成全组件库或发布就绪版本。
 

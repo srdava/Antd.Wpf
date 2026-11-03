@@ -130,7 +130,7 @@ try {
     }
     $snapshotPath = 'artifacts/performance/verified-' + (Get-Date -Format 'yyyyMMdd-HHmmss')
     New-Item -ItemType Directory -Path $snapshotPath | Out-Null
-    Copy-Item -LiteralPath 'artifacts/performance/m0', 'artifacts/performance/popup-comparison', 'artifacts/performance/divider', 'artifacts/performance/password' -Destination $snapshotPath -Recurse
+    Copy-Item -LiteralPath 'artifacts/performance/m0', 'artifacts/performance/popup-comparison', 'artifacts/performance/divider', 'artifacts/performance/password', 'artifacts/performance/lifecycle' -Destination $snapshotPath -Recurse
     $performance = foreach ($framework in @('net48', 'net8.0-windows')) {
         foreach ($sceneFolder in @('m0', 'divider', 'password')) {
             $csvPath = "$snapshotPath/$sceneFolder/$framework/samples.csv"
@@ -148,6 +148,27 @@ try {
                     qualification = 'Hidden-window layout/Dispatcher proxy; not full PF acceptance'
                 }
             }
+        }
+    }
+    $lifecycle = foreach ($framework in @('net48', 'net8.0-windows')) {
+        $directory = "$snapshotPath/lifecycle/$framework"
+        $before = @(Import-Csv -LiteralPath "$directory/before-native-baseline-references.csv")
+        $pages = @(Import-Csv -LiteralPath "$directory/pages-references.csv")
+        $commands = @(Import-Csv -LiteralPath "$directory/commands-references.csv")
+        $native = @(Import-Csv -LiteralPath "$directory/native-baseline-references.csv")
+        $alivePages = @($pages | Where-Object alive -eq 'True').Count
+        $aliveCommands = @($commands | Where-Object alive -eq 'True').Count
+        if ($before.Count -ne 901 -or $pages.Count -ne 901 -or $commands.Count -ne 100 -or $native.Count -ne 9 -or $alivePages -ne 0 -or $aliveCommands -ne 0) {
+            throw "Incomplete or retained lifecycle observations: $directory"
+        }
+        [ordered]@{
+            target = $framework; scenario = 'PF09.page-popup-weak-reference-probe'; pagePopupCycles = 100
+            trackedPageAndOwnerReferences = $pages.Count
+            aliveBeforeNativeAutomationBaseline = @($before | Where-Object alive -eq 'True').Count
+            aliveAfterNativeAutomationBaseline = $alivePages; aliveCommandsAfterRelease = $aliveCommands
+            nativeBaselineWindows = 3; aliveNativeBaselineReferences = @($native | Where-Object alive -eq 'True').Count
+            rawDirectory = $directory
+            qualification = 'Conditional managed-reference probe after native UIA baseline; external automation retention remains reported, not full PF09 heap/native-handle acceptance'
         }
     }
     $sourceFiles = @(Get-ChildItem src, samples, tests -Recurse -File | Where-Object {
@@ -168,11 +189,11 @@ try {
             'artifacts/divider-matrix-net48.png', 'artifacts/divider-matrix-net8.png', 'artifacts/flex-matrix-net48.png', 'artifacts/flex-matrix-net8.png',
             'artifacts/space-matrix-net48.png', 'artifacts/space-matrix-net8.png', 'artifacts/grid-matrix-net48.png', 'artifacts/grid-matrix-net8.png',
             'artifacts/layout-matrix-net48.png', 'artifacts/layout-matrix-net8.png')
-        performance = @($performance); popupComparisonDirectory = "$snapshotPath/popup-comparison"; sourceSnapshot = $sourceSnapshot
+        performance = @($performance); lifecycle = @($lifecycle); popupComparisonDirectory = "$snapshotPath/popup-comparison"; sourceSnapshot = $sourceSnapshot
         limitations = @(
             'Framework consumers share the installed CLR 4.x runtime; not separate OS installations.',
             'Earlier PF05 runs exceeded 300ms; current proxy results do not explain or close the intermittent issue.',
-            'PF01/PF03/PF04/PF06-PF10, physical keyboard/IME, DPI matrix, screen reader, x86 and heap-root investigation remain unverified.',
+            'PF01/PF03/PF04/PF06-PF08/PF10, physical keyboard/IME, DPI matrix, screen reader and x86 remain unverified. PF09 has a conditional 100-cycle managed-reference probe; external UIA retention and full process/native heap investigation remain open.',
             'Switch has 200ms thumb motion with cancellation; color/label transitions, pressed-handle stretch, shadow and busy rotation remain pending. Hardware frame-time/GC acceptance is unverified.'
             'Flex supports optional horizontal/vertical wrapping and distributed justification; Grow/Shrink/Basis/AlignSelf, wrap-reverse, align-content selection and baseline remain pending. No Flex wall-time/GC budget is claimed.'
             'Space uses decorative separators, suppresses separators at wrap boundaries, and does not implement Compact or baseline. No Space wall-time/GC budget is claimed.'

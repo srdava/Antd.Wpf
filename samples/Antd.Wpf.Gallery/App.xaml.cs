@@ -1,5 +1,7 @@
 using System;
+using System.Diagnostics;
 using System.IO;
+using System.Runtime.CompilerServices;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Media;
@@ -11,6 +13,21 @@ namespace Antd.Wpf.Gallery;
 public partial class App : Application
 {
     protected override void OnStartup(StartupEventArgs e)
+    {
+        long startupTimestamp = Stopwatch.GetTimestamp();
+        if (e.Args.Length > 0 && e.Args[0] == "--measure-startup")
+        {
+            StartupProbe.Run(this, e.Args, startupTimestamp);
+        }
+        else
+        {
+            StartGallery(e);
+        }
+        base.OnStartup(e);
+    }
+
+    [MethodImpl(MethodImplOptions.NoInlining)]
+    private void StartGallery(StartupEventArgs e)
     {
         if (e.Args.Length == 2 && (e.Args[0] == "--capture" || e.Args[0] == "--capture-matrix" || e.Args[0] == "--capture-divider" || e.Args[0] == "--capture-flex" || e.Args[0] == "--capture-space" || e.Args[0] == "--capture-grid" || e.Args[0] == "--capture-layout"))
         {
@@ -63,6 +80,5 @@ public partial class App : Application
             MainWindow.Show();
         }
 
-        base.OnStartup(e);
     }
 }

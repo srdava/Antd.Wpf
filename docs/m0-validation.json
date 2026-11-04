@@ -1,5 +1,5 @@
 {
-  "validatedAt": "2026-11-03T15:02:05.9354367+08:00",
+  "validatedAt": "2026-11-03T15:35:46.2632718+08:00",
   "command": "pwsh -File scripts/Verify.ps1",
   "exitCode": 0,
   "scope": "M0, P1 native selection/layout, Switch label typography/thumb motion, Input search dispatch/cancellation, count/length hints and multiline row bounds/scrolling, Flex wrapping/distributed justification, manual Sider collapse and Gallery scrolling/compact-navigation regression; not full catalog or release acceptance",
@@ -8,19 +8,19 @@
   "tests": [
     {
       "target": "net48",
-      "passed": 269,
-      "total": 269,
+      "passed": 273,
+      "total": 273,
       "report": "artifacts/test-results/verified-net48.trx"
     },
     {
       "target": "net8.0-windows",
-      "passed": 269,
-      "total": 269,
+      "passed": 273,
+      "total": 273,
       "report": "artifacts/test-results/verified-net8.0-windows.trx"
     }
   ],
   "package": "artifacts/packages/Antd.Wpf.0.1.0-alpha.1.nupkg",
-  "packageSha256": "39142632BBE7126C714CF11E1743A2B7C2EDCBE5AFE5911AE197000613DF0A2A",
+  "packageSha256": "7625B8D41CFBF6D3349D96D54D7A29A899FB5C6FD0353629E4E5472A0B7A07A0",
   "thirdPartyNotices": {
     "source": "src/Antd.Wpf/THIRD-PARTY-NOTICES.txt",
     "sha256": "F1FA1B2E14D11E90F16E3F8DFC0C74C164E3E41012C3093A3987B35D991DEF43",
@@ -53,131 +53,323 @@
       "target": "net48",
       "scenario": "PF02.layout-proxy",
       "samples": 30,
-      "p50Milliseconds": 85.381,
-      "p95Milliseconds": 144.898,
+      "p50Milliseconds": 92.28,
+      "p95Milliseconds": 181.801,
       "provisionalBudgetMilliseconds": 200,
       "proxyWithinBudget": true,
-      "maxMilliseconds": 174.944,
-      "raw": "artifacts/performance/verified-20261103-150205/m0/net48/samples.csv",
-      "environment": "artifacts/performance/verified-20261103-150205/m0/net48/environment.txt",
+      "maxMilliseconds": 183.389,
+      "raw": "artifacts/performance/verified-20261103-153455/m0/net48/samples.csv",
+      "environment": "artifacts/performance/verified-20261103-153455/m0/net48/environment.txt",
       "qualification": "Hidden-window layout/Dispatcher proxy; not full PF acceptance"
     },
     {
       "target": "net48",
       "scenario": "PF02.mixed-layout-proxy",
       "samples": 30,
-      "p50Milliseconds": 70.692,
-      "p95Milliseconds": 97.285,
+      "p50Milliseconds": 58.361,
+      "p95Milliseconds": 75.668,
       "provisionalBudgetMilliseconds": 200,
       "proxyWithinBudget": true,
-      "maxMilliseconds": 145.452,
-      "raw": "artifacts/performance/verified-20261103-150205/m0/net48/samples.csv",
-      "environment": "artifacts/performance/verified-20261103-150205/m0/net48/environment.txt",
+      "maxMilliseconds": 90.935,
+      "raw": "artifacts/performance/verified-20261103-153455/m0/net48/samples.csv",
+      "environment": "artifacts/performance/verified-20261103-153455/m0/net48/environment.txt",
       "qualification": "Hidden-window layout/Dispatcher proxy; not full PF acceptance"
     },
     {
       "target": "net48",
       "scenario": "PF05.layout-proxy",
       "samples": 30,
-      "p50Milliseconds": 11.068,
-      "p95Milliseconds": 18.09,
+      "p50Milliseconds": 15.399,
+      "p95Milliseconds": 23.442,
       "provisionalBudgetMilliseconds": 300,
       "proxyWithinBudget": true,
-      "maxMilliseconds": 19.001,
-      "raw": "artifacts/performance/verified-20261103-150205/m0/net48/samples.csv",
-      "environment": "artifacts/performance/verified-20261103-150205/m0/net48/environment.txt",
+      "maxMilliseconds": 42.128,
+      "raw": "artifacts/performance/verified-20261103-153455/m0/net48/samples.csv",
+      "environment": "artifacts/performance/verified-20261103-153455/m0/net48/environment.txt",
       "qualification": "Hidden-window layout/Dispatcher proxy; not full PF acceptance"
     },
     {
       "target": "net48",
       "scenario": "PF02.divider-layout-proxy",
       "samples": 30,
-      "p50Milliseconds": 21.801,
-      "p95Milliseconds": 41.492,
+      "p50Milliseconds": 14.669,
+      "p95Milliseconds": 28.712,
       "provisionalBudgetMilliseconds": 200,
       "proxyWithinBudget": true,
-      "maxMilliseconds": 48.63,
-      "raw": "artifacts/performance/verified-20261103-150205/divider/net48/samples.csv",
-      "environment": "artifacts/performance/verified-20261103-150205/divider/net48/environment.txt",
+      "maxMilliseconds": 30.492,
+      "raw": "artifacts/performance/verified-20261103-153455/divider/net48/samples.csv",
+      "environment": "artifacts/performance/verified-20261103-153455/divider/net48/environment.txt",
       "qualification": "Hidden-window layout/Dispatcher proxy; not full PF acceptance"
     },
     {
       "target": "net48",
       "scenario": "PF02.password-layout-proxy",
       "samples": 30,
-      "p50Milliseconds": 78.3,
-      "p95Milliseconds": 107.241,
+      "p50Milliseconds": 73.035,
+      "p95Milliseconds": 97.754,
       "provisionalBudgetMilliseconds": 200,
       "proxyWithinBudget": true,
-      "maxMilliseconds": 109.7,
-      "raw": "artifacts/performance/verified-20261103-150205/password/net48/samples.csv",
-      "environment": "artifacts/performance/verified-20261103-150205/password/net48/environment.txt",
+      "maxMilliseconds": 120.209,
+      "raw": "artifacts/performance/verified-20261103-153455/password/net48/samples.csv",
+      "environment": "artifacts/performance/verified-20261103-153455/password/net48/environment.txt",
       "qualification": "Hidden-window layout/Dispatcher proxy; not full PF acceptance"
     },
     {
       "target": "net8.0-windows",
       "scenario": "PF02.layout-proxy",
       "samples": 30,
-      "p50Milliseconds": 62.098,
-      "p95Milliseconds": 91.033,
+      "p50Milliseconds": 89.92,
+      "p95Milliseconds": 136.635,
       "provisionalBudgetMilliseconds": 200,
       "proxyWithinBudget": true,
-      "maxMilliseconds": 95.195,
-      "raw": "artifacts/performance/verified-20261103-150205/m0/net8.0-windows/samples.csv",
-      "environment": "artifacts/performance/verified-20261103-150205/m0/net8.0-windows/environment.txt",
+      "maxMilliseconds": 192.722,
+      "raw": "artifacts/performance/verified-20261103-153455/m0/net8.0-windows/samples.csv",
+      "environment": "artifacts/performance/verified-20261103-153455/m0/net8.0-windows/environment.txt",
       "qualification": "Hidden-window layout/Dispatcher proxy; not full PF acceptance"
     },
     {
       "target": "net8.0-windows",
       "scenario": "PF02.mixed-layout-proxy",
       "samples": 30,
-      "p50Milliseconds": 45.016,
-      "p95Milliseconds": 65.547,
+      "p50Milliseconds": 57.682,
+      "p95Milliseconds": 85.785,
       "provisionalBudgetMilliseconds": 200,
       "proxyWithinBudget": true,
-      "maxMilliseconds": 87.538,
-      "raw": "artifacts/performance/verified-20261103-150205/m0/net8.0-windows/samples.csv",
-      "environment": "artifacts/performance/verified-20261103-150205/m0/net8.0-windows/environment.txt",
+      "maxMilliseconds": 95.459,
+      "raw": "artifacts/performance/verified-20261103-153455/m0/net8.0-windows/samples.csv",
+      "environment": "artifacts/performance/verified-20261103-153455/m0/net8.0-windows/environment.txt",
       "qualification": "Hidden-window layout/Dispatcher proxy; not full PF acceptance"
     },
     {
       "target": "net8.0-windows",
       "scenario": "PF05.layout-proxy",
       "samples": 30,
-      "p50Milliseconds": 11.807,
-      "p95Milliseconds": 19.185,
+      "p50Milliseconds": 24.799,
+      "p95Milliseconds": 45.99,
       "provisionalBudgetMilliseconds": 300,
       "proxyWithinBudget": true,
-      "maxMilliseconds": 20.771,
-      "raw": "artifacts/performance/verified-20261103-150205/m0/net8.0-windows/samples.csv",
-      "environment": "artifacts/performance/verified-20261103-150205/m0/net8.0-windows/environment.txt",
+      "maxMilliseconds": 47.685,
+      "raw": "artifacts/performance/verified-20261103-153455/m0/net8.0-windows/samples.csv",
+      "environment": "artifacts/performance/verified-20261103-153455/m0/net8.0-windows/environment.txt",
       "qualification": "Hidden-window layout/Dispatcher proxy; not full PF acceptance"
     },
     {
       "target": "net8.0-windows",
       "scenario": "PF02.divider-layout-proxy",
       "samples": 30,
-      "p50Milliseconds": 18.553,
-      "p95Milliseconds": 32.947,
+      "p50Milliseconds": 13.996,
+      "p95Milliseconds": 21.379,
       "provisionalBudgetMilliseconds": 200,
       "proxyWithinBudget": true,
-      "maxMilliseconds": 38.611,
-      "raw": "artifacts/performance/verified-20261103-150205/divider/net8.0-windows/samples.csv",
-      "environment": "artifacts/performance/verified-20261103-150205/divider/net8.0-windows/environment.txt",
+      "maxMilliseconds": 23.253,
+      "raw": "artifacts/performance/verified-20261103-153455/divider/net8.0-windows/samples.csv",
+      "environment": "artifacts/performance/verified-20261103-153455/divider/net8.0-windows/environment.txt",
       "qualification": "Hidden-window layout/Dispatcher proxy; not full PF acceptance"
     },
     {
       "target": "net8.0-windows",
       "scenario": "PF02.password-layout-proxy",
       "samples": 30,
-      "p50Milliseconds": 61.101,
-      "p95Milliseconds": 85.467,
+      "p50Milliseconds": 55.076,
+      "p95Milliseconds": 87.435,
       "provisionalBudgetMilliseconds": 200,
       "proxyWithinBudget": true,
-      "maxMilliseconds": 99.802,
-      "raw": "artifacts/performance/verified-20261103-150205/password/net8.0-windows/samples.csv",
-      "environment": "artifacts/performance/verified-20261103-150205/password/net8.0-windows/environment.txt",
+      "maxMilliseconds": 88.978,
+      "raw": "artifacts/performance/verified-20261103-153455/password/net8.0-windows/samples.csv",
+      "environment": "artifacts/performance/verified-20261103-153455/password/net8.0-windows/environment.txt",
       "qualification": "Hidden-window layout/Dispatcher proxy; not full PF acceptance"
+    }
+  ],
+  "startup": [
+    {
+      "target": "net48",
+      "scenario": "PF01.fresh-process-startup-proxy",
+      "pairs": 10,
+      "independentProcesses": 20,
+      "empty": {
+        "startup": {
+          "samples": 10,
+          "p50Milliseconds": 172.0989,
+          "p95Milliseconds": 266.9009,
+          "maxMilliseconds": 266.9009
+        },
+        "loaded": {
+          "samples": 10,
+          "p50Milliseconds": 333.2,
+          "p95Milliseconds": 524.7898,
+          "maxMilliseconds": 524.7898
+        },
+        "rendering": {
+          "samples": 10,
+          "p50Milliseconds": 333.2131,
+          "p95Milliseconds": 524.8133,
+          "maxMilliseconds": 524.8133
+        },
+        "inputDispatch": {
+          "samples": 10,
+          "p50Milliseconds": 567.4467,
+          "p95Milliseconds": 818.6716,
+          "maxMilliseconds": 818.6716
+        }
+      },
+      "controls": {
+        "startup": {
+          "samples": 10,
+          "p50Milliseconds": 170.2459,
+          "p95Milliseconds": 242.5612,
+          "maxMilliseconds": 242.5612
+        },
+        "loaded": {
+          "samples": 10,
+          "p50Milliseconds": 579.2988,
+          "p95Milliseconds": 678.5571,
+          "maxMilliseconds": 678.5571
+        },
+        "rendering": {
+          "samples": 10,
+          "p50Milliseconds": 580.4953,
+          "p95Milliseconds": 679.9954,
+          "maxMilliseconds": 679.9954
+        },
+        "inputDispatch": {
+          "samples": 10,
+          "p50Milliseconds": 810.512,
+          "p95Milliseconds": 922.2421,
+          "maxMilliseconds": 922.2421
+        }
+      },
+      "pairedLoadedDelta": {
+        "samples": 10,
+        "p50Milliseconds": 247.93960000000004,
+        "p95Milliseconds": 363.63689999999997,
+        "maxMilliseconds": 363.63689999999997
+      },
+      "pairedRenderingDelta": {
+        "samples": 10,
+        "p50Milliseconds": 249.12610000000006,
+        "p95Milliseconds": 365.1589,
+        "maxMilliseconds": 365.1589
+      },
+      "pairedInputDispatchDelta": {
+        "samples": 10,
+        "p50Milliseconds": 217.135,
+        "p95Milliseconds": 360.35260000000005,
+        "maxMilliseconds": 360.35260000000005
+      },
+      "provisionalBudgetMilliseconds": 300,
+      "pairedInputDispatchProxyWithinBudget": false,
+      "focusAcceptedSamples": 20,
+      "gallerySha256": "6DB934907AF1CB5554982E740350B2C8B0564582AC2E53651A9C53DED10C9131",
+      "librarySha256": "5F10B88933B77F1621B509EE9971E235009A39F5ABD97487B4ED08E05C274F8A",
+      "runnerSha256": "17F76658FC80BF5D84262A548345714429F4474AE228BCB163789451F7B3283D",
+      "machine": "RD_SUNR",
+      "os": "Microsoft Windows NT 10.0.26300.0",
+      "processors": 8,
+      "cpu": [
+        "11th Gen Intel(R) Core(TM) i7-1165G7 @ 2.80GHz"
+      ],
+      "gpu": [
+        "OrayIddDriver Device",
+        "Intel(R) Iris(R) Xe Graphics"
+      ],
+      "qpcFrequency": 10000000,
+      "qualification": "Fresh independent processes, alternating paired order; OS caches not flushed; hidden-window Rendering and Input Dispatcher proxies, not GPU presentation or physical interactivity/complete PF01 acceptance. Negative deltas retained.",
+      "rawDirectory": "artifacts/performance/verified-20261103-153455/startup/net48"
+    },
+    {
+      "target": "net8.0-windows",
+      "scenario": "PF01.fresh-process-startup-proxy",
+      "pairs": 10,
+      "independentProcesses": 20,
+      "empty": {
+        "startup": {
+          "samples": 10,
+          "p50Milliseconds": 353.9688,
+          "p95Milliseconds": 429.4384,
+          "maxMilliseconds": 429.4384
+        },
+        "loaded": {
+          "samples": 10,
+          "p50Milliseconds": 560.4832,
+          "p95Milliseconds": 703.5664,
+          "maxMilliseconds": 703.5664
+        },
+        "rendering": {
+          "samples": 10,
+          "p50Milliseconds": 560.4927,
+          "p95Milliseconds": 703.579,
+          "maxMilliseconds": 703.579
+        },
+        "inputDispatch": {
+          "samples": 10,
+          "p50Milliseconds": 791.3988,
+          "p95Milliseconds": 947.6411,
+          "maxMilliseconds": 947.6411
+        }
+      },
+      "controls": {
+        "startup": {
+          "samples": 10,
+          "p50Milliseconds": 345.6461,
+          "p95Milliseconds": 413.3178,
+          "maxMilliseconds": 413.3178
+        },
+        "loaded": {
+          "samples": 10,
+          "p50Milliseconds": 940.0946,
+          "p95Milliseconds": 1180.8152,
+          "maxMilliseconds": 1180.8152
+        },
+        "rendering": {
+          "samples": 10,
+          "p50Milliseconds": 941.4555,
+          "p95Milliseconds": 1182.4363,
+          "maxMilliseconds": 1182.4363
+        },
+        "inputDispatch": {
+          "samples": 10,
+          "p50Milliseconds": 1202.247,
+          "p95Milliseconds": 1484.6637,
+          "maxMilliseconds": 1484.6637
+        }
+      },
+      "pairedLoadedDelta": {
+        "samples": 10,
+        "p50Milliseconds": 377.42929999999996,
+        "p95Milliseconds": 532.962,
+        "maxMilliseconds": 532.962
+      },
+      "pairedRenderingDelta": {
+        "samples": 10,
+        "p50Milliseconds": 378.2837,
+        "p95Milliseconds": 534.5680000000001,
+        "maxMilliseconds": 534.5680000000001
+      },
+      "pairedInputDispatchDelta": {
+        "samples": 10,
+        "p50Milliseconds": 381.64459999999997,
+        "p95Milliseconds": 609.3244000000001,
+        "maxMilliseconds": 609.3244000000001
+      },
+      "provisionalBudgetMilliseconds": 300,
+      "pairedInputDispatchProxyWithinBudget": false,
+      "focusAcceptedSamples": 20,
+      "gallerySha256": "50554A16446225E706AB39DAE118D0DD6C5134865FBB56F882461C7EE8793970",
+      "librarySha256": "861AAD584D9595CF3A07A2598124F050045CD7A49F168DAC2EB1769390B769A9",
+      "runnerSha256": "17F76658FC80BF5D84262A548345714429F4474AE228BCB163789451F7B3283D",
+      "machine": "RD_SUNR",
+      "os": "Microsoft Windows NT 10.0.26300.0",
+      "processors": 8,
+      "cpu": [
+        "11th Gen Intel(R) Core(TM) i7-1165G7 @ 2.80GHz"
+      ],
+      "gpu": [
+        "OrayIddDriver Device",
+        "Intel(R) Iris(R) Xe Graphics"
+      ],
+      "qpcFrequency": 10000000,
+      "qualification": "Fresh independent processes, alternating paired order; OS caches not flushed; hidden-window Rendering and Input Dispatcher proxies, not GPU presentation or physical interactivity/complete PF01 acceptance. Negative deltas retained.",
+      "rawDirectory": "artifacts/performance/verified-20261103-153455/startup/net8.0-windows"
     }
   ],
   "lifecycle": [
@@ -191,7 +383,7 @@
       "aliveCommandsAfterRelease": 0,
       "nativeBaselineWindows": 3,
       "aliveNativeBaselineReferences": 9,
-      "rawDirectory": "artifacts/performance/verified-20261103-150205/lifecycle/net48",
+      "rawDirectory": "artifacts/performance/verified-20261103-153455/lifecycle/net48",
       "qualification": "Conditional managed-reference probe after native UIA baseline; external automation retention remains reported, not full PF09 heap/native-handle acceptance"
     },
     {
@@ -204,11 +396,11 @@
       "aliveCommandsAfterRelease": 0,
       "nativeBaselineWindows": 3,
       "aliveNativeBaselineReferences": 9,
-      "rawDirectory": "artifacts/performance/verified-20261103-150205/lifecycle/net8.0-windows",
+      "rawDirectory": "artifacts/performance/verified-20261103-153455/lifecycle/net8.0-windows",
       "qualification": "Conditional managed-reference probe after native UIA baseline; external automation retention remains reported, not full PF09 heap/native-handle acceptance"
     }
   ],
-  "popupComparisonDirectory": "artifacts/performance/verified-20261103-150205/popup-comparison",
+  "popupComparisonDirectory": "artifacts/performance/verified-20261103-153455/popup-comparison",
   "sourceSnapshot": [
     {
       "path": "samples\\Antd.Wpf.Gallery\\Antd.Wpf.Gallery.csproj",
@@ -220,7 +412,7 @@
     },
     {
       "path": "samples\\Antd.Wpf.Gallery\\App.xaml.cs",
-      "sha256": "8181E3294B162A877DAD4014FD8172D44808C52DD5B6CC5B23DD38CD7E3AD77B"
+      "sha256": "5FEEEB2B37D2BC31991F21172D03A8AA24B3AACD1A858F1E91EAB4FD88769EE1"
     },
     {
       "path": "samples\\Antd.Wpf.Gallery\\AssemblyInfo.cs",
@@ -253,6 +445,10 @@
     {
       "path": "samples\\Antd.Wpf.Gallery\\SpaceMatrix.xaml",
       "sha256": "50E620DCE3D120AA3E898EED0F38864D649142FE25FFF8629683B849B193D64C"
+    },
+    {
+      "path": "samples\\Antd.Wpf.Gallery\\StartupProbe.cs",
+      "sha256": "5371B620AE976AADD156842D88CE4605DBFE34D810C3AC64E69C6900262E5B73"
     },
     {
       "path": "samples\\Antd.Wpf.Gallery\\VisualMatrix.xaml",
@@ -503,6 +699,10 @@
       "sha256": "FDA677E7ACFEB780CD0B8383118E400C805C9ED10AEE8D0218243FD97A0E59FB"
     },
     {
+      "path": "tests\\Antd.Wpf.Tests\\StartupProbeTests.cs",
+      "sha256": "23225F6DD27130360892B28E8BCA8F74F7C0B9A8BE983C792B6E4D61557D97E6"
+    },
+    {
       "path": "tests\\Antd.Wpf.Tests\\SwitchMotionTests.cs",
       "sha256": "270FE5A485921F30B08B44E2D7A63A53A2F07758377E56CD8300FB1DA23BF0FA"
     },
@@ -527,10 +727,20 @@
       "sha256": "456E3F92F3B44C66A78E1060FA0A0AA56154A9179A0A1894AFD048546FFAB388"
     }
   ],
+  "scriptSnapshot": [
+    {
+      "path": "scripts/Verify.ps1",
+      "sha256": "580BB0472BF1E1788B2A036E94F749166366843D406C796BACBCE2686C3D69F8"
+    },
+    {
+      "path": "scripts/Measure-Startup.ps1",
+      "sha256": "17F76658FC80BF5D84262A548345714429F4474AE228BCB163789451F7B3283D"
+    }
+  ],
   "limitations": [
     "Framework consumers share the installed CLR 4.x runtime; not separate OS installations.",
     "Earlier PF05 runs exceeded 300ms; current proxy results do not explain or close the intermittent issue.",
-    "PF01/PF03/PF04/PF06-PF08/PF10, physical keyboard/IME, DPI matrix, screen reader and x86 remain unverified. PF09 has a conditional 100-cycle managed-reference probe; external UIA retention and full process/native heap investigation remain open.",
+    "PF01 has 10 paired fresh-process samples per target, with hidden Rendering/Input Dispatcher proxies and OS caches unflushed; actual GPU presentation/physical interactivity and full PF01 acceptance remain open. PF03/PF04/PF06-PF08/PF10, physical keyboard/IME, DPI matrix, screen reader and x86 remain unverified. PF09 is conditional on native UIA baseline; full process/native heap investigation remains open.",
     "Switch has 200ms thumb motion with cancellation; color/label transitions, pressed-handle stretch, shadow and busy rotation remain pending. Hardware frame-time/GC acceptance is unverified.",
     "Flex supports optional horizontal/vertical wrapping and distributed justification; Grow/Shrink/Basis/AlignSelf, wrap-reverse, align-content selection and baseline remain pending. No Flex wall-time/GC budget is claimed.",
     "Space uses decorative separators, suppresses separators at wrap boundaries, and does not implement Compact or baseline. No Space wall-time/GC budget is claimed.",

@@ -131,6 +131,14 @@ try {
     $snapshotPath = 'artifacts/performance/verified-' + (Get-Date -Format 'yyyyMMdd-HHmmss')
     New-Item -ItemType Directory -Path $snapshotPath | Out-Null
     Copy-Item -LiteralPath 'artifacts/performance/m0', 'artifacts/performance/popup-comparison', 'artifacts/performance/divider', 'artifacts/performance/password', 'artifacts/performance/lifecycle' -Destination $snapshotPath -Recurse
+    $startup = foreach ($framework in @('net48', 'net8.0-windows')) {
+        $directory = "$snapshotPath/startup/$framework"
+        & (Join-Path $PSScriptRoot 'Measure-Startup.ps1') -Target $framework -Pairs 10 -OutputDirectory (Join-Path $repository $directory)
+        $summary = Get-Content -LiteralPath "$directory/summary.json" -Raw | ConvertFrom-Json
+        if ($summary.pairs -ne 10 -or $summary.independentProcesses -ne 20) { throw "Incomplete startup probe: $directory" }
+        $summary | Add-Member -NotePropertyName rawDirectory -NotePropertyValue $directory
+        $summary
+    }
     $performance = foreach ($framework in @('net48', 'net8.0-windows')) {
         foreach ($sceneFolder in @('m0', 'divider', 'password')) {
             $csvPath = "$snapshotPath/$sceneFolder/$framework/samples.csv"
@@ -177,6 +185,9 @@ try {
     $sourceSnapshot = @($sourceFiles | ForEach-Object {
         [ordered]@{ path = [IO.Path]::GetRelativePath($repository, $_.FullName); sha256 = (Get-FileHash -LiteralPath $_.FullName -Algorithm SHA256).Hash }
     })
+    $scriptSnapshot = @('scripts/Verify.ps1', 'scripts/Measure-Startup.ps1') | ForEach-Object {
+        [ordered]@{ path = $_; sha256 = (Get-FileHash -LiteralPath $_ -Algorithm SHA256).Hash }
+    }
     $report = [ordered]@{
         validatedAt = (Get-Date).ToString('o'); command = 'pwsh -File scripts/Verify.ps1'; exitCode = 0
         scope = 'M0, P1 native selection/layout, Switch label typography/thumb motion, Input search dispatch/cancellation, count/length hints and multiline row bounds/scrolling, Flex wrapping/distributed justification, manual Sider collapse and Gallery scrolling/compact-navigation regression; not full catalog or release acceptance'
@@ -189,11 +200,12 @@ try {
             'artifacts/divider-matrix-net48.png', 'artifacts/divider-matrix-net8.png', 'artifacts/flex-matrix-net48.png', 'artifacts/flex-matrix-net8.png',
             'artifacts/space-matrix-net48.png', 'artifacts/space-matrix-net8.png', 'artifacts/grid-matrix-net48.png', 'artifacts/grid-matrix-net8.png',
             'artifacts/layout-matrix-net48.png', 'artifacts/layout-matrix-net8.png')
-        performance = @($performance); lifecycle = @($lifecycle); popupComparisonDirectory = "$snapshotPath/popup-comparison"; sourceSnapshot = $sourceSnapshot
+        performance = @($performance); startup = @($startup); lifecycle = @($lifecycle)
+        popupComparisonDirectory = "$snapshotPath/popup-comparison"; sourceSnapshot = $sourceSnapshot; scriptSnapshot = @($scriptSnapshot)
         limitations = @(
             'Framework consumers share the installed CLR 4.x runtime; not separate OS installations.',
             'Earlier PF05 runs exceeded 300ms; current proxy results do not explain or close the intermittent issue.',
-            'PF01/PF03/PF04/PF06-PF08/PF10, physical keyboard/IME, DPI matrix, screen reader and x86 remain unverified. PF09 has a conditional 100-cycle managed-reference probe; external UIA retention and full process/native heap investigation remain open.',
+            'PF01 has 10 paired fresh-process samples per target, with hidden Rendering/Input Dispatcher proxies and OS caches unflushed; actual GPU presentation/physical interactivity and full PF01 acceptance remain open. PF03/PF04/PF06-PF08/PF10, physical keyboard/IME, DPI matrix, screen reader and x86 remain unverified. PF09 is conditional on native UIA baseline; full process/native heap investigation remains open.',
             'Switch has 200ms thumb motion with cancellation; color/label transitions, pressed-handle stretch, shadow and busy rotation remain pending. Hardware frame-time/GC acceptance is unverified.'
             'Flex supports optional horizontal/vertical wrapping and distributed justification; Grow/Shrink/Basis/AlignSelf, wrap-reverse, align-content selection and baseline remain pending. No Flex wall-time/GC budget is claimed.'
             'Space uses decorative separators, suppresses separators at wrap boundaries, and does not implement Compact or baseline. No Space wall-time/GC budget is claimed.'

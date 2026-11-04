@@ -25,7 +25,7 @@ internal static class Program
             InputSearchEventArgs? searchRequest = null;
             int searchCalls = 0;
             search.SearchRequested += (_, args) => { searchRequest = args; searchCalls++; };
-            var select = new AntSelect { ItemsSource = new[] { "Alpha", "Beta" }, SelectedIndex = 1 };
+            var select = new AntSelect { ItemsSource = new[] { "Alpha", "Beta" }, SelectedIndex = 1, AllowClear = true };
             var toggle = new AntSwitch { IsChecked = true, CheckedContent = "开", UncheckedContent = "关" };
             var checkbox = new AntCheckBox { Content = "Check", IsChecked = null };
             var radio = new AntRadioButton { Content = "Radio", IsChecked = true };
@@ -152,6 +152,11 @@ internal static class Program
             using (var secret = password.SecurePassword) { Require(secret.Length == 9 && !password.IsEmpty, "Packaged secure password failed"); }
             password.Clear();
             Require(password.IsEmpty, "Packaged password clear failed");
+            var selectClear = select.Template?.FindName("PART_ClearButton", select) as Button
+                ?? throw new InvalidOperationException("Select clear BAML unavailable");
+            selectClear.RaiseEvent(new RoutedEventArgs(ButtonBase.ClickEvent));
+            Require(select.SelectedIndex == -1 && !select.IsDropDownOpen, "Packaged select clear failed");
+            select.SelectedIndex = 1;
             input.ShowCount = true;
             input.MaxLength = 4;
             Pump();
@@ -198,7 +203,7 @@ internal static class Program
             Require(input.Text == "中文 package", "Theme destroyed input");
             select.IsDropDownOpen = true;
             Pump();
-            Require(select.Template.FindName("PART_Popup", select) is Popup { IsOpen: true }, "Popup failed");
+            Require(select.Template?.FindName("PART_Popup", select) is Popup { IsOpen: true }, "Popup failed");
             Require((string)select.SelectedItem == "Beta", "Selection changed");
             window.Close();
             Pump();

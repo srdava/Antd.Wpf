@@ -2,6 +2,8 @@
 
 核对日期：2026-10-30。此文件记录官方事实、可重复计算结果与本项目的映射决定，不是全部组件已经视觉验收的声明。
 
+2026-11-04 Select单选清除追加：沿用既有尺寸/padding/圆角，默认12DIP CloseCircleFilled矢量保留官方1024画布，Tertiary/Secondary动态前景；20DIP命中区属于WPF映射。清除在既有箭头槽内显示，不增加文本占位宽度。几何来源与逐项功能验证见[Select清除](select-clear-implementation.md)，未声明完整指针/DPI逐像素验收。
+
 ## 证据与复现
 
 - 官方源码版本固定为 [ant-design/ant-design 6.6.8](https://github.com/ant-design/ant-design/tree/6.6.8)。已下载样式、主题种子、派生算法和别名源码，URL、字节数、SHA-256 见 [styles manifest](official/styles-6.6.8/manifest.json)。原有组件说明清单 [manifest.json](official/manifest.json) 继续保留，未替换其来源或 hash。

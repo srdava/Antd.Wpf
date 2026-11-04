@@ -1,5 +1,5 @@
 {
-  "validatedAt": "2026-11-03T15:35:46.2632718+08:00",
+  "validatedAt": "2026-11-04T11:33:47.9136388+08:00",
   "command": "pwsh -File scripts/Verify.ps1",
   "exitCode": 0,
   "scope": "M0, P1 native selection/layout, Switch label typography/thumb motion, Input search dispatch/cancellation, count/length hints and multiline row bounds/scrolling, Flex wrapping/distributed justification, manual Sider collapse and Gallery scrolling/compact-navigation regression; not full catalog or release acceptance",
@@ -8,22 +8,22 @@
   "tests": [
     {
       "target": "net48",
-      "passed": 273,
-      "total": 273,
+      "passed": 283,
+      "total": 283,
       "report": "artifacts/test-results/verified-net48.trx"
     },
     {
       "target": "net8.0-windows",
-      "passed": 273,
-      "total": 273,
+      "passed": 283,
+      "total": 283,
       "report": "artifacts/test-results/verified-net8.0-windows.trx"
     }
   ],
   "package": "artifacts/packages/Antd.Wpf.0.1.0-alpha.1.nupkg",
-  "packageSha256": "7625B8D41CFBF6D3349D96D54D7A29A899FB5C6FD0353629E4E5472A0B7A07A0",
+  "packageSha256": "922A0925F42B97873A637C2822D19F6C67505B4724DEDD1B8A565FB3A4F9BFA0",
   "thirdPartyNotices": {
     "source": "src/Antd.Wpf/THIRD-PARTY-NOTICES.txt",
-    "sha256": "F1FA1B2E14D11E90F16E3F8DFC0C74C164E3E41012C3093A3987B35D991DEF43",
+    "sha256": "7F369E4592D33685222C38F24B9F2913638D9802EFEC137B1D7870E84F8B2A5A",
     "packagedBytesMatchSource": true
   },
   "consumerTargetsPassed": [
@@ -53,130 +53,130 @@
       "target": "net48",
       "scenario": "PF02.layout-proxy",
       "samples": 30,
-      "p50Milliseconds": 92.28,
-      "p95Milliseconds": 181.801,
+      "p50Milliseconds": 95.628,
+      "p95Milliseconds": 170.362,
       "provisionalBudgetMilliseconds": 200,
       "proxyWithinBudget": true,
-      "maxMilliseconds": 183.389,
-      "raw": "artifacts/performance/verified-20261103-153455/m0/net48/samples.csv",
-      "environment": "artifacts/performance/verified-20261103-153455/m0/net48/environment.txt",
+      "maxMilliseconds": 174.73,
+      "raw": "artifacts/performance/verified-20261104-113258/m0/net48/samples.csv",
+      "environment": "artifacts/performance/verified-20261104-113258/m0/net48/environment.txt",
       "qualification": "Hidden-window layout/Dispatcher proxy; not full PF acceptance"
     },
     {
       "target": "net48",
       "scenario": "PF02.mixed-layout-proxy",
       "samples": 30,
-      "p50Milliseconds": 58.361,
-      "p95Milliseconds": 75.668,
+      "p50Milliseconds": 69.665,
+      "p95Milliseconds": 124.931,
       "provisionalBudgetMilliseconds": 200,
       "proxyWithinBudget": true,
-      "maxMilliseconds": 90.935,
-      "raw": "artifacts/performance/verified-20261103-153455/m0/net48/samples.csv",
-      "environment": "artifacts/performance/verified-20261103-153455/m0/net48/environment.txt",
+      "maxMilliseconds": 125.813,
+      "raw": "artifacts/performance/verified-20261104-113258/m0/net48/samples.csv",
+      "environment": "artifacts/performance/verified-20261104-113258/m0/net48/environment.txt",
       "qualification": "Hidden-window layout/Dispatcher proxy; not full PF acceptance"
     },
     {
       "target": "net48",
       "scenario": "PF05.layout-proxy",
       "samples": 30,
-      "p50Milliseconds": 15.399,
-      "p95Milliseconds": 23.442,
+      "p50Milliseconds": 16.69,
+      "p95Milliseconds": 25.055,
       "provisionalBudgetMilliseconds": 300,
       "proxyWithinBudget": true,
-      "maxMilliseconds": 42.128,
-      "raw": "artifacts/performance/verified-20261103-153455/m0/net48/samples.csv",
-      "environment": "artifacts/performance/verified-20261103-153455/m0/net48/environment.txt",
+      "maxMilliseconds": 58.898,
+      "raw": "artifacts/performance/verified-20261104-113258/m0/net48/samples.csv",
+      "environment": "artifacts/performance/verified-20261104-113258/m0/net48/environment.txt",
       "qualification": "Hidden-window layout/Dispatcher proxy; not full PF acceptance"
     },
     {
       "target": "net48",
       "scenario": "PF02.divider-layout-proxy",
       "samples": 30,
-      "p50Milliseconds": 14.669,
-      "p95Milliseconds": 28.712,
+      "p50Milliseconds": 20.971,
+      "p95Milliseconds": 32.159,
       "provisionalBudgetMilliseconds": 200,
       "proxyWithinBudget": true,
-      "maxMilliseconds": 30.492,
-      "raw": "artifacts/performance/verified-20261103-153455/divider/net48/samples.csv",
-      "environment": "artifacts/performance/verified-20261103-153455/divider/net48/environment.txt",
+      "maxMilliseconds": 37.693,
+      "raw": "artifacts/performance/verified-20261104-113258/divider/net48/samples.csv",
+      "environment": "artifacts/performance/verified-20261104-113258/divider/net48/environment.txt",
       "qualification": "Hidden-window layout/Dispatcher proxy; not full PF acceptance"
     },
     {
       "target": "net48",
       "scenario": "PF02.password-layout-proxy",
       "samples": 30,
-      "p50Milliseconds": 73.035,
-      "p95Milliseconds": 97.754,
+      "p50Milliseconds": 81.025,
+      "p95Milliseconds": 150.54,
       "provisionalBudgetMilliseconds": 200,
       "proxyWithinBudget": true,
-      "maxMilliseconds": 120.209,
-      "raw": "artifacts/performance/verified-20261103-153455/password/net48/samples.csv",
-      "environment": "artifacts/performance/verified-20261103-153455/password/net48/environment.txt",
+      "maxMilliseconds": 161.292,
+      "raw": "artifacts/performance/verified-20261104-113258/password/net48/samples.csv",
+      "environment": "artifacts/performance/verified-20261104-113258/password/net48/environment.txt",
       "qualification": "Hidden-window layout/Dispatcher proxy; not full PF acceptance"
     },
     {
       "target": "net8.0-windows",
       "scenario": "PF02.layout-proxy",
       "samples": 30,
-      "p50Milliseconds": 89.92,
-      "p95Milliseconds": 136.635,
+      "p50Milliseconds": 75.473,
+      "p95Milliseconds": 117.715,
       "provisionalBudgetMilliseconds": 200,
       "proxyWithinBudget": true,
-      "maxMilliseconds": 192.722,
-      "raw": "artifacts/performance/verified-20261103-153455/m0/net8.0-windows/samples.csv",
-      "environment": "artifacts/performance/verified-20261103-153455/m0/net8.0-windows/environment.txt",
+      "maxMilliseconds": 125.229,
+      "raw": "artifacts/performance/verified-20261104-113258/m0/net8.0-windows/samples.csv",
+      "environment": "artifacts/performance/verified-20261104-113258/m0/net8.0-windows/environment.txt",
       "qualification": "Hidden-window layout/Dispatcher proxy; not full PF acceptance"
     },
     {
       "target": "net8.0-windows",
       "scenario": "PF02.mixed-layout-proxy",
       "samples": 30,
-      "p50Milliseconds": 57.682,
-      "p95Milliseconds": 85.785,
+      "p50Milliseconds": 60.342,
+      "p95Milliseconds": 99.305,
       "provisionalBudgetMilliseconds": 200,
       "proxyWithinBudget": true,
-      "maxMilliseconds": 95.459,
-      "raw": "artifacts/performance/verified-20261103-153455/m0/net8.0-windows/samples.csv",
-      "environment": "artifacts/performance/verified-20261103-153455/m0/net8.0-windows/environment.txt",
+      "maxMilliseconds": 105.207,
+      "raw": "artifacts/performance/verified-20261104-113258/m0/net8.0-windows/samples.csv",
+      "environment": "artifacts/performance/verified-20261104-113258/m0/net8.0-windows/environment.txt",
       "qualification": "Hidden-window layout/Dispatcher proxy; not full PF acceptance"
     },
     {
       "target": "net8.0-windows",
       "scenario": "PF05.layout-proxy",
       "samples": 30,
-      "p50Milliseconds": 24.799,
-      "p95Milliseconds": 45.99,
+      "p50Milliseconds": 16.475,
+      "p95Milliseconds": 34.195,
       "provisionalBudgetMilliseconds": 300,
       "proxyWithinBudget": true,
-      "maxMilliseconds": 47.685,
-      "raw": "artifacts/performance/verified-20261103-153455/m0/net8.0-windows/samples.csv",
-      "environment": "artifacts/performance/verified-20261103-153455/m0/net8.0-windows/environment.txt",
+      "maxMilliseconds": 36.077,
+      "raw": "artifacts/performance/verified-20261104-113258/m0/net8.0-windows/samples.csv",
+      "environment": "artifacts/performance/verified-20261104-113258/m0/net8.0-windows/environment.txt",
       "qualification": "Hidden-window layout/Dispatcher proxy; not full PF acceptance"
     },
     {
       "target": "net8.0-windows",
       "scenario": "PF02.divider-layout-proxy",
       "samples": 30,
-      "p50Milliseconds": 13.996,
-      "p95Milliseconds": 21.379,
+      "p50Milliseconds": 22.05,
+      "p95Milliseconds": 35.532,
       "provisionalBudgetMilliseconds": 200,
       "proxyWithinBudget": true,
-      "maxMilliseconds": 23.253,
-      "raw": "artifacts/performance/verified-20261103-153455/divider/net8.0-windows/samples.csv",
-      "environment": "artifacts/performance/verified-20261103-153455/divider/net8.0-windows/environment.txt",
+      "maxMilliseconds": 41.745,
+      "raw": "artifacts/performance/verified-20261104-113258/divider/net8.0-windows/samples.csv",
+      "environment": "artifacts/performance/verified-20261104-113258/divider/net8.0-windows/environment.txt",
       "qualification": "Hidden-window layout/Dispatcher proxy; not full PF acceptance"
     },
     {
       "target": "net8.0-windows",
       "scenario": "PF02.password-layout-proxy",
       "samples": 30,
-      "p50Milliseconds": 55.076,
-      "p95Milliseconds": 87.435,
+      "p50Milliseconds": 112.934,
+      "p95Milliseconds": 167.125,
       "provisionalBudgetMilliseconds": 200,
       "proxyWithinBudget": true,
-      "maxMilliseconds": 88.978,
-      "raw": "artifacts/performance/verified-20261103-153455/password/net8.0-windows/samples.csv",
-      "environment": "artifacts/performance/verified-20261103-153455/password/net8.0-windows/environment.txt",
+      "maxMilliseconds": 179.969,
+      "raw": "artifacts/performance/verified-20261104-113258/password/net8.0-windows/samples.csv",
+      "environment": "artifacts/performance/verified-20261104-113258/password/net8.0-windows/environment.txt",
       "qualification": "Hidden-window layout/Dispatcher proxy; not full PF acceptance"
     }
   ],
@@ -189,78 +189,78 @@
       "empty": {
         "startup": {
           "samples": 10,
-          "p50Milliseconds": 172.0989,
-          "p95Milliseconds": 266.9009,
-          "maxMilliseconds": 266.9009
+          "p50Milliseconds": 177.7549,
+          "p95Milliseconds": 268.1013,
+          "maxMilliseconds": 268.1013
         },
         "loaded": {
           "samples": 10,
-          "p50Milliseconds": 333.2,
-          "p95Milliseconds": 524.7898,
-          "maxMilliseconds": 524.7898
+          "p50Milliseconds": 333.3475,
+          "p95Milliseconds": 440.1805,
+          "maxMilliseconds": 440.1805
         },
         "rendering": {
           "samples": 10,
-          "p50Milliseconds": 333.2131,
-          "p95Milliseconds": 524.8133,
-          "maxMilliseconds": 524.8133
+          "p50Milliseconds": 333.3599,
+          "p95Milliseconds": 440.1917,
+          "maxMilliseconds": 440.1917
         },
         "inputDispatch": {
           "samples": 10,
-          "p50Milliseconds": 567.4467,
-          "p95Milliseconds": 818.6716,
-          "maxMilliseconds": 818.6716
+          "p50Milliseconds": 539.5007,
+          "p95Milliseconds": 659.4444,
+          "maxMilliseconds": 659.4444
         }
       },
       "controls": {
         "startup": {
           "samples": 10,
-          "p50Milliseconds": 170.2459,
-          "p95Milliseconds": 242.5612,
-          "maxMilliseconds": 242.5612
+          "p50Milliseconds": 191.7113,
+          "p95Milliseconds": 250.1224,
+          "maxMilliseconds": 250.1224
         },
         "loaded": {
           "samples": 10,
-          "p50Milliseconds": 579.2988,
-          "p95Milliseconds": 678.5571,
-          "maxMilliseconds": 678.5571
+          "p50Milliseconds": 606.2412,
+          "p95Milliseconds": 938.5126,
+          "maxMilliseconds": 938.5126
         },
         "rendering": {
           "samples": 10,
-          "p50Milliseconds": 580.4953,
-          "p95Milliseconds": 679.9954,
-          "maxMilliseconds": 679.9954
+          "p50Milliseconds": 607.8613,
+          "p95Milliseconds": 940.494,
+          "maxMilliseconds": 940.494
         },
         "inputDispatch": {
           "samples": 10,
-          "p50Milliseconds": 810.512,
-          "p95Milliseconds": 922.2421,
-          "maxMilliseconds": 922.2421
+          "p50Milliseconds": 800.8572,
+          "p95Milliseconds": 1150.1554,
+          "maxMilliseconds": 1150.1554
         }
       },
       "pairedLoadedDelta": {
         "samples": 10,
-        "p50Milliseconds": 247.93960000000004,
-        "p95Milliseconds": 363.63689999999997,
-        "maxMilliseconds": 363.63689999999997
+        "p50Milliseconds": 277.51880000000006,
+        "p95Milliseconds": 568.4667,
+        "maxMilliseconds": 568.4667
       },
       "pairedRenderingDelta": {
         "samples": 10,
-        "p50Milliseconds": 249.12610000000006,
-        "p95Milliseconds": 365.1589,
-        "maxMilliseconds": 365.1589
+        "p50Milliseconds": 279.2319,
+        "p95Milliseconds": 570.4393,
+        "maxMilliseconds": 570.4393
       },
       "pairedInputDispatchDelta": {
         "samples": 10,
-        "p50Milliseconds": 217.135,
-        "p95Milliseconds": 360.35260000000005,
-        "maxMilliseconds": 360.35260000000005
+        "p50Milliseconds": 244.45549999999992,
+        "p95Milliseconds": 587.9496000000001,
+        "maxMilliseconds": 587.9496000000001
       },
       "provisionalBudgetMilliseconds": 300,
       "pairedInputDispatchProxyWithinBudget": false,
       "focusAcceptedSamples": 20,
-      "gallerySha256": "6DB934907AF1CB5554982E740350B2C8B0564582AC2E53651A9C53DED10C9131",
-      "librarySha256": "5F10B88933B77F1621B509EE9971E235009A39F5ABD97487B4ED08E05C274F8A",
+      "gallerySha256": "33048F0CC11F789DC5F5B92E31E7321C6D2BD39C2EA7A925DCFCAE422EA2B166",
+      "librarySha256": "1ECFB5666AF26BC95920B20DC0D7BFCB71D344418B0D9AB71B36B2AA02AFD1A5",
       "runnerSha256": "17F76658FC80BF5D84262A548345714429F4474AE228BCB163789451F7B3283D",
       "machine": "RD_SUNR",
       "os": "Microsoft Windows NT 10.0.26300.0",
@@ -274,7 +274,7 @@
       ],
       "qpcFrequency": 10000000,
       "qualification": "Fresh independent processes, alternating paired order; OS caches not flushed; hidden-window Rendering and Input Dispatcher proxies, not GPU presentation or physical interactivity/complete PF01 acceptance. Negative deltas retained.",
-      "rawDirectory": "artifacts/performance/verified-20261103-153455/startup/net48"
+      "rawDirectory": "artifacts/performance/verified-20261104-113258/startup/net48"
     },
     {
       "target": "net8.0-windows",
@@ -284,78 +284,78 @@
       "empty": {
         "startup": {
           "samples": 10,
-          "p50Milliseconds": 353.9688,
-          "p95Milliseconds": 429.4384,
-          "maxMilliseconds": 429.4384
+          "p50Milliseconds": 344.1735,
+          "p95Milliseconds": 393.0552,
+          "maxMilliseconds": 393.0552
         },
         "loaded": {
           "samples": 10,
-          "p50Milliseconds": 560.4832,
-          "p95Milliseconds": 703.5664,
-          "maxMilliseconds": 703.5664
+          "p50Milliseconds": 594.3653,
+          "p95Milliseconds": 634.9028,
+          "maxMilliseconds": 634.9028
         },
         "rendering": {
           "samples": 10,
-          "p50Milliseconds": 560.4927,
-          "p95Milliseconds": 703.579,
-          "maxMilliseconds": 703.579
+          "p50Milliseconds": 594.3742,
+          "p95Milliseconds": 634.9137,
+          "maxMilliseconds": 634.9137
         },
         "inputDispatch": {
           "samples": 10,
-          "p50Milliseconds": 791.3988,
-          "p95Milliseconds": 947.6411,
-          "maxMilliseconds": 947.6411
+          "p50Milliseconds": 843.9047,
+          "p95Milliseconds": 877.4402,
+          "maxMilliseconds": 877.4402
         }
       },
       "controls": {
         "startup": {
           "samples": 10,
-          "p50Milliseconds": 345.6461,
-          "p95Milliseconds": 413.3178,
-          "maxMilliseconds": 413.3178
+          "p50Milliseconds": 350.9573,
+          "p95Milliseconds": 582.7514,
+          "maxMilliseconds": 582.7514
         },
         "loaded": {
           "samples": 10,
-          "p50Milliseconds": 940.0946,
-          "p95Milliseconds": 1180.8152,
-          "maxMilliseconds": 1180.8152
+          "p50Milliseconds": 1017.3633,
+          "p95Milliseconds": 1540.4915,
+          "maxMilliseconds": 1540.4915
         },
         "rendering": {
           "samples": 10,
-          "p50Milliseconds": 941.4555,
-          "p95Milliseconds": 1182.4363,
-          "maxMilliseconds": 1182.4363
+          "p50Milliseconds": 1019.5616,
+          "p95Milliseconds": 1543.8969,
+          "maxMilliseconds": 1543.8969
         },
         "inputDispatch": {
           "samples": 10,
-          "p50Milliseconds": 1202.247,
-          "p95Milliseconds": 1484.6637,
-          "maxMilliseconds": 1484.6637
+          "p50Milliseconds": 1260.795,
+          "p95Milliseconds": 1815.7932,
+          "maxMilliseconds": 1815.7932
         }
       },
       "pairedLoadedDelta": {
         "samples": 10,
-        "p50Milliseconds": 377.42929999999996,
-        "p95Milliseconds": 532.962,
-        "maxMilliseconds": 532.962
+        "p50Milliseconds": 447.2364000000001,
+        "p95Milliseconds": 913.8760000000001,
+        "maxMilliseconds": 913.8760000000001
       },
       "pairedRenderingDelta": {
         "samples": 10,
-        "p50Milliseconds": 378.2837,
-        "p95Milliseconds": 534.5680000000001,
-        "maxMilliseconds": 534.5680000000001
+        "p50Milliseconds": 448.3583,
+        "p95Milliseconds": 917.2572,
+        "maxMilliseconds": 917.2572
       },
       "pairedInputDispatchDelta": {
         "samples": 10,
-        "p50Milliseconds": 381.64459999999997,
-        "p95Milliseconds": 609.3244000000001,
-        "maxMilliseconds": 609.3244000000001
+        "p50Milliseconds": 438.8936,
+        "p95Milliseconds": 963.1037000000001,
+        "maxMilliseconds": 963.1037000000001
       },
       "provisionalBudgetMilliseconds": 300,
       "pairedInputDispatchProxyWithinBudget": false,
       "focusAcceptedSamples": 20,
-      "gallerySha256": "50554A16446225E706AB39DAE118D0DD6C5134865FBB56F882461C7EE8793970",
-      "librarySha256": "861AAD584D9595CF3A07A2598124F050045CD7A49F168DAC2EB1769390B769A9",
+      "gallerySha256": "B34A7699BA202CE1CE076794501FC968EAE8AD2FC319A953DF6E5BDDD2D57AB9",
+      "librarySha256": "582FC1D9F4C84D17ED55C07786499B41C50DB2ABE1FF5A9474AE517FD6D38C6A",
       "runnerSha256": "17F76658FC80BF5D84262A548345714429F4474AE228BCB163789451F7B3283D",
       "machine": "RD_SUNR",
       "os": "Microsoft Windows NT 10.0.26300.0",
@@ -369,7 +369,7 @@
       ],
       "qpcFrequency": 10000000,
       "qualification": "Fresh independent processes, alternating paired order; OS caches not flushed; hidden-window Rendering and Input Dispatcher proxies, not GPU presentation or physical interactivity/complete PF01 acceptance. Negative deltas retained.",
-      "rawDirectory": "artifacts/performance/verified-20261103-153455/startup/net8.0-windows"
+      "rawDirectory": "artifacts/performance/verified-20261104-113258/startup/net8.0-windows"
     }
   ],
   "lifecycle": [
@@ -383,7 +383,7 @@
       "aliveCommandsAfterRelease": 0,
       "nativeBaselineWindows": 3,
       "aliveNativeBaselineReferences": 9,
-      "rawDirectory": "artifacts/performance/verified-20261103-153455/lifecycle/net48",
+      "rawDirectory": "artifacts/performance/verified-20261104-113258/lifecycle/net48",
       "qualification": "Conditional managed-reference probe after native UIA baseline; external automation retention remains reported, not full PF09 heap/native-handle acceptance"
     },
     {
@@ -396,11 +396,11 @@
       "aliveCommandsAfterRelease": 0,
       "nativeBaselineWindows": 3,
       "aliveNativeBaselineReferences": 9,
-      "rawDirectory": "artifacts/performance/verified-20261103-153455/lifecycle/net8.0-windows",
+      "rawDirectory": "artifacts/performance/verified-20261104-113258/lifecycle/net8.0-windows",
       "qualification": "Conditional managed-reference probe after native UIA baseline; external automation retention remains reported, not full PF09 heap/native-handle acceptance"
     }
   ],
-  "popupComparisonDirectory": "artifacts/performance/verified-20261103-153455/popup-comparison",
+  "popupComparisonDirectory": "artifacts/performance/verified-20261104-113258/popup-comparison",
   "sourceSnapshot": [
     {
       "path": "samples\\Antd.Wpf.Gallery\\Antd.Wpf.Gallery.csproj",
@@ -436,7 +436,7 @@
     },
     {
       "path": "samples\\Antd.Wpf.Gallery\\MainWindow.xaml",
-      "sha256": "756011D31E2972C8FF70379C8B5007F51DBAFFFAE65DF2E9DA48BE42498666AD"
+      "sha256": "A5BA53E4B1277A3055C28E7BF68377DBDB8309D1D0E5258BD379C2B3008D695D"
     },
     {
       "path": "samples\\Antd.Wpf.Gallery\\MainWindow.xaml.cs",
@@ -452,7 +452,7 @@
     },
     {
       "path": "samples\\Antd.Wpf.Gallery\\VisualMatrix.xaml",
-      "sha256": "E5869FF257EBF806D489CEA223154F88BE0D37F39741A5EE43DABA90491E9BD9"
+      "sha256": "3B767DFD52770B22F82B81E38E9CD3458099DE6A7494377121383D8F43CB62AB"
     },
     {
       "path": "src\\Antd.Wpf\\Antd.Wpf.csproj",
@@ -524,7 +524,7 @@
     },
     {
       "path": "src\\Antd.Wpf\\Controls\\AntSelect.cs",
-      "sha256": "07D74E75B33CA4CB130F3C2EF98A89877A560A7157B4596A3C408C27CDA8B364"
+      "sha256": "7D9D6680856A6D52CDC7AD180DA7D80975E22AA4B4BFB4ADF8FE118E69BB10AC"
     },
     {
       "path": "src\\Antd.Wpf\\Controls\\AntSider.cs",
@@ -588,7 +588,7 @@
     },
     {
       "path": "src\\Antd.Wpf\\Themes\\Controls\\Select.xaml",
-      "sha256": "C7027873BF35D726C97664AA8E8E4E8DB7C27C16760A13DB65DEA4D157EA1B47"
+      "sha256": "064D9E3C4B2E2D0736E7F795E9C4479461F636D49A6D158A62E476E97B41A190"
     },
     {
       "path": "src\\Antd.Wpf\\Themes\\Controls\\Switch.xaml",
@@ -691,6 +691,10 @@
       "sha256": "E9ECE0460E457872878E31B5AC3CE2B7BE1A024AE510F21F8F00658F5ABD216A"
     },
     {
+      "path": "tests\\Antd.Wpf.Tests\\SelectClearTests.cs",
+      "sha256": "9F1984A6ED89D5BBF86EDD16EF8D60032422A3C4BF998A22CD4364989019CA37"
+    },
+    {
       "path": "tests\\Antd.Wpf.Tests\\SpaceTests.cs",
       "sha256": "7ED8D1E5383D6579336296A2AE8274C8643AB78B2C08556E7B39F423347A9BF4"
     },
@@ -724,7 +728,7 @@
     },
     {
       "path": "tests\\Consumers\\Antd.Wpf.Consumer\\Program.cs",
-      "sha256": "456E3F92F3B44C66A78E1060FA0A0AA56154A9179A0A1894AFD048546FFAB388"
+      "sha256": "2A1181593115DC45227B96B0F49851182C9AD115C4A480F2612FD45160A4673E"
     }
   ],
   "scriptSnapshot": [

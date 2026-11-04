@@ -1,0 +1,8 @@
+{
+  "retrievedAt": "2026-11-04",
+  "source": "https://github.com/ant-design/ant-design-icons/blob/92bcdb742d5cb8be2fecdaf7446a33ed08a07deb/packages/icons-svg/svg/filled/close-circle.svg",
+  "file": "close-circle-filled.svg",
+  "sha256": "C09244C8C15382E255542FB3239707415E2C01CB0587C08ACCDAE89C3143033C",
+  "license": "icons-LICENSE.txt",
+  "adaptation": "Select 12DIP Viewbox with original1024 Canvas; native20DIP clear button hit area; Foreground follows theme resources"
+}

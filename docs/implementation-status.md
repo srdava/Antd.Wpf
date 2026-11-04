@@ -1,6 +1,10 @@
 # 实施状态：M0 基础与 P1 原生选择/基础布局/Layout切片
 
-日期：2026-11-03。这是实际代码状态，区别于组件规格和早期静态分析。产品版本为`0.1.0-alpha.1`，尚未公开发布，也未完成全部79项入口。
+日期：2026-11-04。这是实际代码状态，区别于组件规格和早期静态分析。产品版本为`0.1.0-alpha.1`，尚未公开发布，也未完成全部79项入口。
+
+本批按功能优先继续Select P1单选清除：新增AllowClear、ClearSelection()、非编辑模式Delete、原生Invoke、三种选择绑定与Text绑定保留、清除关闭Popup及旧模板部件解绑。默认使用官方CloseCircleFilled矢量，清除不扫描或改写ItemsSource。多选/Tags/搜索继续后续实现；细节与验收见[Select清除](analysis/select-clear-implementation.md)。
+
+2026-11-04 11:33本批完整Verify功能exit0：Release零警告/错误，net48/net8各283/283，四个真实包消费目标通过，14张截图生成、两端明暗矩阵目视检查，82份源码及2份脚本hash一致。PF02/PF05本轮代理预算内，PF01配对Input Dispatcher增量587.9496/963.1037ms仍超预算，M0验收未关闭。原生Checkbox合成Space测试的一次失败及定向复查记录保留，最终完整回归无失败/跳过。
 
 本批增加Gallery的独立进程启动探针与`Measure-Startup.ps1`，每端10对空宿主/200控件页，记录Startup/Loaded/Rendering/Input Dispatcher检查点、程序集和环境，Verify单独归档startup段及脚本hash。空宿主断言不加载Antd.Wpf；隐藏窗口、未清空OS缓存的代理不能解释为真实呈现/首次物理可交互。首轮net8配对Input Dispatcher增量p95为3536.2092ms，超过300ms暂定预算，原始失败保留；PF01与M0继续开放，见[启动采样](analysis/m0-startup-validation.md)。
 
@@ -22,7 +26,7 @@ M0剩余门槛按[专用验收清单](m0-acceptance.md)跟踪。本批补充100�
 | AntThemeScope | Light/Dark、继承尺寸/动画、局部覆盖、系统高对比度资源、按作用域缓存 | 任意种子调色板、Culture配置、全部组件token未实现 |
 | AntButton | 六种变体、常用语义色、圆形/胶囊、三尺寸、图标位置、Ghost、加载延迟、防命令重入 | 完整IconTemplate/LoadingIcon、预设全调色板、波纹/渐变/中文自动间距未完成 |
 | AntInput | TextBox原生编辑/绑定/撤销、占位、前后缀、清除、UTF-16长度/上限提示、只读超限状态与UIA错误、变体/状态；多行自动高度及行数限制；Search默认中性图标及显式文本按钮、命令/三种原因/取消令牌、Loading防重入和UIA忙碌状态 | Search完整Addon组合、Password显隐与OTP、独立软上限/字素计数/外置TextArea计数、所有高对比度交互矩阵未完成 |
-| AntSelect | ComboBox单选语义、默认模板、虚拟化/回收、Popup主题桥接、Esc/卸载/重模板化清理 | 清除、多选/Tags、分组、搜索、远程加载与完整状态矩阵未完成 |
+| AntSelect | ComboBox单选语义、清除按钮/API/Delete与绑定保留、默认模板、虚拟化/回收、Popup主题桥接、Esc/卸载/重模板化清理 | 多选/Tags、分组、搜索、远程加载与完整状态矩阵未完成 |
 | AntPasswordBox | 组合原生PasswordBox的掩码输入、SecurePassword副本、清除/空状态事件、三尺寸/变体/主题、原生密码UIA、重模板保留编辑器、卸载清除 | 显隐触发器、前后缀、只读策略、程序化安全初始化、真实输入/DPI/读屏/堆根待实现或验收；见[实施说明](analysis/password-implementation.md) |
 | AntSwitch | ToggleButton原生命令/TogglePattern、两态绑定、null按关展示、开关内容/尺寸/RTL、加载防重入、忙碌UIA状态；200ms拨钮动画、关闭动画及隐藏/卸载/重模板化清理 | 颜色/标签过渡、按压拉伸、把手阴影和加载旋转待实现；真实输入、高对比度动态矩阵及硬件帧率/GC待验收 |
 | AntCheckBox | 原生CheckBox绑定、Command、Space、三态；16DIP框、4圆角、8DIP标签内距、8×8半选方块；原生TogglePattern | Checkbox.Group/SelectedKeys与跨页全选未实现 |

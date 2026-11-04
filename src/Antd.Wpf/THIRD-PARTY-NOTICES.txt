@@ -28,6 +28,7 @@ WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
 @ant-design/icons-svg 4.6.0 - LeftOutlined and BarsOutlined vector paths
 Ant Design Icons - SearchOutlined vector path (commit 92bcdb742d5cb8be2fecdaf7446a33ed08a07deb)
+Ant Design Icons - CloseCircleFilled vector path (same commit)
 https://github.com/ant-design/ant-design-icons
 
 MIT LICENSE

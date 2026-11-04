@@ -8,8 +8,11 @@ using Antd.Wpf.Theming;
 
 namespace Antd.Wpf.Controls;
 
+[TemplatePart(Name = ClearButtonPartName, Type = typeof(Button))]
 public class AntSelect : ComboBox
 {
+    private const string ClearButtonPartName = "PART_ClearButton";
+    private Button? _clearButton;
     private FrameworkElement? _popupRoot;
     private ResourceDictionary? _scopeResources;
 
@@ -52,6 +55,24 @@ public class AntSelect : ComboBox
         set => SetValue(StatusProperty, value);
     }
 
+    public static readonly DependencyProperty AllowClearProperty = DependencyProperty.Register(
+        nameof(AllowClear), typeof(bool), typeof(AntSelect), new FrameworkPropertyMetadata(false));
+
+    public bool AllowClear
+    {
+        get => (bool)GetValue(AllowClearProperty);
+        set => SetValue(AllowClearProperty, value);
+    }
+
+    public void ClearSelection()
+    {
+        VerifyAccess();
+        if (!IsEnabled || SelectedIndex < 0) { return; }
+        SetCurrentValue(IsDropDownOpenProperty, false);
+        SetCurrentValue(SelectedIndexProperty, -1);
+        Focus();
+    }
+
     protected override void OnDropDownOpened(EventArgs args)
     {
         // shortcut: earlier runs exceeded PF05 intermittently; retain native/scoped comparisons until hardware calibration.
@@ -78,7 +99,13 @@ public class AntSelect : ComboBox
 
     protected override void OnPreviewKeyDown(KeyEventArgs args)
     {
-        if (args.Key == Key.Escape && IsDropDownOpen)
+        if (!args.Handled && args.Key == Key.Delete && Keyboard.Modifiers == ModifierKeys.None &&
+            AllowClear && !IsEditable && !IsDropDownOpen && IsKeyboardFocused && SelectedIndex >= 0 && IsEnabled)
+        {
+            ClearSelection();
+            args.Handled = true;
+        }
+        else if (args.Key == Key.Escape && IsDropDownOpen)
         {
             SetCurrentValue(IsDropDownOpenProperty, false);
             Focus();
@@ -90,13 +117,28 @@ public class AntSelect : ComboBox
 
     public override void OnApplyTemplate()
     {
+        DetachClearButton();
         ReleasePopupResources();
         base.OnApplyTemplate();
+        _clearButton = GetTemplateChild(ClearButtonPartName) as Button;
+        if (_clearButton != null) { _clearButton.Click += OnClearClick; }
+    }
+
+    private void OnClearClick(object sender, RoutedEventArgs args)
+    {
+        if (AllowClear) { ClearSelection(); }
+        args.Handled = true;
+    }
+
+    private void DetachClearButton()
+    {
+        if (_clearButton != null) { _clearButton.Click -= OnClearClick; _clearButton = null; }
     }
 
     private static void OnTemplateChanged(DependencyObject sender, DependencyPropertyChangedEventArgs args)
     {
         var select = (AntSelect)sender;
+        select.DetachClearButton();
         if (args.OldValue is ControlTemplate)
         {
             select.SetCurrentValue(IsDropDownOpenProperty, false);

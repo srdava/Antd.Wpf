@@ -38,7 +38,7 @@
             <antd:AntPasswordBox Placeholder="Password / 密码" AllowClear="True" Margin="0,0,0,20" />
             <TextBlock Text="Select · Small / Default / Large" FontWeight="SemiBold" Margin="0,0,0,8" />
             <antd:AntSelect Size="Small" SelectedIndex="0" Margin="0,0,0,8"><ComboBoxItem Content="Small option" /></antd:AntSelect>
-            <antd:AntSelect SelectedIndex="0" Margin="0,0,0,8"><ComboBoxItem Content="Default option" /></antd:AntSelect>
+            <antd:AntSelect AllowClear="True" SelectedIndex="0" Margin="0,0,0,8"><ComboBoxItem Content="Clearable option · Delete" /></antd:AntSelect>
             <antd:AntSelect Size="Large" SelectedIndex="0" Margin="0,0,0,20"><ComboBoxItem Content="Large option" /></antd:AntSelect>
             <TextBlock Text="Checkbox" FontWeight="SemiBold" Margin="0,0,0,8" />
             <WrapPanel Margin="0,0,0,8">

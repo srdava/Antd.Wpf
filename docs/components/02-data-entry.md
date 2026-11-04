@@ -217,6 +217,8 @@
 
 **验收**：①同名不同键选项可正确选择且标签去重按约定；②远程A请求晚到不覆盖B，移除已选标签不重开Popup；③10,000项、非默认ItemTemplate行高滚动定位和键盘选中正确；④达到最大选择数只阻止新增，仍可取消和清除；⑤主题切换不丢已选值/搜索文本/焦点。
 
+实施记录：单选清除新增AllowClear、ClearSelection()、Delete与原生Invoke，保持选中绑定和Popup关闭，详见[Select清除](../analysis/select-clear-implementation.md)。上述多选/标签/搜索验收仍按后续批次推进。
+
 <a id="slider"></a>
 
 ## slider — Slider
